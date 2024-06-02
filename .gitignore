@@ -190,3 +190,13 @@ nose/Library/ArtifactDB-lock
 nose/Library/SourceAssetDB
 nose/Library/SourceAssetDB-lock
 nose/UserSettings/Layouts/default-2022.dwlt
+nose/Library/ArtifactDB
+nose/Library/ArtifactDB-lock
+nose/Library/Bee/backend1.traceevents
+nose/Library/Bee/fullprofile.json
+nose/Library/Bee/tundra.digestcache
+nose/Library/ilpp.pid
+nose/Library/SourceAssetDB
+nose/Library/SourceAssetDB-lock
+nose/Logs/shadercompiler-UnityShaderCompiler0.log
+nose/Temp/FSTimeGet-c2952e3a34f34476984ada65ca83a26e
