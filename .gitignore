@@ -186,3 +186,7 @@ nose/Library/ilpp.pid
 nose/Library/SourceAssetDB
 nose/Library/SourceAssetDB-lock
 nose/Logs/shadercompiler-UnityShaderCompiler0.log
+nose/Library/ArtifactDB-lock
+nose/Library/SourceAssetDB
+nose/Library/SourceAssetDB-lock
+nose/UserSettings/Layouts/default-2022.dwlt
