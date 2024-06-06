@@ -18,6 +18,7 @@ public class Start_botton : MonoBehaviour
         {
             SceneManager.LoadScene("SampleScene");//some_senseiシーンをロードする
             Debug.Log("space");
+
         }
     }
 }
