@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class planetMove : MonoBehaviour
 {
+    [SerializeField, Header("回転速度")]
+    private float rotetionSpeed;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,6 +17,6 @@ public class planetMove : MonoBehaviour
     void Update()
     {
         Transform myTransform = this.transform;
-        myTransform.Rotate(0.0f, 0.0f, 0.1f);
+        myTransform.Rotate(0.0f, 0.0f, rotetionSpeed);
     }
 }
