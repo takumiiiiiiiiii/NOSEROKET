@@ -30,7 +30,7 @@ public class UFO : MonoBehaviour
     void FixedUpdate()
     {
         Nosemove nose;//呼ぶスクリプトにあだ名をつける
-        GameObject obj = GameObject.Find("nose");//Circleというゲームオブジェクトを探す
+        GameObject obj = GameObject.Find("nose_player");//Circleというゲームオブジェクトを探す
         nose = obj.GetComponent<Nosemove>();//スクリプトを取得
         
         if (move == true)
