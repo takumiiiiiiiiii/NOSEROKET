@@ -7,6 +7,7 @@ public class Nosemove : MonoBehaviour
     // Start is called before the first frame update
     public Rigidbody2D RB;
     public float speed;
+    public Vector2 player_vector;
     private Vector2 forword;
     void Start()
     {
@@ -15,7 +16,7 @@ public class Nosemove : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-
+        player_vector = this.transform.position;
         Transform myTransform = this.transform;
         Vector3 worldAngle = myTransform.eulerAngles;
         Debug.Log(forword);
