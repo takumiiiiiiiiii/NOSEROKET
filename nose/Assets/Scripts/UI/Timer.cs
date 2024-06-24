@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using UnityEngine.SceneManagement; // UnityEngine.SceneManagemntの機能を使用
 
 
-public class Timer1 : MonoBehaviour
+public class Timer : MonoBehaviour
 {
 
     //　トータル制限時間
