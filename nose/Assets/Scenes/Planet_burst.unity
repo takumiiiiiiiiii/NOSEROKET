@@ -1887,7 +1887,7 @@ Transform:
   m_GameObject: {fileID: 736773268}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0.058521114}
+  m_LocalPosition: {x: 1.86, y: -10.36, z: 0.058521114}
   m_LocalScale: {x: 1.1, y: 1.1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2033,7 +2033,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd620372963484324ad7b6eba3cdce67, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 30
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
 --- !u!1 &738294001
@@ -5978,6 +5978,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0afba27f7f304ff7a45b43ea260b670, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  minute: 0
+  seconds: 0
+  timerText: {fileID: 0}
+  waitTime: 1000
 --- !u!114 &1861325309
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6626,8 +6630,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  OUT_POLLEN: 0
-  pollen: {fileID: 0}
+  OUT_POLLEN: 10
+  pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
 --- !u!58 &2076766314
 CircleCollider2D:
   m_ObjectHideFlags: 0
