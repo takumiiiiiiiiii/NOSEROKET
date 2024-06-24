@@ -7,9 +7,11 @@ public class Nosemove : MonoBehaviour
     // Start is called before the first frame update
     public Rigidbody2D RB;
     public float speed;//鼻の移動スピードを入力する
+    public float dash_speed=2;//ダッシュ時のスピード
     public Vector2 player_vector;//プレイヤーの現在地を記録
     private Vector2 forword;
-    private bool Nose_Dush=false;
+    [HideInInspector] public static bool DoNotMove=false;
+    [HideInInspector] public  bool Nose_Dush=false;
     void Start()
     {
         forword = transform.forward;
@@ -32,28 +34,30 @@ public class Nosemove : MonoBehaviour
         worldAngle.x = 10.0f;
         worldAngle.y = 0;
         worldAngle.z = 0;
-        
-        if (Input.GetKey(KeyCode.LeftArrow)&& Input.GetKey(KeyCode.Space) == false)
-        {
-            myTransform.Rotate(0, 0, 3.0f, Space.World);
-        }
-        if (Input.GetKey(KeyCode.RightArrow)&&Input.GetKey(KeyCode.Space) == false)
-        {
-            myTransform.Rotate(0, 0, -3.0f, Space.World);
-        }
-        if (Input.GetKey(KeyCode.Space)==false)
-        {
-            if (Nose_Dush == true)//
+        Debug.Log("DoNotMove:" + DoNotMove);
+        if (DoNotMove == false){
+            if (Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.Space) == false)
             {
-                transform.position += transform.rotation * new Vector2(0, speed * 2);//ダッシュ
+                myTransform.Rotate(0, 0, 3.0f, Space.World);
             }
-            else
+            if (Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.Space) == false)
             {
-                transform.position += transform.rotation * new Vector2(0, speed);//通常の移動
+                myTransform.Rotate(0, 0, -3.0f, Space.World);
             }
-        }else if(Nose_Dush == true)
-        {
-            transform.position += transform.rotation * new Vector2(0, speed * 2);//ダッシュ
+            if (Input.GetKey(KeyCode.Space) == false)
+            {
+                if (Nose_Dush == true)//
+                {
+                    transform.position += transform.rotation * new Vector2(0, speed * dash_speed);//ダッシュ
+                }
+                else
+                {
+                    transform.position += transform.rotation * new Vector2(0, speed);//通常の移動
+                }
+            } else if (Nose_Dush == true)
+            {
+                transform.position += transform.rotation * new Vector2(0, speed * dash_speed);//ダッシュ
+            }
         }
     }
     private IEnumerator Dash()
