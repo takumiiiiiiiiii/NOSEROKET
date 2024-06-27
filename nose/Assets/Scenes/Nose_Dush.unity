@@ -1111,6 +1111,7 @@ GameObject:
   - component: {fileID: 375455210}
   - component: {fileID: 375455211}
   - component: {fileID: 375455212}
+  - component: {fileID: 375455213}
   m_Layer: 5
   m_Name: dash_slider
   m_TagString: Untagged
@@ -1184,9 +1185,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 50
+  m_MaxValue: 10
   m_WholeNumbers: 0
-  m_Value: 26.8
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -1214,6 +1215,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74ccec22d682a47ec9c827f9f9439726, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &375455213
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 375455209}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4b1f0a2df803440989b730eca976d10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 375455211}
+  pollenPoint: 0
 --- !u!1 &389602306
 GameObject:
   m_ObjectHideFlags: 0
