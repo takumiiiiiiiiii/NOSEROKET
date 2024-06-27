@@ -11,19 +11,22 @@ public class pollenHit : MonoBehaviour
     [SerializeField] private Rigidbody2D Rb;
 
     public Score Sc;
+    public SliderController Sdc;
 
 
     // Start is called before the first frame update
     void Start()
     {
         Sc = GameObject.Find("Text (TMP) (1)").GetComponent<Score>();
-    }
+        Sdc = GameObject.Find("dash_slider").GetComponent<SliderController>();
 
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Player")
         {
             Sc.score += 100;
+            Sdc.CollectObject();
             Destroy(this.gameObject);
         }
     }
