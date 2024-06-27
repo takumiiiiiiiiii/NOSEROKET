@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using AIE2D;
+using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Nosemove : MonoBehaviour
 {
@@ -11,10 +14,13 @@ public class Nosemove : MonoBehaviour
     public Vector2 player_vector;//プレイヤーの現在地を記録
     private Vector2 forword;
     [HideInInspector] public static bool DoNotMove=false;
-    [HideInInspector] public  bool Nose_Dush=false;
+    [HideInInspector] public static bool Nose_Dush=false;
+    private AfterImageEffect2DPlayerBase _player = null;
     void Start()
     {
         forword = transform.forward;
+        _player = gameObject.GetComponent<AfterImageEffect2DPlayerBase>();
+        //_player.CreateAfterImage(gameObject.GetComponent<SpriteRenderer>());
     }
     // Update is called once per frame
     private void Update()
@@ -23,6 +29,15 @@ public class Nosemove : MonoBehaviour
         {
             Debug.Log("fafafa");
             StartCoroutine(Dash());
+            
+        }
+        if (Nose_Dush == true)
+        {
+            _player.SetActive(true);
+        }
+        else
+        {
+            _player.SetActive(false);
         }
     }
     void FixedUpdate()
@@ -34,6 +49,8 @@ public class Nosemove : MonoBehaviour
         worldAngle.x = 10.0f;
         worldAngle.y = 0;
         worldAngle.z = 0;
+        
+
         Debug.Log("DoNotMove:" + DoNotMove);
         if (DoNotMove == false){
             if (Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.Space) == false)

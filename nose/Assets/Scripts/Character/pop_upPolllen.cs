@@ -6,6 +6,7 @@ using UnityEngine;
 [RequireComponent(typeof(CircleCollider2D))]
 public class pop_upPolllen : MonoBehaviour
 {
+
     [SerializeField] private CircleCollider2D CC;
     [SerializeField] private Rigidbody2D RB;
     public float speed;

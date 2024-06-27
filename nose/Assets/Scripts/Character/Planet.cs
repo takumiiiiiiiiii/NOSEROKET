@@ -61,7 +61,7 @@ public class Planet : MonoBehaviour
         Nosemove nose;//呼ぶスクリプトにあだ名をつける
         GameObject obj = GameObject.Find("nose_player");//Circleというゲームオブジェクトを探す
         nose = obj.GetComponent<Nosemove>();//スクリプトを取得
-        if (collision.gameObject.tag == "Player" && nose.Nose_Dush == true)
+        if (collision.gameObject.tag == "Player" && Nosemove.Nose_Dush == true)
         {
             StartCoroutine(Stopc_MoveNose());
             Hit = true;

@@ -532,6 +532,7 @@ GameObject:
   - component: {fileID: 208241178}
   - component: {fileID: 208241177}
   - component: {fileID: 208241180}
+  - component: {fileID: 208241181}
   m_Layer: 6
   m_Name: nose_player
   m_TagString: Player
@@ -755,7 +756,31 @@ MonoBehaviour:
   speed: 0.1
   dash_speed: 3
   player_vector: {x: 0, y: 0}
-  Nose_Dush: 0
+--- !u!114 &208241181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208241173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 044834364507f4ba0bdf7bc8ff7724ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _targetSpriteRenderer: {fileID: 208241175}
+  _afterImageNum: 2
+  _ignoreTimeScale: 0
+  _colorList:
+  - {r: 0.5, g: 0.5, b: 0.5, a: 0.5}
+  _isSameColor: 1
+  _materialType: 0
+  _materialList: []
+  _span: 0.05
+  _duraction: 0.1
+  _fadeTime: 0.05
+  _colorNum: 1
+  _materialNum: 1
 --- !u!1001 &251961406
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1446,6 +1471,7 @@ GameObject:
   - component: {fileID: 519420032}
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
+  - component: {fileID: 519420033}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1527,6 +1553,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 208241176}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &519420033
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: feb04ece56bc244ad9f7e22be11de304, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Damage: {fileID: 0}
 --- !u!1 &542089738
 GameObject:
   m_ObjectHideFlags: 0
