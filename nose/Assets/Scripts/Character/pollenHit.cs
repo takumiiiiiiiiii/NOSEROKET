@@ -23,7 +23,7 @@ public class pollenHit : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if(collision.gameObject.tag == "Player"&&Sc!=null)
         {
             Sc.score += 100;
             Sdc.CollectObject();
