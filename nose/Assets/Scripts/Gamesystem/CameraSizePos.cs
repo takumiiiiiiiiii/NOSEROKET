@@ -20,7 +20,7 @@ public class CameraSizePos : MonoBehaviour
             startFlag = true;
             while(zoomSize < 2)
             {
-                GetComponent<Camera>().orthographicSize = (zoomSize + 1)/10;
+                //GetComponent<Camera>().orthographicSize = (zoomSize + 1)/10;
             }
         }
     }
