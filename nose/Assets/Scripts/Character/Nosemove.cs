@@ -25,11 +25,26 @@ public class Nosemove : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        if (Input.GetKeyUp(KeyCode.Space) && Nose_Dush == false)
+        Serial serial;//呼ぶスクリプトにあだ名をつける
+        GameObject objc = GameObject.Find("Serial");//Circleというゲームオブジェクトを探す
+        serial = objc.GetComponent<Serial>();//スクリプトを取得
+        if (serial.conect == true)
         {
-            Debug.Log("fafafa");
-            StartCoroutine(Dash());
-            
+            if (int.Parse(serial.z) == 1 && int.Parse(serial.x) == 1 && Nose_Dush == false)
+            {
+                Debug.Log("fafafa");
+                StartCoroutine(Dash());
+
+            }
+        }
+        else
+        {
+            if (Input.GetKeyUp(KeyCode.Space) && Nose_Dush == false)
+            {
+                Debug.Log("fafafa");
+                StartCoroutine(Dash());
+
+            }
         }
         if (Nose_Dush == true)
         {
@@ -52,28 +67,65 @@ public class Nosemove : MonoBehaviour
         
 
         Debug.Log("DoNotMove:" + DoNotMove);
-        if (DoNotMove == false){
-            if (Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.Space) == false)
+        Serial serial;//呼ぶスクリプトにあだ名をつける
+        GameObject objc = GameObject.Find("Serial");//Circleというゲームオブジェクトを探す
+        serial = objc.GetComponent<Serial>();//スクリプトを取得
+        if (serial.conect == true)
+        {
+            if (DoNotMove == false)
             {
-                myTransform.Rotate(0, 0, 3.0f, Space.World);
-            }
-            if (Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.Space) == false)
-            {
-                myTransform.Rotate(0, 0, -3.0f, Space.World);
-            }
-            if (Input.GetKey(KeyCode.Space) == false)
-            {
-                if (Nose_Dush == true)//
+                if (int.Parse(serial.x)==1 && int.Parse(serial.z) == 0)
+                {
+                    myTransform.Rotate(0, 0, 3.0f, Space.World);
+                }
+                if (int.Parse(serial.z) == 1 && int.Parse(serial.x) == 0)
+                {
+                    myTransform.Rotate(0, 0, -3.0f, Space.World);
+                }
+                if (int.Parse(serial.z) == 1&& int.Parse(serial.x) == 1)
+                {
+                    if (Nose_Dush == true)//
+                    {
+                        transform.position += transform.rotation * new Vector2(0, speed * dash_speed);//ダッシュ
+                    }
+                    else
+                    {
+                        transform.position += transform.rotation * new Vector2(0, speed);//通常の移動
+                    }
+                }
+                else if (Nose_Dush == true)
                 {
                     transform.position += transform.rotation * new Vector2(0, speed * dash_speed);//ダッシュ
                 }
-                else
-                {
-                    transform.position += transform.rotation * new Vector2(0, speed);//通常の移動
-                }
-            } else if (Nose_Dush == true)
+            }
+        }
+        else
+        {
+            if (DoNotMove == false)
             {
-                transform.position += transform.rotation * new Vector2(0, speed * dash_speed);//ダッシュ
+                if (Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.Space) == false)
+                {
+                    myTransform.Rotate(0, 0, 3.0f, Space.World);
+                }
+                if (Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.Space) == false)
+                {
+                    myTransform.Rotate(0, 0, -3.0f, Space.World);
+                }
+                if (Input.GetKey(KeyCode.Space) == false)
+                {
+                    if (Nose_Dush == true)//
+                    {
+                        transform.position += transform.rotation * new Vector2(0, speed * dash_speed);//ダッシュ
+                    }
+                    else
+                    {
+                        transform.position += transform.rotation * new Vector2(0, speed);//通常の移動
+                    }
+                }
+                else if (Nose_Dush == true)
+                {
+                    transform.position += transform.rotation * new Vector2(0, speed * dash_speed);//ダッシュ
+                }
             }
         }
     }
