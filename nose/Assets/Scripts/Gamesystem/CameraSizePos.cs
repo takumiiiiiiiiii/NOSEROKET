@@ -4,24 +4,24 @@ using UnityEngine;
 
 public class CameraSizePos : MonoBehaviour
 {
-    public bool startFlag = false;
-    public float zoomSize = 0.0f;
+     Camera cam;
     // Start is called before the first frame update
     void Start()
     {
-        
+        cam = this.gameObject.GetComponent<Camera>();
+
+        if (!cam.orthographic)
+        {
+            cam.orthographic = true;  // 必要に応じてオーソグラフィックモードに切り替える
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKey(KeyCode.Space) == true && startFlag == false)
+        if (StartBotton.start == true)
         {
-            startFlag = true;
-            while(zoomSize < 2)
-            {
-                GetComponent<Camera>().orthographicSize = (zoomSize + 1)/10;
-            }
+            cam.orthographicSize -= 1.0f;
         }
     }
 }
