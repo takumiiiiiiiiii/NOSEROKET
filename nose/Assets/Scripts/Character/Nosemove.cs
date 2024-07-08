@@ -15,6 +15,7 @@ public class Nosemove : MonoBehaviour
     private Vector2 forword;
     [HideInInspector] public static bool DoNotMove=false;
     [HideInInspector] public static bool Nose_Dush=false;
+    [HideInInspector] public static Transform myTransform;
     private AfterImageEffect2DPlayerBase _player = null;
     void Start()
     {
@@ -43,14 +44,12 @@ public class Nosemove : MonoBehaviour
     void FixedUpdate()
     {
         player_vector = this.transform.position;
-        Transform myTransform = this.transform;
+        myTransform = this.transform;
         Vector3 worldAngle = myTransform.eulerAngles;
         Debug.Log(Nose_Dush);
         worldAngle.x = 10.0f;
         worldAngle.y = 0;
         worldAngle.z = 0;
-        
-
         Debug.Log("DoNotMove:" + DoNotMove);
         if (DoNotMove == false){
             if (Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.Space) == false)
