@@ -38,12 +38,11 @@ public class Camerashake : MonoBehaviour
 
     private void Update()
     {
-        
-
         if (Nosemove.DoNotMove == true)//当たった時に呼び出す
         {
             if (shakecnt == true)
             {
+
                 audiosorce.PlayOneShot(Damage);
                 StartShake(0.2f, 0.2f, 0.2f);
                 shakecnt = false;

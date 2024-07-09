@@ -14,6 +14,9 @@ public class CameraPos : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.transform.position = new Vector3(Nose.transform.position.x, Nose.transform.position.y,-10);
+        if (Nosemove.DoNotMove == false)
+        {
+            this.transform.position = new Vector3(Nose.transform.position.x, Nose.transform.position.y, -10);
+        }
     }
 }
