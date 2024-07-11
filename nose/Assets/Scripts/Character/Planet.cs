@@ -6,7 +6,7 @@ using UnityEngine;
 public class Planet : MonoBehaviour
 {
     public float speed=40;//吹っ飛んで行くスピード
-    public int OUT_POLLEN;//落とす花粉の数
+    public int OUT_POLLEN=20;//落とす花粉の数
     [SerializeField] private GameObject pollen;//花粉
 
     private bool Hit = false;//ダッシュ中の鼻にあたったかを判定
