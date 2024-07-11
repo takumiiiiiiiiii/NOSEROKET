@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 6152db8165bea4ba19ddf448cb52cdd6
+guid: cd25b85dd7eeb415d83c5f10ddec6eae
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,85 +97,85 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: NoseSpritt_0
+      name: nose_0
       rect:
         serializedVersion: 2
-        x: 8
-        y: 1330
+        x: 0
+        y: 1363
         width: 236
-        height: 590
+        height: 557
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9b11e383c81204e47906d6ddc1cb0be8
-      internalID: -472508858
+      spriteID: bd6c3ec18cc344af380a7618fffee1e0
+      internalID: 819616695
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NoseSpritt_1
+      name: nose_1
       rect:
         serializedVersion: 2
-        x: 244
-        y: 1330
+        x: 236
+        y: 1363
         width: 236
-        height: 590
+        height: 557
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 85b2007375633449cb0992be00db05ff
-      internalID: -383571629
+      spriteID: 992dd0cd6fd974649bd13531b8d4973c
+      internalID: 878445789
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NoseSpritt_2
+      name: nose_2
       rect:
         serializedVersion: 2
-        x: 480
-        y: 1330
+        x: 472
+        y: 1363
         width: 236
-        height: 590
+        height: 557
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 62ea961c9a8fd45eabd65ab6f1f9ae39
-      internalID: 738690994
+      spriteID: 34a5c784a8d524a6eb9a602b09c19c8a
+      internalID: 1454457691
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: NoseSpritt_3
+      name: nose_3
       rect:
         serializedVersion: 2
-        x: 716
-        y: 1330
+        x: 708
+        y: 1363
         width: 236
-        height: 590
+        height: 557
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 17cfbdbf1dfb046eb9ec376ccbbb9633
-      internalID: -1692026617
+      spriteID: 0dc41379192944b868bd326f7384e7e1
+      internalID: -1930733768
       vertices: []
       indices: 
       edges: []
@@ -191,10 +191,10 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      NoseSpritt_0: -472508858
-      NoseSpritt_1: -383571629
-      NoseSpritt_2: 738690994
-      NoseSpritt_3: -1692026617
+      nose_0: 819616695
+      nose_1: 878445789
+      nose_2: 1454457691
+      nose_3: -1930733768
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
