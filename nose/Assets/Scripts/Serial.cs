@@ -14,10 +14,10 @@ public class Serial : MonoBehaviour
     [SerializeField] private string portName;
     [SerializeField] private int baurate;
 
-    public bool conect;
-    private SerialPort serial;
+    public bool conect=false,connect_char=false;
+    public SerialPort serial;
     private bool isLoop = true;
-    public string cntx,cntz,x,z;
+    public string cntx,cntz,x="10",z="10";
     void Start()
     {
         this.serial = new SerialPort(portName, baurate, Parity.None, 8, StopBits.One);
@@ -44,23 +44,34 @@ public class Serial : MonoBehaviour
         {
             cntx = this.serial.ReadLine();
             cntz = this.serial.ReadLine();
+            if (cntx.Length > 6 && cntz.Length > 6)
+            {
+                UnityEngine.Debug.Log("fafa" + x);
+                UnityEngine.Debug.Log("fafa" + z);
+                cntx = "X10";
+                cntz = "Y10";
+            }
             string cntx1 = cntx.Substring(0, 1);
             string cntz1 = cntz.Substring(0, 1);
             UnityEngine.Debug.Log("cntx1" + cntx1);
             UnityEngine.Debug.Log("cntz2" + cntz1);
-            if (cntx1 == "X") {
+            if (cntx1 == "X")
+            {
                 x = cntx.Substring(1);
                 z = cntz.Substring(1);
             }
-            else {
+            else if (cntx1 == "Y")
+            {
                 x = cntz.Substring(1);
                 z = cntx.Substring(1);
             }
+      
             //x = this.serial.ReadLine();
             //z = this.serial.ReadLine();
             //UnityEngine.Debug.Log(message);
             UnityEngine.Debug.Log("x="+x);
             UnityEngine.Debug.Log("z="+z);
+            connect_char = true;
         }
     }
     void OnDestroy()

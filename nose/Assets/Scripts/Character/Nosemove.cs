@@ -34,28 +34,33 @@ public class Nosemove : MonoBehaviour
         serial = objc.GetComponent<Serial>();//スクリプトを取得
         anima.SetBool("Left_anima", false);
         anima.SetBool("Right_anima", false);
-        if (serial.conect == true)
+        if (serial.connect_char == true && serial.x != null && serial.z != null)
         {
-            float x = float.Parse(serial.x);
-            float z = float.Parse(serial.z);
-            if ( x_before < growlevel && z_before < growlevel && Nose_Dush == false)
+            Debug.Log("notcorrect" + serial.x);
+            bool isBase = (serial.x is string);
+            if (isBase == true)
             {
-                if (x >= growlevel || z >= growlevel)
+                float x = float.Parse(serial.x);
+                float z = float.Parse(serial.z);
+                if (x_before < growlevel && z_before < growlevel && Nose_Dush == false)
                 {
-                    Debug.Log("fafafa");
-                    StartCoroutine(Dash());
+                    if (x >= growlevel || z >= growlevel)
+                    {
+                        Debug.Log("fafafa");
+                        StartCoroutine(Dash());
+                    }
                 }
+                if (Nose_Dush == true)
+                {
+                    _player.SetActive(true);
+                }
+                else
+                {
+                    _player.SetActive(false);
+                }
+                x_before = x;
+                z_before = z;
             }
-            if (Nose_Dush == true)
-            {
-                _player.SetActive(true);
-            }
-            else
-            {
-                _player.SetActive(false);
-            }
-            x_before = x;
-            z_before = z;
         }
         else
         {
@@ -98,35 +103,39 @@ public class Nosemove : MonoBehaviour
         GameObject objc = GameObject.Find("sencer");//Circleというゲームオブジェクトを探す
         serial = objc.GetComponent<Serial>();//スクリプトを取得
         
-        if (serial.conect == true&&serial.x != null && serial.z != null)
+        if (serial.connect_char == true&&serial.x != null && serial.z != null)
         {
-            float x = float.Parse(serial.x);
-            float z = float.Parse(serial.z);
-            if (DoNotMove == false)
+            bool isBase = (serial.x is string);
+            if (isBase == true)
             {
-                if (x<growlevel&& z >= growlevel)
+                float x = float.Parse(serial.x);
+                float z = float.Parse(serial.z);
+                if (DoNotMove == false)
                 {
-                    myTransform.Rotate(0, 0, 3.0f, Space.World);
-                }
-                if (z<growlevel && x >= growlevel)
-                {
-                    myTransform.Rotate(0, 0, -3.0f, Space.World);
-                }
-                if (x >= growlevel && z >= growlevel　&& Nose_Dush==true)
-                {
-                    Debug.Log("iff");
-                    transform.position += transform.rotation * new Vector2(0, speed * dash_speed);//ダッシュ
-                }
-                else if(x >= growlevel || z >= growlevel)
-                {
-                  
-                    if (Nose_Dush == true)
+                    if (x < growlevel && z >= growlevel)
                     {
+                        myTransform.Rotate(0, 0, 3.0f, Space.World);
+                    }
+                    if (z < growlevel && x >= growlevel)
+                    {
+                        myTransform.Rotate(0, 0, -3.0f, Space.World);
+                    }
+                    if (x >= growlevel && z >= growlevel && Nose_Dush == true)
+                    {
+                        Debug.Log("iff");
                         transform.position += transform.rotation * new Vector2(0, speed * dash_speed);//ダッシュ
                     }
-                    else
+                    else if (x >= growlevel || z >= growlevel)
                     {
-                        transform.position += transform.rotation * new Vector2(0, speed);//通常の移動
+
+                        if (Nose_Dush == true)
+                        {
+                            transform.position += transform.rotation * new Vector2(0, speed * dash_speed);//ダッシュ
+                        }
+                        else
+                        {
+                            transform.position += transform.rotation * new Vector2(0, speed);//通常の移動
+                        }
                     }
                 }
             }

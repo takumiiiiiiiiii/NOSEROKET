@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement; // UnityEngine.SceneManagemntの機能を使用
+using Unity.VisualScripting;
 
 
 public class Timer : MonoBehaviour
@@ -77,6 +78,10 @@ public class Timer : MonoBehaviour
     {
         //Instantiate(End);
         yield return new WaitForSeconds(waitTime);
+        Serial seria;//呼ぶスクリプトにあだ名をつける
+        GameObject objc = GameObject.Find("sencer");//Circleというゲームオブジェクトを探す
+        seria = objc.GetComponent<Serial>();//スクリプトを取得
+        seria.serial.Close();
         SceneManager.LoadScene("kakehi_open");
         //SceneManager.LoadScene(targetSceneName);
     }

@@ -15,15 +15,17 @@ public class Start_botton2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Serial serial;//呼ぶスクリプトにあだ名をつける
+        Serial seria;//呼ぶスクリプトにあだ名をつける
         GameObject objc = GameObject.Find("sencer");//Circleというゲームオブジェクトを探す
-        serial = objc.GetComponent<Serial>();//スクリプトを取得
-        if (serial.conect == true)
+        seria = objc.GetComponent<Serial>();//スクリプトを取得
+        if (seria.connect_char == true)
         {
-            float x = float.Parse(serial.x);
-            float z = float.Parse(serial.z);
+            
+            float x = float.Parse(seria.x);
+            float z = float.Parse(seria.z);
             if (x <= growlevel &&z <= growlevel ) //スペースキー押した場合
             {
+                seria.serial.Close();
                 SceneManager.LoadScene("OpenCampus");//some_senseiシーンをロードする
                 Debug.Log("space");
 
