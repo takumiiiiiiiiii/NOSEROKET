@@ -1,9 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using AIE2D;
-using Unity.VisualScripting;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Nosemove : MonoBehaviour
 {
@@ -101,7 +98,7 @@ public class Nosemove : MonoBehaviour
         GameObject objc = GameObject.Find("sencer");//Circleというゲームオブジェクトを探す
         serial = objc.GetComponent<Serial>();//スクリプトを取得
         
-        if (serial.conect == true)
+        if (serial.conect == true&&serial.x != null && serial.z != null)
         {
             float x = float.Parse(serial.x);
             float z = float.Parse(serial.z);

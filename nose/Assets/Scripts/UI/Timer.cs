@@ -77,7 +77,7 @@ public class Timer : MonoBehaviour
     {
         //Instantiate(End);
         yield return new WaitForSeconds(waitTime);
-        SceneManager.LoadScene("ResultScene");
+        SceneManager.LoadScene("kakehi_open");
         //SceneManager.LoadScene(targetSceneName);
     }
 }

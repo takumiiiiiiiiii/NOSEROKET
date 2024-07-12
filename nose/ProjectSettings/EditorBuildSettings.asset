@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/OldScens/Nose_Dush.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/OpenCampus/kakehi_open.unity
+    guid: 39da4e29fb5d94146b3bd20017d5444a
+  - enabled: 1
+    path: Assets/Scenes/OpenCampus/OpenCampus.unity
+    guid: c65b402a0921940709556b7e841a41a2
   m_configObjects: {}
