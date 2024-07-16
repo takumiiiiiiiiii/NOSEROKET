@@ -46,15 +46,13 @@ public class Serial : MonoBehaviour
             cntz = this.serial.ReadLine();
             if (cntx.Length > 6 && cntz.Length > 6)
             {
-                UnityEngine.Debug.Log("fafa" + x);
-                UnityEngine.Debug.Log("fafa" + z);
                 cntx = "X10";
                 cntz = "Y10";
             }
             string cntx1 = cntx.Substring(0, 1);
             string cntz1 = cntz.Substring(0, 1);
-            UnityEngine.Debug.Log("cntx1" + cntx1);
-            UnityEngine.Debug.Log("cntz2" + cntz1);
+            //UnityEngine.Debug.Log("cntx1" + cntx1);
+            //UnityEngine.Debug.Log("cntz2" + cntz1);
             if (cntx1 == "X")
             {
                 x = cntx.Substring(1);
@@ -69,8 +67,8 @@ public class Serial : MonoBehaviour
             //x = this.serial.ReadLine();
             //z = this.serial.ReadLine();
             //UnityEngine.Debug.Log(message);
-            UnityEngine.Debug.Log("x="+x);
-            UnityEngine.Debug.Log("z="+z);
+            //UnityEngine.Debug.Log("x="+x);
+            //UnityEngine.Debug.Log("z="+z);
             connect_char = true;
         }
     }

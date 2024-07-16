@@ -18,7 +18,7 @@ public class Start_botton2 : MonoBehaviour
         Serial seria;//呼ぶスクリプトにあだ名をつける
         GameObject objc = GameObject.Find("sencer");//Circleというゲームオブジェクトを探す
         seria = objc.GetComponent<Serial>();//スクリプトを取得
-        if (seria.connect_char == true)
+        if (seria.connect_char == true&&seria.x.Length < 6 && seria.z.Length < 6)
         {
             
             float x = float.Parse(seria.x);

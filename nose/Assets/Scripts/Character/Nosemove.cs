@@ -16,7 +16,7 @@ public class Nosemove : MonoBehaviour
     [HideInInspector] public static bool DoNotMove=false;
     [HideInInspector] public static bool Nose_Dush=false;
     [HideInInspector] public static Transform myTransform;
-    [HideInInspector] private float x_before,z_before;
+    [HideInInspector] private float x_before=10f,z_before=10f;
 
     private AfterImageEffect2DPlayerBase _player = null;
     void Start()
@@ -34,11 +34,9 @@ public class Nosemove : MonoBehaviour
         serial = objc.GetComponent<Serial>();//スクリプトを取得
         anima.SetBool("Left_anima", false);
         anima.SetBool("Right_anima", false);
-        if (serial.connect_char == true && serial.x != null && serial.z != null)
+        if (serial.connect_char == true)
         {
-            Debug.Log("notcorrect" + serial.x);
-            bool isBase = (serial.x is string);
-            if (isBase == true)
+            if (serial.x.Length<7&&serial.z.Length<7)
             {
                 float x = float.Parse(serial.x);
                 float z = float.Parse(serial.z);
@@ -46,7 +44,6 @@ public class Nosemove : MonoBehaviour
                 {
                     if (x >= growlevel || z >= growlevel)
                     {
-                        Debug.Log("fafafa");
                         StartCoroutine(Dash());
                     }
                 }
@@ -60,7 +57,17 @@ public class Nosemove : MonoBehaviour
                 }
                 x_before = x;
                 z_before = z;
+                if (x < growlevel && z >= growlevel)
+                {
+                    
+                    anima.SetBool("Right_anima", true);
+                }
+                if (z < growlevel && x >= growlevel)
+                {
+                    anima.SetBool("Left_anima", true);
+                }
             }
+           
         }
         else
         {
@@ -75,7 +82,6 @@ public class Nosemove : MonoBehaviour
             }
             if (Input.GetKeyUp(KeyCode.Space) && Nose_Dush == false)
             {
-                Debug.Log("fafafa");
                 StartCoroutine(Dash());
             }
             if (Nose_Dush == true)
@@ -103,23 +109,24 @@ public class Nosemove : MonoBehaviour
         GameObject objc = GameObject.Find("sencer");//Circleというゲームオブジェクトを探す
         serial = objc.GetComponent<Serial>();//スクリプトを取得
         
-        if (serial.connect_char == true&&serial.x != null && serial.z != null)
+        if (serial.connect_char == true)
         {
-            bool isBase = (serial.x is string);
-            if (isBase == true)
+            if (serial.x.Length < 7 && serial.z.Length < 7)
             {
                 float x = float.Parse(serial.x);
                 float z = float.Parse(serial.z);
+                Debug.Log("X:" + x);
                 if (DoNotMove == false)
                 {
-                    if (x < growlevel && z >= growlevel)
-                    {
-                        myTransform.Rotate(0, 0, 3.0f, Space.World);
-                    }
                     if (z < growlevel && x >= growlevel)
                     {
                         myTransform.Rotate(0, 0, -3.0f, Space.World);
                     }
+                    if (x < growlevel && z >= growlevel)
+                    {
+                        myTransform.Rotate(0, 0, 3.0f, Space.World);
+                    }
+                  
                     if (x >= growlevel && z >= growlevel && Nose_Dush == true)
                     {
                         Debug.Log("iff");
