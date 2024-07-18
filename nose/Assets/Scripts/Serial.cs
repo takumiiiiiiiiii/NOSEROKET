@@ -44,11 +44,6 @@ public class Serial : MonoBehaviour
         {
             cntx = this.serial.ReadLine();
             cntz = this.serial.ReadLine();
-            if (cntx.Length > 6 && cntz.Length > 6)
-            {
-                cntx = "X10";
-                cntz = "Y10";
-            }
             string cntx1 = cntx.Substring(0, 1);
             string cntz1 = cntz.Substring(0, 1);
             //UnityEngine.Debug.Log("cntx1" + cntx1);

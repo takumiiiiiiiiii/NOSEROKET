@@ -2325,7 +2325,7 @@ MonoBehaviour:
   speed: 0.1
   dash_speed: 4
   player_vector: {x: 0, y: 0}
-  growlevel: 0.2
+  growlevel: 5
 --- !u!114 &208241181
 MonoBehaviour:
   m_ObjectHideFlags: 0
