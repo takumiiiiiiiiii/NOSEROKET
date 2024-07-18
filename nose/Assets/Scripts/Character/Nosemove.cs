@@ -36,10 +36,10 @@ public class Nosemove : MonoBehaviour
         anima.SetBool("Right_anima", false);
         if (serial.connect_char == true)
         {
-            if (serial.x.Length<7&&serial.z.Length<7)
+            float x, z;
+            if (float.TryParse(serial.x, out x)&&float.TryParse(serial.z, out z))
             {
-                float x = float.Parse(serial.x);
-                float z = float.Parse(serial.z);
+               
                 if (x_before < growlevel && z_before < growlevel && Nose_Dush == false)
                 {
                     if (x >= growlevel || z >= growlevel)
@@ -111,10 +111,9 @@ public class Nosemove : MonoBehaviour
         
         if (serial.connect_char == true)
         {
-            if (serial.x.Length < 7 && serial.z.Length < 7)
+            float x, z;
+            if (float.TryParse(serial.x, out x) && float.TryParse(serial.z, out z))//文字を数字に直しつつ変なデータがきたら弾く
             {
-                float x = float.Parse(serial.x);
-                float z = float.Parse(serial.z);
                 Debug.Log("X:" + x);
                 if (DoNotMove == false)
                 {
