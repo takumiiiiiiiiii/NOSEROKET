@@ -45,7 +45,7 @@ public class Blackout : MonoBehaviour
 
                 if (alpha >= 1)
                 {
-                    anime_start = false;
+                    
                 }
             }
         }
