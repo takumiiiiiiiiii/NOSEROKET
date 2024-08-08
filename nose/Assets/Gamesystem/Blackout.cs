@@ -1,15 +1,19 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Blackout : MonoBehaviour
 {
     private bool anime_start = false;
     private SpriteRenderer objRenderer;
+    private float alpha;
+    private float add_spd = -11.0f;
     // Start is called before the first frame update
     void Start()
     {
         objRenderer = GetComponent<SpriteRenderer>();
+        alpha = 0.0f;
         SetTransparency(0.0f);
     }
 
@@ -23,10 +27,14 @@ public class Blackout : MonoBehaviour
             Debug.Log("space");
 
         }
+        //Bout();
+    }
+    void FixedUpdate()
+    {
+        Debug.Log("mっ耳耳み");
         Bout();
     }
-
-    public void SetTransparency(float alpha)
+        public void SetTransparency(float alpha)
     {
         UnityEngine.Color color = objRenderer.material.color;
         color.a = alpha;
@@ -37,15 +45,17 @@ public class Blackout : MonoBehaviour
     {
         if (anime_start == true)
         {
-            transform.position += new Vector3(0, 10, 0) * Time.deltaTime;
-            if (transform.position.y > 75)
+            add_spd += 0.1f;
+            transform.position += new Vector3(0, 10 + add_spd, 0) * Time.deltaTime;
+            if (transform.position.y > 50)
             {
-                float alpha = Mathf.PingPong(Time.time, 1.0f);
+ 
+                alpha += 0.01f;
                 SetTransparency(alpha);
 
-                if (alpha >= 1)
+                if (alpha > 1)
                 {
-                    
+                    SceneManager.LoadScene("tutorial");
                 }
             }
         }
