@@ -9,6 +9,7 @@ public class Pollen_tree_child : MonoBehaviour
     [SerializeField] private Rigidbody2D RB;
     public GameObject tree;//花粉
     public int angle = 30;
+  
     private int ID;
     // Start is called before the first frame update
     void Start()
@@ -23,9 +24,15 @@ public class Pollen_tree_child : MonoBehaviour
         }
         if (ID > Pollen_tree_master.tree_cnt_end)
         {
-            Domino_camera.target = this.transform;
+           
             RB.constraints = RigidbodyConstraints2D.FreezePositionX | RigidbodyConstraints2D.FreezePositionY;
             RB.freezeRotation = true;
+            if (Pollen_tree_master.end == true)
+            {
+                Domino_camera.target = this.transform;
+                Pollen_tree_master.end = false;
+            }
+
         }
     }
 
