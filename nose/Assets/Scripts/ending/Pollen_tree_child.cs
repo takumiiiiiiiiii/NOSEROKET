@@ -9,8 +9,8 @@ public class Pollen_tree_child : MonoBehaviour
     [SerializeField] private Rigidbody2D RB;
     public GameObject tree;//花粉
     public int angle = 30;
-  
     private int ID;
+    private bool taoreru=false;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +31,7 @@ public class Pollen_tree_child : MonoBehaviour
             {
                 Domino_camera.target = this.transform;
                 Pollen_tree_master.end = false;
+
             }
 
         }
@@ -40,16 +41,19 @@ public class Pollen_tree_child : MonoBehaviour
     void Update()
     {
         float currentAngle = transform.eulerAngles.z;
+        //Debug.Log(currentAngle);
         // 角度を-180から180の範囲に正規化します
         if (currentAngle > 180)
         {
             currentAngle -= 360;
         }
-
+        //Debug.Log(Mathf.Abs(currentAngle));
         // 現在の角度がトリガー角度を超えているかどうかをチェックします
-        if (Mathf.Abs(currentAngle) > 30)
+        if (Mathf.Abs(currentAngle) > 10&&taoreru==false)
         {
-
+            Debug.Log("fwsefwe");
+            Ending_Count.tree++;
+            taoreru = true;
         }
     }
 }

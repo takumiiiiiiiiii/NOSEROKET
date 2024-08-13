@@ -16,7 +16,9 @@ public class Animation_ending : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        
+        if (DominoStart.end_start)
+        {
+            
+        }
     }
 }

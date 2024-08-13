@@ -19,11 +19,11 @@ public class Domino_camera : MonoBehaviour
         
         if (target != null&&DominoStart.end_start)
         {
-            Debug.Log("transform:"+transform.position.x);
-            Debug.Log("target:" + target.position.x);
+            //Debug.Log("transform:"+transform.position.x);
+            //Debug.Log("target:" + target.position.x);
             if (transform.position.x >= target.position.x-0.5 && Animation_ending.anima_start_end==true)
             {
-                
+                GoToTitle.ending_start = true;
                 Animation_ending.anima_end.SetBool("EndGame", true);
             }
             Vector3 direction = (target.position - transform.position).normalized;
