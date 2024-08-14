@@ -20,7 +20,12 @@ public class Pollen_tree_master : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        end = true;
+        tree_cnt = 0;
+        tree_cnt_end = 90;
+        tree_cnt_max = 100;
         distance = between;
+        camera_xpos = 0.4f;
         RB = GetComponent<Rigidbody2D>();
         CC = GetComponent<CircleCollider2D>();
         Instantiate(tree, this.transform.position+new Vector3(distance,0,0), Quaternion.identity);//花粉を置く

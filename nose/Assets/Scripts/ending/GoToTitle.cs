@@ -10,7 +10,7 @@ public class GoToTitle : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        ending_start = false;
     }
 
     // Update is called once per frame

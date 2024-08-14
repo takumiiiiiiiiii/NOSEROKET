@@ -12,6 +12,7 @@ public class Ending_Count : MonoBehaviour
     public Text scoreText;
     void Start()
     {
+        tree = 0;
     }
 
     // Update is called once per frame

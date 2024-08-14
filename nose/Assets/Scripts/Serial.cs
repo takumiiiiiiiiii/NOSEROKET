@@ -69,7 +69,10 @@ public class Serial : MonoBehaviour
     }
     void OnDestroy()
     {
-        this.isLoop = false;
-        this.serial.Close();
+        if (serial != null)
+        {
+            this.isLoop = false;
+            this.serial.Close();
+        }
     }
 }

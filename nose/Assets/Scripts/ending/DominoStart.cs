@@ -14,6 +14,7 @@ public class DominoStart : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        end_start = false;
         RB = GetComponent<Rigidbody2D>();
         RB.gravityScale = 0;
         thispos = this.transform.position;
