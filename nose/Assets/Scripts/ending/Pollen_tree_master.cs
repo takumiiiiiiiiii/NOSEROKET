@@ -11,8 +11,8 @@ public class Pollen_tree_master : MonoBehaviour
 
     public static bool end = true;
     public static int tree_cnt=0;
-    public static int tree_cnt_end = 90;
-    public static int tree_cnt_max = 100;
+    public static int tree_cnt_end = 90;//杉の木の倒す数
+    public static int tree_cnt_max = 1000;//杉の木の最大数
     public static float camera_xpos = 0.4f;
     public float between=1.0f;
     [SerializeField] public static float distance;
@@ -22,8 +22,8 @@ public class Pollen_tree_master : MonoBehaviour
     {
         end = true;
         tree_cnt = 0;
-        tree_cnt_end = 90;
-        tree_cnt_max = 100;
+        tree_cnt_end = Score.current_score/100;
+        tree_cnt_max = 1000;
         distance = between;
         camera_xpos = 0.4f;
         RB = GetComponent<Rigidbody2D>();
