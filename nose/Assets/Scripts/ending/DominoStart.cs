@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class DominoStart : MonoBehaviour
 {
@@ -14,6 +13,7 @@ public class DominoStart : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        end_start = false;
         RB = GetComponent<Rigidbody2D>();
         RB.gravityScale = 0;
         thispos = this.transform.position;
@@ -45,7 +45,7 @@ public class DominoStart : MonoBehaviour
             x_before = x;
             z_before = z;
         }
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyUp(KeyCode.Space))
         {
             RB.gravityScale = 100;
             end_start = true;

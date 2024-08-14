@@ -12,10 +12,13 @@ public class pop_upPolllen : MonoBehaviour
     public float speed;
     public float pop_min=100f,pop_max=200f;
     private Vector2 vec;//鼻のベクトルを入れる
-
+    public Score Sc;
+    public SliderController Sdc;
     // Start is called before the first frame update
     void Start()
     {
+        Sc = GameObject.Find("Text (TMP) (1)").GetComponent<Score>();
+        Sdc = GameObject.Find("dash_slider").GetComponent<SliderController>();
         RB = GetComponent<Rigidbody2D>();
         CC = GetComponent<CircleCollider2D>();
         RB.AddForce(new Vector2(Random.Range(pop_min, pop_max), Random.Range(pop_min,pop_max)));
@@ -42,10 +45,13 @@ public class pop_upPolllen : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.tag == "Player" && Sc != null)
         {
+            Sc.score += 100;
+            Sdc.CollectObject();
             Destroy(this.gameObject);
         }
     }
+
 
 }

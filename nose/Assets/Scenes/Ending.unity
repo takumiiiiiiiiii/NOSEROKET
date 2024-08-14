@@ -1817,7 +1817,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b141e31e096564b49ae7fd8bef7a50ce, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: OpenCampus
+  SceneName: kakehi_open
 --- !u!1 &1868424203
 GameObject:
   m_ObjectHideFlags: 0
