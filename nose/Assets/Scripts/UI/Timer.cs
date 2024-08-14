@@ -20,7 +20,7 @@ public class Timer : MonoBehaviour
     private float oldSeconds;
     public Text timerText;
     public float waitTime = 1000;
-
+    public string scenename="Ending";
     //public GameObject End;
     AudioSource audiosource;
     void Start()
@@ -82,7 +82,7 @@ public class Timer : MonoBehaviour
         GameObject objc = GameObject.Find("sencer");//Circleというゲームオブジェクトを探す
         seria = objc.GetComponent<Serial>();//スクリプトを取得
         seria.serial.Close();
-        SceneManager.LoadScene("kakehi_open");
+        SceneManager.LoadScene(scenename);
         //SceneManager.LoadScene(targetSceneName);
     }
 }
