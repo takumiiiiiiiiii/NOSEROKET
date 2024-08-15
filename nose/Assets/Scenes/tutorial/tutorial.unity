@@ -1858,7 +1858,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 40
   OUT_POLLEN: 20
-  scene_name: kakehi_open
+  scene_name: OpenCampus
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
 --- !u!1 &975426245
 GameObject:

@@ -14,7 +14,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/OpenCampus/OpenCampus.unity
     guid: c65b402a0921940709556b7e841a41a2
+
   - enabled: 1
     path: Assets/Scenes/Matome_Scene.unity
     guid: 1536f381ac24e4cf9b9df08c1d7759df
+
   m_configObjects: {}
