@@ -73,10 +73,6 @@ public class AIface : MonoBehaviour
             {
                 MainSpriteRenderer.sprite = changeDashSprite;
             }
-            else if (Input.GetKeyDown(KeyCode.Space) && Nose_Charge == true)
-            {
-                MainSpriteRenderer.sprite = changeChargeSprite;
-            }
             else if (Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.Space) == false)
             {
                 MainSpriteRenderer.sprite = changeLeftSprite;
@@ -89,7 +85,7 @@ public class AIface : MonoBehaviour
             {
                 Nose_Charge = true;
             }
-            else if (Input.GetKeyUp(KeyCode.Space) && Nose_Dush == false && Nose_Charge == false)
+            else if (Input.GetKeyUp(KeyCode.Space) && Nose_Dush == false)
             {
                 StartCoroutine(Dash());
             }
@@ -103,7 +99,6 @@ public class AIface : MonoBehaviour
     private IEnumerator Dash()
     {
         Nose_Dush = true;
-        Nose_Charge = false;
         yield return new WaitForSeconds(1);//1秒後にダッシュ終わり
         Nose_Dush = false;
     }
