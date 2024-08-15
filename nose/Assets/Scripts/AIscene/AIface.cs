@@ -25,75 +25,32 @@ public class AIface : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Serial serial;//呼ぶスクリプトにあだ名をつける
-        GameObject objc = GameObject.Find("sencer");//Circleというゲームオブジェクトを探す
-        //serial = objc.GetComponent<Serial>();//スクリプトを取得
-        //anima.SetBool("Left_anima", false);
-        //anima.SetBool("Right_anima", false);
-        /*
-        if (serial.connect_char == true)
+        //アニメーション
+        if (Nose_Dush == true)
         {
-            float x, z;
-            if (float.TryParse(serial.x, out x) && float.TryParse(serial.z, out z))
-            {
-
-                if (x_before < growlevel && z_before < growlevel && Nose_Dush == false)
-                {
-                    if (x >= growlevel || z >= growlevel)
-                    {
-                        
-                    }
-                }
-                if (Nose_Dush == true)
-                {
-                    
-                }
-                else
-                {
-                    
-                }
-                x_before = x;
-                z_before = z;
-                if (x < growlevel && z >= growlevel)
-                {
-
-                    anima.SetBool("Right_anima", true);
-                }
-                if (z < growlevel && x >= growlevel)
-                {
-                    anima.SetBool("Left_anima", true);
-                }
-            }
-
+            MainSpriteRenderer.sprite = changeDashSprite;
         }
-        else*/
+        else if (Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.Space) == false && Nose_Charge == false)
         {
-            //アニメーション
-            if (Nose_Dush == true)
-            {
-                MainSpriteRenderer.sprite = changeDashSprite;
-            }
-            else if (Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.Space) == false)
-            {
-                MainSpriteRenderer.sprite = changeLeftSprite;
-            }
-            else if (Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.Space) == false)
-            {
-                MainSpriteRenderer.sprite = changeRightSprite;
-            }
-            else if (Input.GetKeyDown(KeyCode.Space))
-            {
-                Nose_Charge = true;
-            }
-            else if (Input.GetKeyUp(KeyCode.Space) && Nose_Dush == false)
-            {
-                StartCoroutine(Dash());
-            }
-            else if (Nose_Dush == false)
-            {
-                MainSpriteRenderer.sprite = changeNormalSprite;
-            }    
+            MainSpriteRenderer.sprite = changeLeftSprite;
         }
+        else if (Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.Space) == false && Nose_Charge == false)
+        {
+            MainSpriteRenderer.sprite = changeRightSprite;
+        }
+        else if (Input.GetKeyDown(KeyCode.Space) && Nose_Dush == false)
+        {
+            MainSpriteRenderer.sprite = changeChargeSprite;
+            Nose_Charge = true;
+        }
+        else if (Input.GetKeyUp(KeyCode.Space) && Nose_Dush == false)
+        {
+            StartCoroutine(Dash());
+        }
+        else if (Nose_Dush == false && Nose_Charge == false)
+        {
+            MainSpriteRenderer.sprite = changeNormalSprite;
+        }    
 
     }
     private IEnumerator Dash()
@@ -101,5 +58,6 @@ public class AIface : MonoBehaviour
         Nose_Dush = true;
         yield return new WaitForSeconds(1);//1秒後にダッシュ終わり
         Nose_Dush = false;
+        Nose_Charge = false;
     }
 }
