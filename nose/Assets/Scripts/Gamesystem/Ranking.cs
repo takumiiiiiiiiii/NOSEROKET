@@ -18,7 +18,7 @@ public class Ranking : MonoBehaviour
     {
         GetRanking();
         
-        SetRanking(Score.current_score*10);
+        SetRanking(Score.current_score/100+1);
 
         for (int i = 0; i < rankingText.Length; i++)
         {

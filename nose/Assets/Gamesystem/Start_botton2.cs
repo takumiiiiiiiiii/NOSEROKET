@@ -15,6 +15,7 @@ public class Start_botton2 : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        PlayerPrefs.DeleteKey("YourKeyName");
         Serial serial;//呼ぶスクリプトにあだ名をつける
         GameObject objc = GameObject.Find("sencer");//Circleというゲームオブジェクトを探す
         serial = objc.GetComponent<Serial>();//スクリプトを取得
