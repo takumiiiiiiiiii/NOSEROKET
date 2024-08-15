@@ -29,5 +29,11 @@ public class Start_botton2 : MonoBehaviour
 
             }
         }
+        if (Input.GetKeyDown(KeyCode.Space)) //スペースキー押した場合
+        {
+            SceneManager.LoadScene("OpenCampus");//some_senseiシーンをロードする
+            Debug.Log("space");
+
+        }
     }
 }

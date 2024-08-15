@@ -34,7 +34,6 @@ public class Walls : MonoBehaviour
         nose = obj.GetComponent<Nosemove>();//スクリプトを取得
         if (collision.gameObject.tag == "Player"&&dilaybo==false)
         {
-            
             StartCoroutine(Dilay());
             Nosemove.myTransform.Rotate(0, 0, 180f, Space.World);
             
