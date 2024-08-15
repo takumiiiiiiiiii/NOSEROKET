@@ -21,6 +21,8 @@ public class Nosemove : MonoBehaviour
     private AfterImageEffect2DPlayerBase _player = null;
     void Start()
     {
+        DoNotMove = false;
+        Nose_Dush = false;
         anima = gameObject.GetComponent<Animator>();
         forword = transform.forward;
         _player = gameObject.GetComponent<AfterImageEffect2DPlayerBase>();
