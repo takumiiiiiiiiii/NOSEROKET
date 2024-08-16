@@ -3317,6 +3317,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 2010273428}
+  youtscoreText: {fileID: 330087772}
 --- !u!114 &1751438798
 MonoBehaviour:
   m_ObjectHideFlags: 0

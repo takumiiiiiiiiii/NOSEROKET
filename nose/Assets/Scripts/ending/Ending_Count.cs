@@ -9,7 +9,7 @@ public class Ending_Count : MonoBehaviour
 {
     public static int tree=0;
     public static int current_score;
-    public Text scoreText;
+    public Text scoreText,youtscoreText;
     void Start()
     {
         tree = 0;
@@ -18,6 +18,7 @@ public class Ending_Count : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        youtscoreText.text = string.Format("{0}" + "本", tree);
         scoreText.text = string.Format("{0}"+"本", tree);
     }
 
