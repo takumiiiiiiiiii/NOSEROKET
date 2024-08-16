@@ -10,7 +10,7 @@ public class Nosemove : MonoBehaviour
     public float speed;//鼻の移動スピードを入力する
     public float dash_speed=2;//ダッシュ時のスピード
     public Vector2 player_vector;//プレイヤーの現在地を記録
-    public float growlevel=0.3f;
+    public  static float growlevel=0.3f;
     private Vector2 forword;
     
     [HideInInspector] public static bool DoNotMove=false;
