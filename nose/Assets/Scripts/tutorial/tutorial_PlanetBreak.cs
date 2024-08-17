@@ -7,6 +7,8 @@ using UnityEngine.SceneManagement;
 [RequireComponent(typeof(CircleCollider2D))]
 public class tutorial_PlanetBreak : MonoBehaviour
 {
+    public GameObject black_out, text;
+
     public float speed = 40;//吹っ飛んで行くスピード
     public int OUT_POLLEN = 20;//落とす花粉の数
     public string scene_name = "kakehi_open";
@@ -60,11 +62,14 @@ public class tutorial_PlanetBreak : MonoBehaviour
     }
     private IEnumerator End_tutorial()//シーンを移動
     {
+        
         yield return new WaitForSeconds(3);
         SceneManager.LoadScene(scene_name);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
+        Instantiate(black_out);//画面暗転
+        Instantiate(text);//文字を表示
         Nosemove nose;//呼ぶスクリプトにあだ名をつける
         GameObject obj = GameObject.Find("nose_player");//Circleというゲームオブジェクトを探す
         nose = obj.GetComponent<Nosemove>();//スクリプトを取得
