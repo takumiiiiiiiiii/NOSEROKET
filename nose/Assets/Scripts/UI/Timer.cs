@@ -7,7 +7,7 @@ using Unity.VisualScripting;
 
 public class Timer : MonoBehaviour
 {
-
+    public GameObject text;
     //　トータル制限時間
     private float totalTime;
     //　制限時間（分）
@@ -77,6 +77,10 @@ public class Timer : MonoBehaviour
     IEnumerator LoadScene()
     {
         //Instantiate(End);
+        if (text != null)
+        {
+            Instantiate(text);
+        }
         yield return new WaitForSeconds(waitTime);
         Serial seria;//呼ぶスクリプトにあだ名をつける
         GameObject objc = GameObject.Find("sencer");//Circleというゲームオブジェクトを探す
