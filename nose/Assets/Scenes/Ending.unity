@@ -1579,8 +1579,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50ed87b3482c54a3596b06138325c567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  portName: 
-  baurate: 0
+  portName: /dev/cu.usbserial-6552CACE16
+  baurate: 9600
   conect: 0
   connect_char: 0
   cntx: 
