@@ -7,8 +7,8 @@ public class DominoStart : MonoBehaviour
     private Vector2 thispos;
     public static bool end_start=false;
     private float growlevel = 0.3f;
-    private float x_before = 0;
-    private float z_before = 0;
+    private float x_before = 10;
+    private float z_before = 10;
     [SerializeField] private Rigidbody2D RB;
     // Start is called before the first frame update
     void Start()
