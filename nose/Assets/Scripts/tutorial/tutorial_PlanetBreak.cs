@@ -56,20 +56,21 @@ public class tutorial_PlanetBreak : MonoBehaviour
     }
     private IEnumerator Stopc_MoveNose()//鼻を一時的にフリーズさせる
     {
+
         Nosemove.DoNotMove = true;
         yield return new WaitForSeconds(1);
         Nosemove.DoNotMove = false;
     }
     private IEnumerator End_tutorial()//シーンを移動
     {
-        
+        Hit = false;
+        Instantiate(black_out);//画面暗転
+        Instantiate(text);//文字を表示
         yield return new WaitForSeconds(3);
         SceneManager.LoadScene(scene_name);
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Instantiate(black_out);//画面暗転
-        Instantiate(text);//文字を表示
         Nosemove nose;//呼ぶスクリプトにあだ名をつける
         GameObject obj = GameObject.Find("nose_player");//Circleというゲームオブジェクトを探す
         nose = obj.GetComponent<Nosemove>();//スクリプトを取得
