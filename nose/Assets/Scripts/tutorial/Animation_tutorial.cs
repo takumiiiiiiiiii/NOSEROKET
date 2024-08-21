@@ -17,6 +17,7 @@ public class Nose_wait : MonoBehaviour
     }
     void Update()
     {
+
         Nosemove targetScript = targetObject.GetComponent<Nosemove>();
         if (targetScript != null)
         {
