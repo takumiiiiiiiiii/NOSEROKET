@@ -6,7 +6,6 @@ public class DominoStart : MonoBehaviour
 {
     private Vector2 thispos;
     public static bool end_start=false;
-    private float growlevel = 0.3f;
     private float x_before = 10;
     private float z_before = 10;
     [SerializeField] private Rigidbody2D RB;
@@ -34,9 +33,9 @@ public class DominoStart : MonoBehaviour
         if (serial.conect&&float.TryParse(serial.x, out x) && float.TryParse(serial.z, out z))
         {
             
-            if (x_before < growlevel && z_before < growlevel)
+            if (x_before <  Nosemove.growlevel && z_before < Nosemove.growlevel)
             {
-                if (x >= growlevel || z >= growlevel)
+                if (x >= Nosemove.growlevel || z >= Nosemove.growlevel)
                 {
                     RB.gravityScale = 100;
                     end_start = true;
@@ -50,7 +49,5 @@ public class DominoStart : MonoBehaviour
             RB.gravityScale = 100;
             end_start = true;
         }
-
-
     }
 }
