@@ -7,6 +7,8 @@ using Unity.VisualScripting;
 
 public class Timer : MonoBehaviour
 {
+    AudioSource audiosorce;
+    public AudioClip timerzero;
     public GameObject text;
     //　トータル制限時間
     private float totalTime;
@@ -21,8 +23,6 @@ public class Timer : MonoBehaviour
     public Text timerText;
     public float waitTime = 1000;
     public string scenename="Ending";
-    //public GameObject End;
-    AudioSource audiosource;
     void Start()
     {
         //minute = 0;
@@ -30,7 +30,8 @@ public class Timer : MonoBehaviour
         totalTime = minute * 60 + seconds;
         oldSeconds = 0f;
         timerText = GetComponentInChildren<Text>();
-        audiosource = GetComponent<AudioSource>();
+        audiosorce = GetComponent<AudioSource>();
+
     }
 
     float countdown = 3f;
@@ -67,6 +68,7 @@ public class Timer : MonoBehaviour
             //　制限時間以下になったらコンソールに『制限時間終了』という文字列を表示する
             if (totalTime <= 0f)
             {
+                audiosorce.PlayOneShot(timerzero);
                 Debug.Log("制限時間終了");
                 //Instantiate(End);
                 StartCoroutine(nameof(LoadScene));
