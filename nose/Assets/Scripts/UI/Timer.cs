@@ -8,7 +8,9 @@ using Unity.VisualScripting;
 public class Timer : MonoBehaviour
 {
     AudioSource audiosorce;
+    public AudioClip timerstart;
     public AudioClip timerzero;
+    
     public GameObject text;
     //　トータル制限時間
     private float totalTime;
@@ -90,5 +92,9 @@ public class Timer : MonoBehaviour
         seria.serial.Close();
         SceneManager.LoadScene(scenename);
         //SceneManager.LoadScene(targetSceneName);
+    }
+    public void OnTimerStart()
+    {
+        audiosorce.PlayOneShot(timerstart);
     }
 }
