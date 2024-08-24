@@ -6293,6 +6293,9 @@ MonoBehaviour:
   changeLeftSprite: {fileID: 21300000, guid: 8d8b14aab5a7449b69132a44fe0f628c, type: 3}
   changeDashSprite: {fileID: 21300000, guid: 33024a8eb5cd64c7b83d544059e648e5, type: 3}
   changeChargeSprite: {fileID: 21300000, guid: 183736d7f0e1c479394ef259e7295092, type: 3}
+  changeChargeSprite1: {fileID: 21300000, guid: 590b21f6d9a1843e9b52ee8cb83f3dce, type: 3}
+  changeChargeSprite2: {fileID: 21300000, guid: a1e745c03d4a2494e8fbb63d908b2f40, type: 3}
+  changeChargeSprite3: {fileID: 21300000, guid: dd6b4c8320dbc41c3af37ace12c965cd, type: 3}
 --- !u!212 &681477743
 SpriteRenderer:
   m_ObjectHideFlags: 0
