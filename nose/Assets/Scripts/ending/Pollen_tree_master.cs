@@ -20,6 +20,7 @@ public class Pollen_tree_master : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
         end = true;
         tree_cnt = 0;
         tree_cnt_end = Score.current_score/100;

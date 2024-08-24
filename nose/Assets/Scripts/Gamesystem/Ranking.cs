@@ -8,18 +8,18 @@ public class Ranking : MonoBehaviour
     int point;
 
     string[] ranking = { "ランキング1位", "ランキング2位", "ランキング3位", "ランキング4位", "ランキング5位" };
-    int[] rankingValue = new int[5];
 
+    int[] rankingValue = new int[5];
+    public static int[] rankingshare = new int[5];
     [SerializeField, Header("表示させるテキスト")]
     Text[] rankingText = new Text[5];
 
     // Use this for initialization
     void Start()
     {
+        rankingshare = rankingValue;
         GetRanking();
-        
         SetRanking(Score.current_score/100+1);
-
         for (int i = 0; i < rankingText.Length; i++)
         {
             int lank = i + 1;
