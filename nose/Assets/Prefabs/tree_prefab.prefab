@@ -174,4 +174,7 @@ MonoBehaviour:
   CC: {fileID: 0}
   RB: {fileID: 0}
   tree: {fileID: 2932978501390981630}
+  NO1: {fileID: 3168078685639572454, guid: 5c7153817f00b4064b26bf3f36b1327e, type: 3}
+  NO2: {fileID: 2522820922721387970, guid: fa1ab55a85b28478b9868f744bfa317b, type: 3}
+  NO3: {fileID: 7981991701416618066, guid: 7b20da2e3b7fc4cb5802583f53ffb05b, type: 3}
   angle: 30

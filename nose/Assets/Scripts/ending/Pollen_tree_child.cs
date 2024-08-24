@@ -7,13 +7,19 @@ public class Pollen_tree_child : MonoBehaviour
 {
     [SerializeField] private CircleCollider2D CC;
     [SerializeField] private Rigidbody2D RB;
-    public GameObject tree;//花粉
+    public GameObject tree;
+    public GameObject NO1;//
+    public GameObject NO2;//
+    public GameObject NO3;//
     public int angle = 30;
+    public float NO_height=3.0f;
     private int ID;
     private bool taoreru=false;
+
     // Start is called before the first frame update
     void Start()
     {
+
         ID = Pollen_tree_master.tree_cnt;
         Pollen_tree_master.tree_cnt++;
         RB = GetComponent<Rigidbody2D>();
@@ -31,9 +37,19 @@ public class Pollen_tree_child : MonoBehaviour
             {
                 Domino_camera.target = this.transform;
                 Pollen_tree_master.end = false;
-
             }
-
+        }
+        if (Ranking.rankingshare[0] == ID && NO1 != null)
+        {
+            Instantiate(NO1, this.transform.position + new Vector3(0, NO_height, 0), Quaternion.identity);
+        }
+        if (Ranking.rankingshare[1] == ID && NO2 != null)
+        {
+            Instantiate(NO2, this.transform.position + new Vector3(0, NO_height, 0), Quaternion.identity);
+        }
+        if (Ranking.rankingshare[3] == ID && NO3 != null)
+        {
+            Instantiate(NO3, this.transform.position + new Vector3(0, NO_height, 0), Quaternion.identity);
         }
     }
 
