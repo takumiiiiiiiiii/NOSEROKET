@@ -32,7 +32,51 @@ public class AIface : MonoBehaviour
         serial = objc.GetComponent<Serial>();//スクリプトを取得
         if (serial.connect_char == true)
         {
+            float x, z;
+            if (float.TryParse(serial.x, out x) && float.TryParse(serial.z, out z))//文字を数字に直しつつ変なデータがきたら弾く
+            {
+                MainSpriteRenderer.sprite = changeNormalSprite;
+                Debug.Log("X:" + x);
+                if (DoNotMove == false)
+                {
+                    if (z < Nosemove.growlevel && x >= Nosemove.growlevel)
+                    {
+                        MainSpriteRenderer.sprite = changeLeftSprite;
+                    }
+                    if (x < Nosemove.growlevel && z >= Nosemove.growlevel)
+                    {
+                        MainSpriteRenderer.sprite = changeRightSprite;
+                    }
 
+                    if (x >= Nosemove.growlevel && z >= Nosemove.growlevel && Nose_Dush == true)
+                    {
+                        MainSpriteRenderer.sprite = changeDashSprite;
+                        Debug.Log("iff");
+                        //transform.position += transform.rotation * new Vector2(0, speed * dash_speed);//ダッシュ
+                    }
+                    else if (x >= Nosemove.growlevel || z >= Nosemove.growlevel)
+                    {
+
+                        if (Nose_Dush == true)
+                        {
+                            
+                        }
+                        else
+                        {
+                            //transform.position += transform.rotation * new Vector2(0, speed);//通常の移動
+                        }
+                    }
+                    if (x_before < Nosemove.growlevel && z_before < Nosemove.growlevel)
+                    {
+                        if (x >= Nosemove.growlevel || z >= Nosemove.growlevel)
+                        {
+                            StartCoroutine(Dash());
+                        }
+                    }
+                    x_before = x;
+                    z_before = z;
+                }
+            }
         }
         else
         {
@@ -91,48 +135,7 @@ public class AIface : MonoBehaviour
     }
     void FixedUpdate()
     {
-        Serial serial;//呼ぶスクリプトにあだ名をつける
-        GameObject objc = GameObject.Find("sencer");//Circleというゲームオブジェクトを探す
-        serial = objc.GetComponent<Serial>();//スクリプトを取得
-        if (serial.connect_char == true)
-        {
-
-            float x, z;
-            if (float.TryParse(serial.x, out x) && float.TryParse(serial.z, out z))//文字を数字に直しつつ変なデータがきたら弾く
-            {
-                MainSpriteRenderer.sprite = changeNormalSprite;
-                Debug.Log("X:" + x);
-                if (DoNotMove == false)
-                {
-                    if (z < Nosemove.growlevel && x >= Nosemove.growlevel)
-                    {
-                        MainSpriteRenderer.sprite = changeLeftSprite;
-                    }
-                    if (x < Nosemove.growlevel && z >= Nosemove.growlevel)
-                    {
-                        MainSpriteRenderer.sprite = changeRightSprite;
-                    }
-
-                    if (x >= Nosemove.growlevel && z >= Nosemove.growlevel && Nose_Dush == true)
-                    {
-                        Debug.Log("iff");
-                        //transform.position += transform.rotation * new Vector2(0, speed * dash_speed);//ダッシュ
-                    }
-                    else if (x >= Nosemove.growlevel || z >= Nosemove.growlevel)
-                    {
-
-                        if (Nose_Dush == true)
-                        {
-                            //transform.position += transform.rotation * new Vector2(0, speed * dash_speed);//ダッシュ
-                        }
-                        else
-                        {
-                            //transform.position += transform.rotation * new Vector2(0, speed);//通常の移動
-                        }
-                    }
-                }
-            }
-        }
+        
     }
     private IEnumerator Dash()
     {

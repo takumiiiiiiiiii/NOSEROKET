@@ -10,7 +10,7 @@ public class Nosemove : MonoBehaviour
     public float speed;//鼻の移動スピードを入力する
     public float dash_speed=2;//ダッシュ時のスピード
     public Vector2 player_vector;//プレイヤーの現在地を記録
-    public  static float growlevel=10f;
+    public  static float growlevel=0.6f;
     private Vector2 forword;
     AudioSource audiosorce;
     public AudioClip dash;
@@ -67,12 +67,13 @@ public class Nosemove : MonoBehaviour
                 z_before = z;
                 if (x < growlevel && z >= growlevel)
                 {
-                    
-                    anima.SetBool("Right_anima", true);
+                    anima.SetBool("Left_anima", true);
+
                 }
                 if (z < growlevel && x >= growlevel)
                 {
-                    anima.SetBool("Left_anima", true);
+
+                    anima.SetBool("Right_anima", true);
                 }
             }
            
@@ -127,11 +128,12 @@ public class Nosemove : MonoBehaviour
                 {
                     if (z < growlevel && x >= growlevel)
                     {
-                        myTransform.Rotate(0, 0, -3.0f, Space.World);
+                        myTransform.Rotate(0, 0, 3.0f, Space.World);
                     }
                     if (x < growlevel && z >= growlevel)
                     {
-                        myTransform.Rotate(0, 0, 3.0f, Space.World);
+                       
+                        myTransform.Rotate(0, 0, -3.0f, Space.World);
                     }
                   
                     if (x >= growlevel && z >= growlevel && Nose_Dush == true)
