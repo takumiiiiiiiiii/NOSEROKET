@@ -12,13 +12,18 @@ public class Nosemove : MonoBehaviour
     public Vector2 player_vector;//プレイヤーの現在地を記録
     public  static float growlevel=10f;
     private Vector2 forword;
-    
+    AudioSource audiosorce;
+    public AudioClip dash;
+
     [HideInInspector] public static bool DoNotMove=false;
     [HideInInspector] public static bool Nose_Dush=false;
     [HideInInspector] public static Transform myTransform;
     [HideInInspector] private float x_before=10f,z_before=10f;
+    
 
     private AfterImageEffect2DPlayerBase _player = null;
+
+    private 
     void Start()
     {
         DoNotMove = false;
@@ -26,6 +31,7 @@ public class Nosemove : MonoBehaviour
         anima = gameObject.GetComponent<Animator>();
         forword = transform.forward;
         _player = gameObject.GetComponent<AfterImageEffect2DPlayerBase>();
+        audiosorce = GetComponent<AudioSource>();
         //_player.CreateAfterImage(gameObject.GetComponent<SpriteRenderer>());
     }
     // Update is called once per frame
@@ -183,6 +189,7 @@ public class Nosemove : MonoBehaviour
     private IEnumerator Dash()
     {
         Nose_Dush = true;
+        audiosorce.PlayOneShot(dash);
         yield return new WaitForSeconds(1);//1秒後にダッシュ終わり
         Nose_Dush = false;
     }

@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
@@ -28,7 +29,7 @@ public class Camerashake : MonoBehaviour
     private float _totalShakeTime; // 揺れ経過時間
     private bool shakecnt = true;
     AudioSource audiosorce;
-    public AudioClip Damage;
+    public AudioClip[] Damage;
     private void Start()
     {
         // 初期位置を保持
@@ -43,7 +44,7 @@ public class Camerashake : MonoBehaviour
             if (shakecnt == true)
             {
 
-                audiosorce.PlayOneShot(Damage);
+                audiosorce.PlayOneShot(Damage[Random.Range(0, Damage.Length)]);
                 StartShake(0.2f, 0.2f, 0.2f);
                 shakecnt = false;
             }
