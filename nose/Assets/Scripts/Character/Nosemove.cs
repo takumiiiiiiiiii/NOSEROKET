@@ -2,6 +2,7 @@ using System.Collections;
 using AIE2D;
 using UnityEngine;
 
+
 public class Nosemove : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -14,6 +15,7 @@ public class Nosemove : MonoBehaviour
     private Vector2 forword;
     AudioSource audiosorce;
     public AudioClip dash;
+    public SliderController Sdc;
 
     [HideInInspector] public static bool DoNotMove=false;
     [HideInInspector] public static bool Nose_Dush=false;
@@ -32,6 +34,7 @@ public class Nosemove : MonoBehaviour
         forword = transform.forward;
         _player = gameObject.GetComponent<AfterImageEffect2DPlayerBase>();
         audiosorce = GetComponent<AudioSource>();
+        Sdc = GameObject.Find("dash_slider").GetComponent<SliderController>();
         //_player.CreateAfterImage(gameObject.GetComponent<SpriteRenderer>());
     }
     // Update is called once per frame
@@ -92,14 +95,17 @@ public class Nosemove : MonoBehaviour
             if (Input.GetKeyUp(KeyCode.Space) && Nose_Dush == false)
             {
                 StartCoroutine(Dash());
+                Sdc.EmittingObject();
             }
             if (Nose_Dush == true)
             {
                 _player.SetActive(true);
+                
             }
             else
             {
                 _player.SetActive(false);
+                
             }
         }
         
@@ -191,6 +197,7 @@ public class Nosemove : MonoBehaviour
     private IEnumerator Dash()
     {
         Nose_Dush = true;
+        
         audiosorce.PlayOneShot(dash);
         yield return new WaitForSeconds(1);//1秒後にダッシュ終わり
         Nose_Dush = false;

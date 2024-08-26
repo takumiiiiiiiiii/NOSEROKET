@@ -2347,6 +2347,7 @@ MonoBehaviour:
   dash_speed: 4
   player_vector: {x: 0, y: 0}
   dash: {fileID: 8300000, guid: 4c56a83be3b4e43d2b1b99c086aa5b25, type: 3}
+  Sdc: {fileID: 0}
 --- !u!114 &208241181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14490,6 +14491,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 1758798135}
   pollenPoint: 0
+  pollenReleaseRate: 5
 --- !u!114 &1758798134
 MonoBehaviour:
   m_ObjectHideFlags: 0
