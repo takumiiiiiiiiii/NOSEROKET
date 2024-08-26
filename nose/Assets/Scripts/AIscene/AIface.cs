@@ -17,6 +17,8 @@ public class AIface : MonoBehaviour
     [HideInInspector] public static bool DoNotMove = false;
     [HideInInspector] public static bool Nose_Dush = false;
     [HideInInspector] public static bool Nose_Charge = false;
+    private float x_before = 10;
+    private float z_before = 10;
     private float charge_time=0f;
     // Start is called before the first frame update
     void Start()
