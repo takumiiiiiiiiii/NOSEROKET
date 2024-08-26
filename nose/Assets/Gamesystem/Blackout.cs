@@ -11,6 +11,7 @@ public class Blackout : MonoBehaviour
     private SpriteRenderer objRenderer;
     private float alpha;
     private float add_spd = -11.0f;
+    public string SeneName="tutorial";
     // Start is called before the first frame update
     void Start()
     {
@@ -74,7 +75,7 @@ public class Blackout : MonoBehaviour
 
                 if (alpha > 1)
                 {
-                    SceneManager.LoadScene("tutorial");
+                    SceneManager.LoadScene(SeneName);
                 }
             }
         }

@@ -24,7 +24,7 @@ public class Timer : MonoBehaviour
     private float oldSeconds;
     public Text timerText;
     public float waitTime = 1000;
-    public string scenename="Ending";
+    public string scenename;
     void Start()
     {
         //minute = 0;
