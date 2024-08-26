@@ -3708,6 +3708,7 @@ MonoBehaviour:
   speed: 0.1
   dash_speed: 4
   player_vector: {x: 0, y: 0}
+  dash: {fileID: 0}
 --- !u!114 &208241181
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7256,6 +7257,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0afba27f7f304ff7a45b43ea260b670, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timerstart: {fileID: 0}
+  timerzero: {fileID: 0}
   text: {fileID: 8465516378775091074, guid: d02eb5f4290bd402b8a0dfdca83cd611, type: 3}
   minute: 1
   seconds: 0
@@ -8760,7 +8763,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feb04ece56bc244ad9f7e22be11de304, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: {fileID: 0}
+  Damage:
+  - {fileID: 0}
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38172,18 +38176,18 @@ SceneRoots:
   - {fileID: 519420032}
   - {fileID: 681477744}
   - {fileID: 495805513}
+  - {fileID: 1478306562}
   - {fileID: 208241176}
-  - {fileID: 522703479}
   - {fileID: 261755253}
-  - {fileID: 1605817146}
   - {fileID: 2033162840}
   - {fileID: 854641801}
-  - {fileID: 457535474}
   - {fileID: 637371408}
   - {fileID: 1303691023}
   - {fileID: 554293453}
-  - {fileID: 1478306562}
+  - {fileID: 1605817146}
   - {fileID: 1799266783}
   - {fileID: 1591457087}
   - {fileID: 1760214471}
   - {fileID: 1217040398}
+  - {fileID: 522703479}
+  - {fileID: 457535474}
