@@ -53,7 +53,9 @@ public class Nosemove : MonoBehaviour
                
                 if (x_before < growlevel && z_before < growlevel && Nose_Dush == false)
                 {
-                    if (x >= growlevel || z >= growlevel)
+                    if (Sdc.EmittingObject())
+                        StartCoroutine(Dash());
+                    if (x >= growlevel || z >= growlevel)//
                     {
                         StartCoroutine(Dash());
                     }
@@ -94,8 +96,8 @@ public class Nosemove : MonoBehaviour
             }
             if (Input.GetKeyUp(KeyCode.Space) && Nose_Dush == false)
             {
-                StartCoroutine(Dash());
-                Sdc.EmittingObject();
+                if(Sdc.EmittingObject())
+                    StartCoroutine(Dash());   
             }
             if (Nose_Dush == true)
             {

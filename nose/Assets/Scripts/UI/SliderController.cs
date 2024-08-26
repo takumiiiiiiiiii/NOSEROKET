@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Runtime.Remoting.Lifetime;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
@@ -10,6 +11,9 @@ public class SliderController : MonoBehaviour
     public Slider slider;
     public int pollenPoint;
     public int pollenReleaseRate;
+    //public Color color;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,6 +21,7 @@ public class SliderController : MonoBehaviour
         {
             slider.value = 0;
             pollenPoint = 0;
+            //color = gameObject.GetComponent<Image>().color;
         }
     }
 
@@ -26,10 +31,16 @@ public class SliderController : MonoBehaviour
         UpdateSlider();
     }
 
-    public void EmittingObject()
+    public bool EmittingObject()
     {
+        if (pollenPoint < pollenReleaseRate)
+        {
+            return false;
+        }
         pollenPoint -= pollenReleaseRate;
         UpdateSlider();
+
+        return true;    
     }
 
     // Update is called once per frame
@@ -37,8 +48,22 @@ public class SliderController : MonoBehaviour
     {
         if(slider != null)
         {
-
             slider.value = pollenPoint;
+            /*
+            if(pollenPoint > 100)
+            {
+       
+                this.image_pollenGauge.color = new Color32(80, 255, 0, 255);
+            }
+            else if(pollenPoint >= pollenReleaseRate)
+            {
+                this.image_pollenGauge.color = new Color32(255, 209, 0, 255);
+            }
+            else
+            {
+                image_pollenGauge.color = new Color32(255, 80, 0, 255);
+            }
+            */
         }
     }
 }

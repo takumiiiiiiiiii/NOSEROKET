@@ -4264,7 +4264,7 @@ MonoBehaviour:
   timerzero: {fileID: 8300000, guid: 47bc6321620134fc0a1c9d777ef4a8bc, type: 3}
   text: {fileID: 8465516378775091074, guid: d02eb5f4290bd402b8a0dfdca83cd611, type: 3}
   minute: 0
-  seconds: 10
+  seconds: 30
   timerText: {fileID: 444390061}
   waitTime: 3
   scenename: tateEnding
@@ -8433,7 +8433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 0.82046974, b: 0, a: 1}
+  m_Color: {r: 1, g: 0.81960785, b: 0, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -14491,7 +14491,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   slider: {fileID: 1758798135}
   pollenPoint: 0
-  pollenReleaseRate: 5
+  pollenReleaseRate: 10
 --- !u!114 &1758798134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -14549,9 +14549,9 @@ MonoBehaviour:
   m_HandleRect: {fileID: 0}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 10
+  m_MaxValue: 100
   m_WholeNumbers: 0
-  m_Value: 1
+  m_Value: 0
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
