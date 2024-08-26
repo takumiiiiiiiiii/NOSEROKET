@@ -23,6 +23,9 @@ public class AIface : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        DoNotMove = false;
+        Nose_Dush = false;
+        Nose_Charge = false;
         MainSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
     }
 
@@ -41,39 +44,53 @@ public class AIface : MonoBehaviour
                 Debug.Log("X:" + x);
                 if (DoNotMove == false)
                 {
-                    if (z < Nosemove.growlevel && x >= Nosemove.growlevel)
+                    if (z < Nosemove.growlevel && x >= Nosemove.growlevel)//右に指を入れる
                     {
                         MainSpriteRenderer.sprite = changeLeftSprite;
                     }
-                    if (x < Nosemove.growlevel && z >= Nosemove.growlevel)
+                    if (x < Nosemove.growlevel && z >= Nosemove.growlevel)//左に指を入れる
                     {
                         MainSpriteRenderer.sprite = changeRightSprite;
                     }
-
-                    if (x >= Nosemove.growlevel && z >= Nosemove.growlevel && Nose_Dush == true)
+                    if(z < Nosemove.growlevel && x < Nosemove.growlevel)
                     {
-                        MainSpriteRenderer.sprite = changeDashSprite;
-                        Debug.Log("iff");
-                        //transform.position += transform.rotation * new Vector2(0, speed * dash_speed);//ダッシュ
-                    }
-                    else if (x >= Nosemove.growlevel || z >= Nosemove.growlevel)
-                    {
-
-                        if (Nose_Dush == true)
+                        MainSpriteRenderer.sprite = changeChargeSprite;
+                        charge_time += Time.deltaTime;
+                        Debug.Log(charge_time);
+                        if (charge_time < 0.25f)
                         {
-                            
+                            MainSpriteRenderer.sprite = changeChargeSprite;
+                            Debug.Log("短く押された: " + charge_time + " 秒");
+                            // 短く押された場合の反応を記述
+                        }
+                        else if (charge_time >= 0.25f && charge_time < 0.5f)
+                        {
+                            MainSpriteRenderer.sprite = changeChargeSprite1;
+                            Debug.Log("中くらいの時間押された: " + charge_time + " 秒");
+                            // 中くらいの時間押された場合の反応を記述
+                        }
+                        else if (charge_time >= 0.5f && charge_time < 0.75f)
+                        {
+                            MainSpriteRenderer.sprite = changeChargeSprite2;
+
+                            // 長く押された場合の反応を記述
                         }
                         else
                         {
-                            //transform.position += transform.rotation * new Vector2(0, speed);//通常の移動
+                            MainSpriteRenderer.sprite = changeChargeSprite3;
                         }
+                        Nose_Charge = true;
                     }
                     if (x_before < Nosemove.growlevel && z_before < Nosemove.growlevel)
                     {
+
                         if (x >= Nosemove.growlevel || z >= Nosemove.growlevel)
                         {
                             StartCoroutine(Dash());
                         }
+                    }
+                    if (Nose_Dush == true) {
+                        MainSpriteRenderer.sprite = changeDashSprite;
                     }
                     x_before = x;
                     z_before = z;
