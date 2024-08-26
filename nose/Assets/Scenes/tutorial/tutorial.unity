@@ -815,6 +815,7 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+
 --- !u!1 &444390057
 GameObject:
   m_ObjectHideFlags: 0
@@ -929,6 +930,7 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 444390057}
   m_CullTransparentMesh: 1
+
 --- !u!1 &457535473
 GameObject:
   m_ObjectHideFlags: 0
@@ -1423,7 +1425,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1412.775, y: 211.1415}
+  m_SizeDelta: {x: 1412.7749, y: 211.1415}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &638569124
 Animator:
@@ -2616,7 +2618,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetObject: {fileID: 208241173}
-  wait_time: 1
+  wait_time: 2
 --- !u!4 &1402404965
 Transform:
   m_ObjectHideFlags: 0
@@ -3301,7 +3303,6 @@ RectTransform:
   - {fileID: 1939170634}
   - {fileID: 567846463}
   - {fileID: 86562728}
-  - {fileID: 444390058}
   - {fileID: 638569123}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

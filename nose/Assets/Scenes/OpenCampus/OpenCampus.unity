@@ -6579,11 +6579,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f8ac308bc0944a81a131c06b7f6337a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  changeNormalSprite: {fileID: 21300000, guid: 92a969f80593c464b9ba2a71d7912c81, type: 3}
+  changeNormalSprite: {fileID: 21300000, guid: 8d4098b20640d4f9c9ab280a5e6a54c8, type: 3}
   changeRightSprite: {fileID: 21300000, guid: 1badceb5c075047529db9a962e57e0e1, type: 3}
   changeLeftSprite: {fileID: 21300000, guid: 8d8b14aab5a7449b69132a44fe0f628c, type: 3}
-  changeDashSprite: {fileID: 21300000, guid: c4b8dbcf0f4134f0099ed0729ce2d4b1, type: 3}
+  changeDashSprite: {fileID: 21300000, guid: 33024a8eb5cd64c7b83d544059e648e5, type: 3}
   changeChargeSprite: {fileID: 21300000, guid: 183736d7f0e1c479394ef259e7295092, type: 3}
+  changeChargeSprite1: {fileID: 21300000, guid: 590b21f6d9a1843e9b52ee8cb83f3dce, type: 3}
+  changeChargeSprite2: {fileID: 21300000, guid: a1e745c03d4a2494e8fbb63d908b2f40, type: 3}
+  changeChargeSprite3: {fileID: 21300000, guid: dd6b4c8320dbc41c3af37ace12c965cd, type: 3}
 --- !u!212 &681477743
 SpriteRenderer:
   m_ObjectHideFlags: 0
