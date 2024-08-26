@@ -9,6 +9,8 @@ public class Start_botton : MonoBehaviour
 {
     SpriteRenderer MainSpriteRenderer;
     public Sprite changeSprite;
+    AudioSource audiosorce;
+    public AudioClip gonose;
 
     private float x_before = 10;
     private float z_before = 10;
@@ -18,6 +20,7 @@ public class Start_botton : MonoBehaviour
     void Start()
     {
         MainSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
+        audiosorce = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -48,6 +51,7 @@ public class Start_botton : MonoBehaviour
             //SceneManager.LoadScene("SampleScene");//some_senseiシーンをロードする
             anime_start = true;
             MainSpriteRenderer.sprite = changeSprite;
+            audiosorce.PlayOneShot(gonose);
             Debug.Log("space");
         }
     }
@@ -57,7 +61,7 @@ public class Start_botton : MonoBehaviour
         AnimeMoveNose();
     }
 
-        void AnimeMoveNose()
+    void AnimeMoveNose()
     {
         if (anime_start == true)
         {
