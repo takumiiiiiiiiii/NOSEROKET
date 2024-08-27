@@ -40,7 +40,7 @@ public class Blackout : MonoBehaviour
             x_before = x;
             z_before = z;
         }
-        if (Input.GetKeyDown(KeyCode.Space)) //スペースキー押した場合
+        if (Input.GetKeyUp(KeyCode.Space)) //スペースキー押した場合
         {
             //SceneManager.LoadScene("SampleScene");//some_senseiシーンをロードする
             anime_start = true;

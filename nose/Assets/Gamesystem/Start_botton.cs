@@ -11,7 +11,7 @@ public class Start_botton : MonoBehaviour
     public Sprite changeSprite;
     AudioSource audiosorce;
     public AudioClip gonose;
-
+    public Animator anima;
     private float x_before = 10;
     private float z_before = 10;
     private bool anime_start = false;
@@ -19,6 +19,7 @@ public class Start_botton : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        anima= gameObject.GetComponent<Animator>();
         MainSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         audiosorce = GetComponent<AudioSource>();
     }
@@ -33,11 +34,15 @@ public class Start_botton : MonoBehaviour
         float x, z;
         if (float.TryParse(serial.x, out x) && float.TryParse(serial.z, out z))
         {
-
+            if (x < Nosemove.growlevel && z < Nosemove.growlevel)
+            {
+                anima.SetBool("Charge", true);
+            }
             if (x_before < Nosemove.growlevel && z_before < Nosemove.growlevel)
             {
                 if (x >= Nosemove.growlevel || z >= Nosemove.growlevel)
                 {
+                    anima.SetBool("Charge",false);
                     anime_start = true;
                     MainSpriteRenderer.sprite = changeSprite;
                 }
@@ -45,10 +50,14 @@ public class Start_botton : MonoBehaviour
             x_before = x;
             z_before = z;
         }
-
-        if (Input.GetKeyDown(KeyCode.Space)) //スペースキー押した場合
+        if (Input.GetKeyDown(KeyCode.Space)) //スペースキーをおした場合
+        {
+            anima.SetBool("Charge", true);
+        }
+            if (Input.GetKeyUp(KeyCode.Space)) //スペースキーを離した場合
         {
             //SceneManager.LoadScene("SampleScene");//some_senseiシーンをロードする
+            anima.SetBool("Charge", false);
             anime_start = true;
             MainSpriteRenderer.sprite = changeSprite;
             audiosorce.PlayOneShot(gonose);
