@@ -32,8 +32,10 @@ public class Planet : MonoBehaviour
         GameObject obj = GameObject.Find("nose_player");//Circleというゲームオブジェクトを探す
         nose = obj.GetComponent<Nosemove>();//スクリプトを取得
         if (Hit == true) {
+            CC.isTrigger = true;
             if (vector_get == true)
             {
+                RB.constraints = RigidbodyConstraints2D.None;
                 this.gameObject.transform.DetachChildren();
                 for (int i = 0; i < OUT_POLLEN; i++)
                 {
@@ -63,7 +65,10 @@ public class Planet : MonoBehaviour
         nose = obj.GetComponent<Nosemove>();//スクリプトを取得
         if (collision.gameObject.tag == "Player" && Nosemove.Nose_Dush == true)
         {
-            StartCoroutine(Stopc_MoveNose());
+            if (!Nosemove.maxcharge)
+            {
+                StartCoroutine(Stopc_MoveNose());
+            }
             Hit = true;
         }
     }

@@ -16,6 +16,9 @@ public class Nosemove : MonoBehaviour
     AudioSource audiosorce;
     public AudioClip dash;
     public SliderController Sdc;
+    //チャージ関連
+    private float charge_time=0f;//チャージ時間を入れる
+    public static bool maxcharge = false;//最大チャージ
 
     [HideInInspector] public static bool DoNotMove=false;
     [HideInInspector] public static bool Nose_Dush=false;
@@ -24,10 +27,12 @@ public class Nosemove : MonoBehaviour
     
 
     private AfterImageEffect2DPlayerBase _player = null;
+    
 
     private 
     void Start()
     {
+        maxcharge = false;
         DoNotMove = false;
         Nose_Dush = false;
         anima = gameObject.GetComponent<Animator>();
@@ -40,6 +45,7 @@ public class Nosemove : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        Debug.Log("チャージ状態"+maxcharge);
         Serial serial;//呼ぶスクリプトにあだ名をつける
         GameObject objc = GameObject.Find("sencer");//Circleというゲームオブジェクトを探す
         serial = objc.GetComponent<Serial>();//スクリプトを取得
@@ -50,16 +56,39 @@ public class Nosemove : MonoBehaviour
             float x, z;
             if (float.TryParse(serial.x, out x)&&float.TryParse(serial.z, out z))
             {
-               
+                //チャージ時間に応じた処理
+                if (z < growlevel && x < growlevel)
+                {
+                    charge_time += Time.deltaTime;
+                    Debug.Log(charge_time);
+                    if (charge_time < 0.25f)
+                    {
+
+                        maxcharge = false;
+                        // 短く押された場合の反応を記述
+                    }
+                    else if (charge_time >= 0.25f && charge_time < 0.5f)
+                    {
+                        maxcharge = false;
+                        // 中くらいの時間押された場合の反応を記述
+                    }
+                    else if (charge_time >= 0.5f && charge_time < 0.75f)
+                    {
+                        maxcharge = true;
+                        // 長く押された場合の反応を記述
+                    }
+                }
+                //花粉が溜まってないと動かない
                 if (x_before < growlevel && z_before < growlevel && Nose_Dush == false)
                 {
-                    if (Sdc.EmittingObject())
+                    //if (Sdc.EmittingObject())
                         StartCoroutine(Dash());
                     if (x >= growlevel || z >= growlevel)//
                     {
                         StartCoroutine(Dash());
                     }
                 }
+                //鼻のアニメーション
                 if (Nose_Dush == true)
                 {
                     _player.SetActive(true);
@@ -68,6 +97,7 @@ public class Nosemove : MonoBehaviour
                 {
                     _player.SetActive(false);
                 }
+                //
                 x_before = x;
                 z_before = z;
                 if (x < growlevel && z >= growlevel)
@@ -94,9 +124,32 @@ public class Nosemove : MonoBehaviour
             {
                 anima.SetBool("Right_anima", true);
             }
-            if (Input.GetKeyUp(KeyCode.Space) && Nose_Dush == false)
+
+            if (Input.GetKey(KeyCode.Space) && Nose_Dush == false)
             {
-                if(Sdc.EmittingObject())
+                charge_time += Time.deltaTime;
+                Debug.Log(charge_time);
+                if (charge_time < 0.25f)
+                {
+                    maxcharge = false;
+                    // 短く押された場合の反応を記述
+                }
+                else if (charge_time >= 0.25f && charge_time < 0.5f)
+                {
+                    maxcharge = false;
+                    // 中くらいの時間押された場合の反応を記述
+                }
+                else if (charge_time >= 0.5f && charge_time < 0.75f)
+                {
+                    maxcharge = true;
+                    // 長く押された場合の反応を記述
+                }
+            }
+
+
+                if (Input.GetKeyUp(KeyCode.Space) && Nose_Dush == false)
+            {
+                //if(Sdc.EmittingObject())
                     StartCoroutine(Dash());   
             }
             if (Nose_Dush == true)
@@ -134,14 +187,14 @@ public class Nosemove : MonoBehaviour
                 Debug.Log("X:" + x);
                 if (DoNotMove == false)
                 {
-                    if (z < growlevel && x >= growlevel)
+                    if (z < growlevel && x >= growlevel)//右移動
                     {
                         myTransform.Rotate(0, 0, 3.0f, Space.World);
                     }
                     if (x < growlevel && z >= growlevel)
                     {
                        
-                        myTransform.Rotate(0, 0, -3.0f, Space.World);
+                        myTransform.Rotate(0, 0, -3.0f, Space.World);//左移動
                     }
                   
                     if (x >= growlevel && z >= growlevel && Nose_Dush == true)
@@ -170,7 +223,6 @@ public class Nosemove : MonoBehaviour
             {
                 if (Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.Space) == false)
                 {
-                    
                     myTransform.Rotate(0, 0, 3.0f, Space.World);
                 }
                 if (Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.Space) == false)
@@ -199,9 +251,11 @@ public class Nosemove : MonoBehaviour
     private IEnumerator Dash()
     {
         Nose_Dush = true;
-        
         audiosorce.PlayOneShot(dash);
         yield return new WaitForSeconds(1);//1秒後にダッシュ終わり
+        charge_time = 0f;
         Nose_Dush = false;
+        maxcharge = false;
+        
     }
 }

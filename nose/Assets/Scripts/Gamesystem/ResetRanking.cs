@@ -15,6 +15,7 @@ public class ResetRanking : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Escape))
         {
+            Debug.Log("Ranking_Reset");
             PlayerPrefs.DeleteAll();
         }
     }
