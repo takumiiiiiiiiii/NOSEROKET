@@ -24,6 +24,7 @@ public class Nekojarashi : MonoBehaviour
         Transform parentTransform = transform.parent;
         if (parentTransform == null)
         {
+            RB.constraints = RigidbodyConstraints2D.None;
             RB.gravityScale = 1.3f;
         }
     }
