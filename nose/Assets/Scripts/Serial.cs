@@ -36,7 +36,27 @@ public class Serial : MonoBehaviour
             conect = false;
         }
     }
+    private void Update()
+    {
+        if (!conect)
+        {
+            this.serial = new SerialPort(portName, baurate, Parity.None, 8, StopBits.One);
 
+            try
+            {
+                UnityEngine.Debug.Log("catch");
+                this.serial.Open();
+                //別スレッドで実行  
+                Scheduler.ThreadPool.Schedule(() => ReadData()).AddTo(this);
+                conect = true;
+            }
+            catch (Exception e)
+            {
+                //UnityEngine.Debug.Log("ポートが開けませんでした。設定している値が間違っている場合があります");
+                conect = false;
+            }
+        }
+    }
     //データ受信時に呼ばれる
     public void ReadData()
     {

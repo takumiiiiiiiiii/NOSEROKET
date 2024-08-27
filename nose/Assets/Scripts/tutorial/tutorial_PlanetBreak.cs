@@ -77,6 +77,11 @@ public class tutorial_PlanetBreak : MonoBehaviour
         Instantiate(black_out);//画面暗転
         Instantiate(text);//文字を表示
         yield return new WaitForSeconds(3);
+        Serial seria;//呼ぶスクリプトにあだ名をつける
+        GameObject objc = GameObject.Find("sencer");//Circleというゲームオブジェクトを探す
+        seria = objc.GetComponent<Serial>();//スクリプトを取得
+        seria.serial.Close();
+
         SceneManager.LoadScene(scene_name);
     }
     private void OnCollisionEnter2D(Collision2D collision)

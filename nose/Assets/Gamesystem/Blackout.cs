@@ -75,7 +75,9 @@ public class Blackout : MonoBehaviour
 
                 if (alpha > 1)
                 {
+
                     SceneManager.LoadScene(SeneName);
+
                 }
             }
         }
