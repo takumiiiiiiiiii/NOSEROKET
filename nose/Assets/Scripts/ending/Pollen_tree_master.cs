@@ -23,8 +23,7 @@ public class Pollen_tree_master : MonoBehaviour
 
         end = true;
         tree_cnt = 0;
-        //tree_cnt_end = Score.current_score/100;
-        tree_cnt_end = 100;
+        tree_cnt_end = Score.current_score/100;
         tree_cnt_max = 1000;
         distance = between;
         camera_xpos = 0.4f;
