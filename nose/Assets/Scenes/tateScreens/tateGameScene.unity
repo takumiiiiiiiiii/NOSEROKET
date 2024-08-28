@@ -8535,8 +8535,8 @@ MonoBehaviour:
   timerstart: {fileID: 0}
   timerzero: {fileID: 8300000, guid: 47bc6321620134fc0a1c9d777ef4a8bc, type: 3}
   text: {fileID: 8465516378775091074, guid: d02eb5f4290bd402b8a0dfdca83cd611, type: 3}
-  minute: 0
-  seconds: 30
+  minute: 1
+  seconds: 0
   timerText: {fileID: 444390061}
   waitTime: 3
   scenename: tateEnding
@@ -35505,6 +35505,51 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &2020663534
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2020663536}
+  - component: {fileID: 2020663535}
+  m_Layer: 0
+  m_Name: rerord
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2020663535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020663534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39475609168304ee48795bda7547d5c4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SceneName: tateGameScene
+--- !u!4 &2020663536
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020663534}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -9.969787, y: 20.666105, z: -0.43860352}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &2022749779 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6131505161885507186, guid: 0b4f19f3fab0d463eb253200f64a2cb2, type: 3}
@@ -38566,3 +38611,4 @@ SceneRoots:
   - {fileID: 1096508887}
   - {fileID: 1369886160}
   - {fileID: 83739886}
+  - {fileID: 2020663536}
