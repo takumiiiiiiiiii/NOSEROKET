@@ -102,13 +102,13 @@ public class Nosemove : MonoBehaviour
                 z_before = z;
                 if (x < growlevel && z >= growlevel)
                 {
-                    anima.SetBool("Left_anima", true);
-
+                   
+                    anima.SetBool("Right_anima", true);
                 }
                 if (z < growlevel && x >= growlevel)
                 {
-
-                    anima.SetBool("Right_anima", true);
+                    anima.SetBool("Left_anima", true);
+                    
                 }
             }
            
@@ -118,11 +118,12 @@ public class Nosemove : MonoBehaviour
             //アニメーション
             if (Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.Space) == false)
             {
-                anima.SetBool("Left_anima", true);
+                anima.SetBool("Right_anima", true);
+                
             }
             if (Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.Space) == false)
             {
-                anima.SetBool("Right_anima", true);
+                anima.SetBool("Left_anima", true);
             }
 
             if (Input.GetKey(KeyCode.Space) && Nose_Dush == false)

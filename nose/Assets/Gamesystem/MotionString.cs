@@ -7,6 +7,7 @@ public class MotionString : MonoBehaviour
     // Start is called before the first frame update
     private float str_x;
     private float str_y;
+    private Vector3 rndpos;
 
     public float min_pos_x;
     public float max_pos_x;
@@ -14,7 +15,7 @@ public class MotionString : MonoBehaviour
     public float max_pos_y;
     void Start()
     {
-        
+        rndpos = this.transform.position;
     }
 
     // Update is called once per frame
@@ -22,7 +23,6 @@ public class MotionString : MonoBehaviour
     {
         str_x = Random.Range(min_pos_x, max_pos_x);
         str_y = Random.Range(min_pos_y, max_pos_y);
-        
-        transform.position = new Vector3(str_x, str_y, 0);
+        transform.position = rndpos+new Vector3(str_x, str_y, 0);
     }
 }
