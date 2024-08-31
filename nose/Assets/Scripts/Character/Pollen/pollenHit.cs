@@ -7,6 +7,7 @@ using TMPro;
 
 public class pollenHit : MonoBehaviour
 {
+    [SerializeField] private GameObject pollen_point;
     [SerializeField] private CircleCollider2D Cc;
     [SerializeField] private Rigidbody2D Rb;
 
@@ -25,9 +26,11 @@ public class pollenHit : MonoBehaviour
     {
         if(collision.gameObject.tag == "Player"&&Sc!=null)
         {
+            Instantiate(pollen_point, this.transform.position, Quaternion.identity);
             Sc.score += 100;
             Sdc.CollectObject();
             Destroy(this.gameObject);
+            
         }
     }
 }
