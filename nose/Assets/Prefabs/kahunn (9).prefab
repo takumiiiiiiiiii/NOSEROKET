@@ -161,8 +161,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 34e9e418e39b04f19a8274c077ef7062, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetCamera: {fileID: 0}
+  speed: 3
   pollen_point: {fileID: 3793076850701079243, guid: b00d91f93ec204732be92e19314cd016, type: 3}
   Cc: {fileID: 858440252183875512}
-  Rb: {fileID: 1584039856904752816}
+  RB: {fileID: 0}
   Sc: {fileID: 0}
   Sdc: {fileID: 0}
