@@ -14,6 +14,7 @@ public class Planet : MonoBehaviour
     private bool vector_get=true;//当たった瞬間のベクトルを取得する
     Rigidbody2D RB;
     CircleCollider2D CC;
+    SliderController Sdc;
     
 
     // Start is called before the first frame update
@@ -21,6 +22,7 @@ public class Planet : MonoBehaviour
     {
         RB = GetComponent<Rigidbody2D>();
         CC = GetComponent<CircleCollider2D>();
+        Sdc = GameObject.Find("dash_slider").GetComponent<SliderController>();
         RB.gravityScale = 0;
         RB.mass = 0.1f;
     }
@@ -53,9 +55,13 @@ public class Planet : MonoBehaviour
     }
     private IEnumerator Stopc_MoveNose()//鼻を一時的にフリーズさせる
     {
-        Nosemove.DoNotMove = true;
-        yield return new WaitForSeconds(1);
-        Nosemove.DoNotMove = false;
+        if(!Sdc.feverFlag)
+        {
+            Nosemove.DoNotMove = true;
+            yield return new WaitForSeconds(1);
+            Nosemove.DoNotMove = false;
+        }
+ 
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

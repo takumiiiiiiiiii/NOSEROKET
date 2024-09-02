@@ -5,15 +5,16 @@ using System.Runtime.Remoting.Lifetime;
 using UnityEngine;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
+using UnityEngine.UIElements;
 
 public class SliderController : MonoBehaviour
 {
-    public Slider slider;
-    public int pollenPoint;
+    public UnityEngine.UI.Slider slider;
+    public float pollenPoint;
     public int pollenReleaseRate;
     public UnityEngine.UI.Image sliderImage; //connected the Image Fill from the slider
 
-
+    public bool feverFlag;
 
     // Start is called before the first frame update
     void Start()
@@ -22,26 +23,57 @@ public class SliderController : MonoBehaviour
         {
             slider.value = 0;
             pollenPoint = 0;
+            feverFlag = false;
 
         }
     }
 
     public void CollectObject()
     {
-        pollenPoint++;
+        if (!feverFlag)
+        { 
+            pollenPoint++;   
+        }
         UpdateSlider();
     }
 
     public bool EmittingObject()
     {
-        if (pollenPoint < pollenReleaseRate)
+
+        if (pollenPoint <  pollenReleaseRate)
         {
+
             return false;
         }
-        pollenPoint -= pollenReleaseRate;
         UpdateSlider();
-
         return true;    
+    }
+
+    public void FeverTime()
+    {
+        
+        UpdateSlider();
+        /*
+        if (pollenPoint >= slider.maxValue)
+        {
+            feverFlag = true;
+              
+        }
+        else if (pollenPoint == 0 && feverFlag == true)
+        {
+            feverFlag = false;
+            UpdateSlider();
+            return false;
+        }
+        else if(feverFlag == true)
+        {
+            //
+            pollenPoint -= 1;
+            UpdateSlider();
+        }
+        
+        return true;
+        */
     }
 
     // Update is called once per frame
@@ -51,7 +83,8 @@ public class SliderController : MonoBehaviour
         {
             slider.value = pollenPoint;
 
-            if(pollenPoint > 100)
+            /*
+            if (pollenPoint > 100)
             {
                 sliderImage.color=new Color32(80,255,0,255);   
             }
@@ -63,6 +96,13 @@ public class SliderController : MonoBehaviour
             {
                 sliderImage.color=new Color32(255,80,0,255);
             }
+            */
+            if(feverFlag)
+                sliderImage.color = new Color32(80, 255, 0, 255);
+            else if(pollenPoint > 100)
+                sliderImage.color = new Color32(255, 209, 0, 255);
+            else
+                sliderImage.color = new Color32(0, 100, 255, 255);
         }
     }
 }
