@@ -16,6 +16,7 @@ public class Nosemove : MonoBehaviour
     AudioSource audiosorce;
     public AudioClip dash;
     public SliderController Sdc;
+
     //チャージ関連
     private float charge_time=0f;//チャージ時間を入れる
     public static bool maxcharge = false;//最大チャージ
@@ -148,9 +149,9 @@ public class Nosemove : MonoBehaviour
             }
 
 
-                if (Input.GetKeyUp(KeyCode.Space) && Nose_Dush == false)
+            if (Input.GetKeyUp(KeyCode.Space) && Nose_Dush == false)
             {
-                //if(Sdc.EmittingObject())
+                if(Sdc.EmittingObject())
                     StartCoroutine(Dash());   
             }
             if (Nose_Dush == true)
