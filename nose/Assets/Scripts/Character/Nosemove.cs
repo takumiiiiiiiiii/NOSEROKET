@@ -84,6 +84,7 @@ public class Nosemove : MonoBehaviour
                 {
                     //if (Sdc.EmittingObject())
                         StartCoroutine(Dash());
+                        
                     if (x >= growlevel || z >= growlevel)//
                     {
                         StartCoroutine(Dash());
@@ -148,11 +149,17 @@ public class Nosemove : MonoBehaviour
                 }
             }
 
-
+            
             if (Input.GetKeyUp(KeyCode.Space) && Nose_Dush == false)
             {
-                if(Sdc.EmittingObject())
-                    StartCoroutine(Dash());   
+                //if(Sdc.EmittingObject())
+                if (Sdc.pollenPoint >= 100)
+                {
+                    
+                    StartCoroutine(SuperDash());
+                }
+                else
+                    StartCoroutine(Dash());
             }
             if (Nose_Dush == true)
             {
@@ -259,5 +266,20 @@ public class Nosemove : MonoBehaviour
         Nose_Dush = false;
         maxcharge = false;
         
+    }
+
+    private IEnumerator SuperDash()
+    {
+        Nose_Dush = true;
+        audiosorce.PlayOneShot(dash);
+        Sdc.feverFlag = true;
+        Sdc.FeverTime();
+        yield return new WaitForSeconds(8);//1秒後にダッシュ終わり
+        Sdc.pollenPoint -= 100;
+        Sdc.feverFlag = false;
+        Sdc.FeverTime();
+        charge_time = 0f;
+        Nose_Dush = false;
+        maxcharge = false;
     }
 }
