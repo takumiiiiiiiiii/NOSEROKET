@@ -22,7 +22,15 @@ public class pop_upPollen : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        targetCamera = GameObject.Find("MainCamera").GetComponent<Camera>();
+        // カメラを探す
+        GameObject cameraObject = GameObject.Find("MainCamera");
+        // カメラが見つかった場合のみコンポーネントを取得する
+        if (cameraObject != null)
+        {
+            Camera targetCamera = cameraObject.GetComponent<Camera>();
+            // targetCameraでさらに処理を続ける
+        }
+        //targetCamera = GameObject.Find("MainCamera").GetComponent<Camera>();
         //カメラのいちを取得
         if (targetCamera == null)
         {
