@@ -11,17 +11,18 @@ public class SliderController : MonoBehaviour
     public Slider slider;
     public int pollenPoint;
     public int pollenReleaseRate;
-    //public Color color;
+    public UnityEngine.UI.Image sliderImage; //connected the Image Fill from the slider
+
 
 
     // Start is called before the first frame update
     void Start()
     {
-        if(slider != null)
+        if (slider != null)
         {
             slider.value = 0;
             pollenPoint = 0;
-            //color = gameObject.GetComponent<Image>().color;
+
         }
     }
 
@@ -49,21 +50,19 @@ public class SliderController : MonoBehaviour
         if(slider != null)
         {
             slider.value = pollenPoint;
-            /*
+
             if(pollenPoint > 100)
             {
-       
-                this.image_pollenGauge.color = new Color32(80, 255, 0, 255);
+                sliderImage.color=new Color32(80,255,0,255);   
             }
             else if(pollenPoint >= pollenReleaseRate)
             {
-                this.image_pollenGauge.color = new Color32(255, 209, 0, 255);
+                sliderImage.color=new Color32(255,209,0,255);
             }
             else
             {
-                image_pollenGauge.color = new Color32(255, 80, 0, 255);
+                sliderImage.color=new Color32(255,80,0,255);
             }
-            */
         }
     }
 }
