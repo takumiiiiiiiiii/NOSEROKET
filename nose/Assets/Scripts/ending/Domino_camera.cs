@@ -27,7 +27,15 @@ public class Domino_camera : MonoBehaviour
                 Animation_ending.anima_end.SetBool("EndGame", true);
             }
             Vector3 direction = (target.position - transform.position).normalized;
-            transform.position += new Vector3( direction.x * speed * Time.deltaTime,0);
+            if (transform.position.x < target.position.x)
+            {
+                speed++;
+            }
+            else
+            {
+                speed--;
+            }
+            transform.position += new Vector3(direction.x * speed * Time.deltaTime, 0);
         }
     }
 }
