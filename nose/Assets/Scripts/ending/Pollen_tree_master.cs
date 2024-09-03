@@ -17,6 +17,7 @@ public class Pollen_tree_master : MonoBehaviour
     public float between=1.0f;
     [SerializeField] public static float distance;
     public GameObject tree;//花粉
+    [SerializeField] private bool debug=false;//デバッグよう
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,10 @@ public class Pollen_tree_master : MonoBehaviour
         tree_cnt = 0;
         tree_cnt_end = Score.current_score/100;
         tree_cnt_max = 1000;
+        if (debug)
+        {
+            tree_cnt_end = 100;
+        }
         distance = between;
         camera_xpos = 0.4f;
         RB = GetComponent<Rigidbody2D>();
@@ -34,6 +39,7 @@ public class Pollen_tree_master : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+ 
         //RB.AddForce(new Vector2(10, 0));
     }
 }

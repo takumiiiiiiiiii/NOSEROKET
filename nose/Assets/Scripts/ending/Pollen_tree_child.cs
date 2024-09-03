@@ -35,7 +35,7 @@ public class Pollen_tree_child : MonoBehaviour
             RB.freezeRotation = true;
             if (Pollen_tree_master.end == true)
             {
-                Domino_camera.target = this.transform;
+                
                 Pollen_tree_master.end = false;
             }
         }
@@ -67,6 +67,7 @@ public class Pollen_tree_child : MonoBehaviour
         // 現在の角度がトリガー角度を超えているかどうかをチェックします
         if (Mathf.Abs(currentAngle) > 10&&taoreru==false)
         {
+            Domino_camera.target = this.transform;
             Debug.Log("fwsefwe");
             Ending_Count.tree++;
             taoreru = true;

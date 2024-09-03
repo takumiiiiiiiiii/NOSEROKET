@@ -1692,7 +1692,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b8bb5e55cc5042f489775f575b4040a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 52
+  speed: 200
 --- !u!1 &522779197
 GameObject:
   m_ObjectHideFlags: 0
@@ -4644,6 +4644,7 @@ MonoBehaviour:
   RB: {fileID: 0}
   between: 2
   tree: {fileID: 5303262885290699823, guid: 96e28c63978bb441bb8ae1d541a10fe4, type: 3}
+  debug: 1
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
