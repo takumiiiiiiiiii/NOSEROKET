@@ -19,6 +19,8 @@ public class Nosemove : MonoBehaviour
     public AudioClip right_left_move;
 
     private bool a_RightLeft_played;
+    private bool audioRight_played;
+    private bool audioLeft_played;
 
     public AudioClip[] Damage;
     public SliderController Sdc;
@@ -45,6 +47,8 @@ public class Nosemove : MonoBehaviour
         DoNotMove = false;
         Nose_Dush = false;
         a_RightLeft_played = false;
+        audioRight_played = false;
+        audioLeft_played = false;
         anima = gameObject.GetComponent<Animator>();
         forword = transform.forward;
         _player = gameObject.GetComponent<AfterImageEffect2DPlayerBase>();
@@ -133,28 +137,28 @@ public class Nosemove : MonoBehaviour
             {
                 anima.SetBool("Right_anima", true);                
             }
-            if (Input.GetKeyDown(KeyCode.LeftArrow) && Input.GetKey(KeyCode.Space) == false && !a_RightLeft_played)
+            if (Input.GetKeyDown(KeyCode.LeftArrow) && Input.GetKey(KeyCode.Space) == false && !audioLeft_played)//左の鼻の穴をさす音
             {
                 audiosorce.PlayOneShot(right_left_move);
-                a_RightLeft_played = true;
+                audioLeft_played = true;
             }
             if (Input.GetKeyUp(KeyCode.LeftArrow) && Input.GetKey(KeyCode.Space) == false)
             {
-                a_RightLeft_played = false; ;
+                audioLeft_played = false; ;
             }
 
             if (Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.Space) == false)
             {
                 anima.SetBool("Left_anima", true);                
             }
-            if (Input.GetKeyDown(KeyCode.RightArrow) && Input.GetKey(KeyCode.Space) == false && !a_RightLeft_played)
+            if (Input.GetKeyDown(KeyCode.RightArrow) && Input.GetKey(KeyCode.Space) == false && !audioRight_played)//右の鼻の穴をさす音
             {
                 audiosorce.PlayOneShot(right_left_move);
-                a_RightLeft_played = true;
+                audioRight_played = true;
             }
             if (Input.GetKeyUp(KeyCode.RightArrow) && Input.GetKey(KeyCode.Space) == false)
             {
-                a_RightLeft_played = false; ;
+                audioRight_played = false; ;
             }
 
             if (Input.GetKey(KeyCode.Space) && Nose_Dush == false)
@@ -227,15 +231,33 @@ public class Nosemove : MonoBehaviour
                     if (z < growlevel && x >= growlevel)//右移動
                     {
                         myTransform.Rotate(0, 0, 3.0f, Space.World);
-
                     }
+
                     if (x < growlevel && z >= growlevel)
-                    {
-                       
+                    {                      
                         myTransform.Rotate(0, 0, -3.0f, Space.World);//左移動
-
                     }
-                  
+
+                    if ((z < growlevel && x >= growlevel) && !audioRight_played)//右の鼻の穴をさす音
+                    {
+                        audiosorce.PlayOneShot(right_left_move);
+                        audioRight_played = true;
+                    }
+                    else
+                    {
+                        audioRight_played = false;
+                    }
+                    if ((x < growlevel && z >= growlevel) && !audioLeft_played)//左の鼻の穴をさす音
+                    {
+                        audiosorce.PlayOneShot(right_left_move);
+                        audioLeft_played = true;
+                    }
+                    else
+                    {
+                        audioLeft_played = false;
+                    }
+
+
                     if (x >= growlevel && z >= growlevel && Nose_Dush == true)
                     {
                         Debug.Log("iff");
@@ -244,7 +266,6 @@ public class Nosemove : MonoBehaviour
                     }
                     else if (x >= growlevel || z >= growlevel)
                     {
-
                         if (Nose_Dush == true)
                         {
                             transform.position += transform.rotation * new Vector2(0, speed * dash_speed);//ダッシュ
@@ -267,7 +288,7 @@ public class Nosemove : MonoBehaviour
                 }
                 if (Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.Space) == false)
                 {
-                    
+    
                     myTransform.Rotate(0, 0, -3.0f, Space.World);
                 }
                 if (Input.GetKey(KeyCode.Space) == false)
