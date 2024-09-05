@@ -28,13 +28,10 @@ public class Camerashake : MonoBehaviour
     private bool _isDoShake;       // 揺れ実行中か？
     private float _totalShakeTime; // 揺れ経過時間
     private bool shakecnt = true;
-    AudioSource audiosorce;
-    public AudioClip[] Damage;
     private void Start()
     {
         // 初期位置を保持
         _initPosition = gameObject.transform.position;
-        audiosorce = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -44,7 +41,6 @@ public class Camerashake : MonoBehaviour
             if (shakecnt == true)
             {
 
-                audiosorce.PlayOneShot(Damage[Random.Range(0, Damage.Length)]);
                 StartShake(0.2f, 0.2f, 0.2f);
                 shakecnt = false;
             }
@@ -116,4 +112,6 @@ public class Camerashake : MonoBehaviour
         _isDoShake = true;
         _totalShakeTime = 0.0f;
     }
+
+
 }

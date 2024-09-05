@@ -15,7 +15,6 @@ public class Planet : MonoBehaviour
     Rigidbody2D RB;
     CircleCollider2D CC;
     SliderController Sdc;
-    
 
     // Start is called before the first frame update
     void Start()
@@ -70,7 +69,7 @@ public class Planet : MonoBehaviour
         GameObject obj = GameObject.Find("nose_player");//Circleというゲームオブジェクトを探す
         nose = obj.GetComponent<Nosemove>();//スクリプトを取得
         if (collision.gameObject.tag == "Player" && Nosemove.Nose_Dush == true)
-        {
+        {           
             if (!Nosemove.maxcharge)
             {
                 StartCoroutine(Stopc_MoveNose());

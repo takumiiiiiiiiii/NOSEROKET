@@ -1,5 +1,6 @@
 using System.Collections;
 using AIE2D;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 
 
@@ -15,7 +16,11 @@ public class Nosemove : MonoBehaviour
     private Vector2 forword;
     AudioSource audiosorce;
     public AudioClip dash;
+    
+    public AudioClip[] Damage;
     public SliderController Sdc;
+
+    
 
     //チャージ関連
     private float charge_time=0f;//チャージ時間を入れる
@@ -40,7 +45,9 @@ public class Nosemove : MonoBehaviour
         forword = transform.forward;
         _player = gameObject.GetComponent<AfterImageEffect2DPlayerBase>();
         audiosorce = GetComponent<AudioSource>();
+        
         Sdc = GameObject.Find("dash_slider").GetComponent<SliderController>();
+        
         //_player.CreateAfterImage(gameObject.GetComponent<SpriteRenderer>());
     }
     // Update is called once per frame
@@ -281,5 +288,16 @@ public class Nosemove : MonoBehaviour
         charge_time = 0f;
         Nose_Dush = false;
         maxcharge = false;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        //Nosemove nose;//呼ぶスクリプトにあだ名をつける
+        //GameObject obj = GameObject.Find("nose_player");//Circleというゲームオブジェクトを探す
+        //nose = obj.GetComponent<Nosemove>();//スクリプトを取得
+        if (collision.gameObject.tag == "Planet" && Nose_Dush == true)
+        {
+            audiosorce.PlayOneShot(Damage[Random.Range(0, Damage.Length)]);
+        }
     }
 }
