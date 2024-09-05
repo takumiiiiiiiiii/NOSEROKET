@@ -16,7 +16,10 @@ public class Nosemove : MonoBehaviour
     private Vector2 forword;
     AudioSource audiosorce;
     public AudioClip dash;
-    
+    public AudioClip right_left_move;
+
+    private bool a_RightLeft_played;
+
     public AudioClip[] Damage;
     public SliderController Sdc;
 
@@ -41,6 +44,7 @@ public class Nosemove : MonoBehaviour
         maxcharge = false;
         DoNotMove = false;
         Nose_Dush = false;
+        a_RightLeft_played = false;
         anima = gameObject.GetComponent<Animator>();
         forword = transform.forward;
         _player = gameObject.GetComponent<AfterImageEffect2DPlayerBase>();
@@ -127,12 +131,30 @@ public class Nosemove : MonoBehaviour
             //アニメーション
             if (Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.Space) == false)
             {
-                anima.SetBool("Right_anima", true);
-                
+                anima.SetBool("Right_anima", true);                
             }
+            if (Input.GetKeyDown(KeyCode.LeftArrow) && Input.GetKey(KeyCode.Space) == false && !a_RightLeft_played)
+            {
+                audiosorce.PlayOneShot(right_left_move);
+                a_RightLeft_played = true;
+            }
+            if (Input.GetKeyUp(KeyCode.LeftArrow) && Input.GetKey(KeyCode.Space) == false)
+            {
+                a_RightLeft_played = false; ;
+            }
+
             if (Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.Space) == false)
             {
-                anima.SetBool("Left_anima", true);
+                anima.SetBool("Left_anima", true);                
+            }
+            if (Input.GetKeyDown(KeyCode.RightArrow) && Input.GetKey(KeyCode.Space) == false && !a_RightLeft_played)
+            {
+                audiosorce.PlayOneShot(right_left_move);
+                a_RightLeft_played = true;
+            }
+            if (Input.GetKeyUp(KeyCode.RightArrow) && Input.GetKey(KeyCode.Space) == false)
+            {
+                a_RightLeft_played = false; ;
             }
 
             if (Input.GetKey(KeyCode.Space) && Nose_Dush == false)
@@ -161,8 +183,7 @@ public class Nosemove : MonoBehaviour
             {
                 //if(Sdc.EmittingObject())
                 if (Sdc.pollenPoint >= 100)
-                {
-                    
+                {                   
                     StartCoroutine(SuperDash());
                 }
                 else
@@ -206,16 +227,19 @@ public class Nosemove : MonoBehaviour
                     if (z < growlevel && x >= growlevel)//右移動
                     {
                         myTransform.Rotate(0, 0, 3.0f, Space.World);
+
                     }
                     if (x < growlevel && z >= growlevel)
                     {
                        
                         myTransform.Rotate(0, 0, -3.0f, Space.World);//左移動
+
                     }
                   
                     if (x >= growlevel && z >= growlevel && Nose_Dush == true)
                     {
                         Debug.Log("iff");
+                        
                         transform.position += transform.rotation * new Vector2(0, speed * dash_speed);//ダッシュ
                     }
                     else if (x >= growlevel || z >= growlevel)
@@ -300,4 +324,6 @@ public class Nosemove : MonoBehaviour
             audiosorce.PlayOneShot(Damage[Random.Range(0, Damage.Length)]);
         }
     }
+
+    
 }
