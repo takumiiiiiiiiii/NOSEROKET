@@ -1,5 +1,6 @@
 using System.Collections;
 using AIE2D;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 
 
@@ -15,7 +16,16 @@ public class Nosemove : MonoBehaviour
     private Vector2 forword;
     AudioSource audiosorce;
     public AudioClip dash;
+    public AudioClip right_left_move;
+
+    private bool a_RightLeft_played;
+    private bool audioRight_played;
+    private bool audioLeft_played;
+
+    public AudioClip[] Damage;
     public SliderController Sdc;
+
+    
 
     //チャージ関連
     private float charge_time=0f;//チャージ時間を入れる
@@ -36,11 +46,16 @@ public class Nosemove : MonoBehaviour
         maxcharge = false;
         DoNotMove = false;
         Nose_Dush = false;
+        a_RightLeft_played = false;
+        audioRight_played = false;
+        audioLeft_played = false;
         anima = gameObject.GetComponent<Animator>();
         forword = transform.forward;
         _player = gameObject.GetComponent<AfterImageEffect2DPlayerBase>();
         audiosorce = GetComponent<AudioSource>();
+        
         Sdc = GameObject.Find("dash_slider").GetComponent<SliderController>();
+        
         //_player.CreateAfterImage(gameObject.GetComponent<SpriteRenderer>());
     }
     // Update is called once per frame
@@ -120,12 +135,30 @@ public class Nosemove : MonoBehaviour
             //アニメーション
             if (Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.Space) == false)
             {
-                anima.SetBool("Right_anima", true);
-                
+                anima.SetBool("Right_anima", true);                
             }
+            if (Input.GetKeyDown(KeyCode.LeftArrow) && Input.GetKey(KeyCode.Space) == false && !audioLeft_played)//左の鼻の穴をさす音
+            {
+                audiosorce.PlayOneShot(right_left_move);
+                audioLeft_played = true;
+            }
+            if (Input.GetKeyUp(KeyCode.LeftArrow) && Input.GetKey(KeyCode.Space) == false)
+            {
+                audioLeft_played = false; ;
+            }
+
             if (Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.Space) == false)
             {
-                anima.SetBool("Left_anima", true);
+                anima.SetBool("Left_anima", true);                
+            }
+            if (Input.GetKeyDown(KeyCode.RightArrow) && Input.GetKey(KeyCode.Space) == false && !audioRight_played)//右の鼻の穴をさす音
+            {
+                audiosorce.PlayOneShot(right_left_move);
+                audioRight_played = true;
+            }
+            if (Input.GetKeyUp(KeyCode.RightArrow) && Input.GetKey(KeyCode.Space) == false)
+            {
+                audioRight_played = false; ;
             }
 
             if (Input.GetKey(KeyCode.Space) && Nose_Dush == false)
@@ -154,8 +187,7 @@ public class Nosemove : MonoBehaviour
             {
                 //if(Sdc.EmittingObject())
                 if (Sdc.pollenPoint >= 100)
-                {
-                    
+                {                   
                     StartCoroutine(SuperDash());
                 }
                 else
@@ -200,20 +232,40 @@ public class Nosemove : MonoBehaviour
                     {
                         myTransform.Rotate(0, 0, 3.0f, Space.World);
                     }
+
                     if (x < growlevel && z >= growlevel)
-                    {
-                       
+                    {                      
                         myTransform.Rotate(0, 0, -3.0f, Space.World);//左移動
                     }
-                  
+
+                    if ((z < growlevel && x >= growlevel) && !audioRight_played)//右の鼻の穴をさす音
+                    {
+                        audiosorce.PlayOneShot(right_left_move);
+                        audioRight_played = true;
+                    }
+                    else
+                    {
+                        audioRight_played = false;
+                    }
+                    if ((x < growlevel && z >= growlevel) && !audioLeft_played)//左の鼻の穴をさす音
+                    {
+                        audiosorce.PlayOneShot(right_left_move);
+                        audioLeft_played = true;
+                    }
+                    else
+                    {
+                        audioLeft_played = false;
+                    }
+
+
                     if (x >= growlevel && z >= growlevel && Nose_Dush == true)
                     {
                         Debug.Log("iff");
+                        
                         transform.position += transform.rotation * new Vector2(0, speed * dash_speed);//ダッシュ
                     }
                     else if (x >= growlevel || z >= growlevel)
                     {
-
                         if (Nose_Dush == true)
                         {
                             transform.position += transform.rotation * new Vector2(0, speed * dash_speed);//ダッシュ
@@ -236,7 +288,7 @@ public class Nosemove : MonoBehaviour
                 }
                 if (Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.Space) == false)
                 {
-                    
+    
                     myTransform.Rotate(0, 0, -3.0f, Space.World);
                 }
                 if (Input.GetKey(KeyCode.Space) == false)
@@ -282,4 +334,17 @@ public class Nosemove : MonoBehaviour
         Nose_Dush = false;
         maxcharge = false;
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        //Nosemove nose;//呼ぶスクリプトにあだ名をつける
+        //GameObject obj = GameObject.Find("nose_player");//Circleというゲームオブジェクトを探す
+        //nose = obj.GetComponent<Nosemove>();//スクリプトを取得
+        if (collision.gameObject.tag == "Planet" && Nose_Dush == true)
+        {
+            audiosorce.PlayOneShot(Damage[Random.Range(0, Damage.Length)]);
+        }
+    }
+
+    
 }

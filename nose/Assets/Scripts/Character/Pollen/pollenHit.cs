@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
 using Unity.Burst.CompilerServices;
+using System.Security.Policy;
 
 
 public class pollenHit : MonoBehaviour
@@ -20,12 +21,15 @@ public class pollenHit : MonoBehaviour
     private Vector2 vec;//鼻のベクトルを入れる
     public Score Sc;
     public SliderController Sdc;
+    AudioSource audiosorce;
+    public AudioClip getpollen;
 
 
     // Start is called before the first frame update
     void Start()
     {
         targetCamera = GameObject.Find("MainCamera").GetComponent<Camera>();
+        audiosorce = GetComponent<AudioSource>();
         //カメラのいちを取得
         if (targetCamera == null)
         {
@@ -47,12 +51,14 @@ public class pollenHit : MonoBehaviour
             vec = Pvec - new Vector2(this.transform.position.x, this.transform.position.y);//プレイヤーの位置から敵の位置を引く
             vec = vec.normalized * speed;//正規化
 
+            
             StartCoroutine(Homing());
             RB.AddForce(vec * speed);
 
             //RB.velocity = vec * speed;
             if (this.transform.position.y < worldPos.y)
             {
+                
                 Sc.score += 100;
                 Sdc.CollectObject();
                 Destroy(this.gameObject);
@@ -65,6 +71,7 @@ public class pollenHit : MonoBehaviour
         {
             instant = true;
             Instantiate(pollen_point, this.transform.position, Quaternion.identity);
+            audiosorce.PlayOneShot(getpollen);
             Sc.score += 100;
             Sdc.CollectObject();
            
@@ -73,6 +80,7 @@ public class pollenHit : MonoBehaviour
     }
     private IEnumerator Homing()
     {
+        
         yield return new WaitForSeconds(0.1f);
  
         RB.velocity = vec * speed;

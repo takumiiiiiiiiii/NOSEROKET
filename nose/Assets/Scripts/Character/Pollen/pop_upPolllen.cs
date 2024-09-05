@@ -12,6 +12,7 @@ public class pop_upPollen : MonoBehaviour
     public Camera targetCamera;
     //
     [SerializeField] private GameObject pollen_point;
+    [SerializeField] private GameObject audio_getpollen;
     [SerializeField] private CircleCollider2D CC;
     [SerializeField] private Rigidbody2D RB;
     public float speed;
@@ -63,6 +64,7 @@ public class pop_upPollen : MonoBehaviour
         //RB.velocity = vec * speed;
         if (this.transform.position.y < worldPos.y)
         {
+            Instantiate(audio_getpollen, this.transform.position, Quaternion.identity);
             Sc.score += 100;
             Sdc.CollectObject();
             Destroy(this.gameObject);
