@@ -45,6 +45,12 @@ TagManager:
   - name: UI
     uniqueID: 313091619
     locked: 0
+  - name: Face
+    uniqueID: 377498691
+    locked: 0
+  - name: Title
+    uniqueID: 761794615
+    locked: 0
   - name: Blackscreen
     uniqueID: 3118830107
     locked: 0
