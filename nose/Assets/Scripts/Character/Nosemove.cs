@@ -319,7 +319,10 @@ public class Nosemove : MonoBehaviour
         maxcharge = false;
         
     }
+    public void SuperDashPatinko()
+    {
 
+    }
     private IEnumerator SuperDash()
     {
         Nose_Dush = true;

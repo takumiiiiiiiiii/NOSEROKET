@@ -116,7 +116,7 @@ public class AIface : MonoBehaviour
             {
                 MainSpriteRenderer.sprite = changeChargeSprite;
                 charge_time += Time.deltaTime;
-                Debug.Log(charge_time);
+                //Debug.Log(charge_time);
                 if (charge_time < 0.25f)
                 {
                     MainSpriteRenderer.sprite = changeChargeSprite;
