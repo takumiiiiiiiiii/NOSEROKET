@@ -41,7 +41,7 @@ public class Camerashake : MonoBehaviour
             if (shakecnt == true)
             {
 
-                StartShake(0.2f, 0.2f, 0.2f);
+                //StartShake(0.2f, 0.2f, 0.2f);
                 shakecnt = false;
             }
         }
@@ -112,6 +112,4 @@ public class Camerashake : MonoBehaviour
         _isDoShake = true;
         _totalShakeTime = 0.0f;
     }
-
-
 }

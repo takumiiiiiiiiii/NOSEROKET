@@ -81,6 +81,7 @@ public class FingerRightAnimation : MonoBehaviour
         }
         else
         {
+
             anima.SetBool("FingerIN", false);
             //アニメーション
             if (Nose_Dush == true)

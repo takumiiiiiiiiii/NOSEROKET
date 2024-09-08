@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class CameraPos : MonoBehaviour
 {
+    
     GameObject Nose;
+    private bool cameramove = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,9 +16,15 @@ public class CameraPos : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Nosemove.DoNotMove == false)
+        Debug.Log(cameramove);
+        if (Nosemove.DoNotMove==false&&cameramove)
         {
             this.transform.position = new Vector3(Nose.transform.position.x, Nose.transform.position.y, -10);
         }
+    }
+
+    public void StartAnime()
+    {
+
     }
 }
