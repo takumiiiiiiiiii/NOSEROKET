@@ -75,6 +75,7 @@ public class Nosemove : MonoBehaviour
                 //チャージ時間に応じた処理
                 if (z < growlevel && x < growlevel)
                 {
+                    anima.SetBool("charge", true);
                     charge_time += Time.deltaTime;
                     Debug.Log(charge_time);
                     if (charge_time < 0.25f)
@@ -97,11 +98,13 @@ public class Nosemove : MonoBehaviour
                 //花粉が溜まってないと動かない
                 if (x_before < growlevel && z_before < growlevel && Nose_Dush == false)
                 {
+
                     //if (Sdc.EmittingObject())
-                        StartCoroutine(Dash());
+                        //StartCoroutine(Dash());
                         
                     if (x >= growlevel || z >= growlevel)//
                     {
+                        anima.SetBool("charge", true);
                         StartCoroutine(Dash());
                     }
                 }
@@ -163,6 +166,8 @@ public class Nosemove : MonoBehaviour
 
             if (Input.GetKey(KeyCode.Space) && Nose_Dush == false)
             {
+
+                anima.SetBool("charge", true);
                 charge_time += Time.deltaTime;
                 Debug.Log(charge_time);
                 if (charge_time < 0.25f)
@@ -185,6 +190,7 @@ public class Nosemove : MonoBehaviour
             
             if (Input.GetKeyUp(KeyCode.Space) && Nose_Dush == false)
             {
+                anima.SetBool("charge",false);
                 StartCoroutine(Dash());
                 //if(Sdc.EmittingObject())
                 if (Sdc.pollenPoint >= 100)
