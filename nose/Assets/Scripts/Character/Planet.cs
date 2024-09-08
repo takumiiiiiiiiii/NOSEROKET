@@ -64,12 +64,19 @@ public class Planet : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+       
+
         Nosemove nose;//呼ぶスクリプトにあだ名をつける
         GameObject obj = GameObject.Find("nose_player");//Circleというゲームオブジェクトを探す
         nose = obj.GetComponent<Nosemove>();//スクリプトを取得
         if (collision.gameObject.tag == "Player" && Nosemove.Nose_Dush == true)
-        {           
+        {
+            GameObject game = GameObject.Find("MainCamera");
+            if (game != null)
+            {
+                Camerashake camerachake = game.GetComponent<Camerashake>();
+                camerachake.StartShake(0.6f, 0.6f, 0.6f);
+            }
             if (!Nosemove.maxcharge)
             {
                 StartCoroutine(Stopc_MoveNose());

@@ -144,7 +144,7 @@ public class Nosemove : MonoBehaviour
             }
             if (Input.GetKeyUp(KeyCode.LeftArrow) && Input.GetKey(KeyCode.Space) == false)
             {
-                audioLeft_played = false; ;
+                audioLeft_played = false;
             }
 
             if (Input.GetKey(KeyCode.RightArrow) && Input.GetKey(KeyCode.Space) == false)
@@ -185,13 +185,14 @@ public class Nosemove : MonoBehaviour
             
             if (Input.GetKeyUp(KeyCode.Space) && Nose_Dush == false)
             {
+                StartCoroutine(Dash());
                 //if(Sdc.EmittingObject())
                 if (Sdc.pollenPoint >= 100)
                 {                   
-                    StartCoroutine(SuperDash());
+                    //StartCoroutine(SuperDash());
                 }
-                else
-                    StartCoroutine(Dash());
+                
+                    //StartCoroutine(Dash());
             }
             if (Nose_Dush == true)
             {
@@ -317,11 +318,10 @@ public class Nosemove : MonoBehaviour
         charge_time = 0f;
         Nose_Dush = false;
         maxcharge = false;
-        
     }
-    public void SuperDashPatinko()
+    public void SuperDashStart()
     {
-
+        StartCoroutine(SuperDash());
     }
     private IEnumerator SuperDash()
     {

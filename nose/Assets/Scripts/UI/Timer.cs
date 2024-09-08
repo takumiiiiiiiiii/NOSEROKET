@@ -25,8 +25,11 @@ public class Timer : MonoBehaviour
     public Text timerText;
     public float waitTime = 1000;
     public string scenename;
+    //タイマーのていし
+    public static bool timerStop;
     void Start()
     {
+        timerStop = false;
         //minute = 0;
         //seconds = 0;
         totalTime = minute * 60 + seconds;
