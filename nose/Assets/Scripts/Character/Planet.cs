@@ -11,7 +11,7 @@ public class Planet : MonoBehaviour
 
     private bool Hit = false;//ダッシュ中の鼻にあたったかを判定
     private Vector2 vec;//鼻のベクトルを入れる
-    private bool vector_get=true;//当たった瞬間のベクトルを取得する
+    private bool vector_get = true;//当たった瞬間のベクトルを取得する
     Rigidbody2D RB;
     CircleCollider2D CC;
     SliderController Sdc;
