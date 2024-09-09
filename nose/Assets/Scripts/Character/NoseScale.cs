@@ -29,7 +29,7 @@ public class NoseScale : MonoBehaviour
             this.transform.localScale = new Vector2(0.53f * i + 0.53f, 0.53f * i + 0.53f);
             yield return new WaitForSeconds(0.01f);
         }
-        ScaleUpFlag = true;
+        ScaleUpFlag = true; 
     }
 
     IEnumerator ScaleDown()
