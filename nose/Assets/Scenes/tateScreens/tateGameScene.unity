@@ -4820,6 +4820,7 @@ GameObject:
   - component: {fileID: 208241181}
   - component: {fileID: 208241182}
   - component: {fileID: 208241183}
+  - component: {fileID: 208241184}
   m_Layer: 6
   m_Name: nose_player
   m_TagString: Player
@@ -4916,7 +4917,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.53764004, y: 0.53764004, z: 2.6882}
+  m_LocalScale: {x: 0.53, y: 0.53, z: 2.6882}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1684312458}
@@ -5197,6 +5198,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &208241184
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 208241173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68106880b1c4246c5b90322059090213, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sdc: {fileID: 1758798133}
 --- !u!1 &225694999
 GameObject:
   m_ObjectHideFlags: 0
