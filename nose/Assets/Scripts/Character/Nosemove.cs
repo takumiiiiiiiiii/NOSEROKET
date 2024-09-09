@@ -15,6 +15,7 @@ public class Nosemove : MonoBehaviour
     public  static float growlevel=0.6f;
     private Vector2 forword;
     AudioSource audiosorce;
+    AudioSource audiosorce2;
     public AudioClip charge;
     public AudioClip dash;
     public AudioClip right_left_move;
@@ -31,6 +32,8 @@ public class Nosemove : MonoBehaviour
     //チャージ関連
     private float charge_time=0f;//チャージ時間を入れる
     public static bool maxcharge = false;//最大チャージ
+
+    [SerializeField] private GameObject audio_charge;
 
     [HideInInspector] public static bool DoNotMove=false;
     [HideInInspector] public static bool Nose_Dush=false;
@@ -54,7 +57,8 @@ public class Nosemove : MonoBehaviour
         forword = transform.forward;
         _player = gameObject.GetComponent<AfterImageEffect2DPlayerBase>();
         audiosorce = GetComponent<AudioSource>();
-        
+        audiosorce2 = GetComponent<AudioSource>();
+
         Sdc = GameObject.Find("dash_slider").GetComponent<SliderController>();
         
         //_player.CreateAfterImage(gameObject.GetComponent<SpriteRenderer>());
@@ -165,15 +169,15 @@ public class Nosemove : MonoBehaviour
                 audioRight_played = false; ;
             }
 
-            if (Input.GetKeyDown(KeyCode.Space) && Nose_Dush == false && !audioCharge_played)//右の鼻の穴をさす音
+            if (Input.GetKeyDown(KeyCode.Space) && Nose_Dush == false && !audioCharge_played)//音
             {
-                audiosorce.PlayOneShot(charge);
+                Instantiate(audio_charge, this.transform.position, Quaternion.identity);
                 audioCharge_played = true;
             }
             if (Input.GetKeyUp(KeyCode.RightArrow) && Nose_Dush == false)
             {
+                Destroy(this.gameObject);
                 audioCharge_played = false;
-                audiosorce.Stop();
             }
 
             if (Input.GetKey(KeyCode.Space) && Nose_Dush == false)
