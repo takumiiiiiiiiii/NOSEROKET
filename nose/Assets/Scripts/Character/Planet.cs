@@ -50,6 +50,10 @@ public class Planet : MonoBehaviour
 
             }
             RB.velocity = -vec * speed;
+            if(this.transform.position.x < -140)
+            {
+                CC.isTrigger = false;
+            }
         }
     }
     private IEnumerator Stopc_MoveNose()//鼻を一時的にフリーズさせる
