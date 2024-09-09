@@ -106,8 +106,8 @@ public class FingerRightAnimation : MonoBehaviour
                 }
                 else if (charge_time >= 0.5f && charge_time < 0.75f)
                 {
-
                     // 長く押された場合の反応を記述
+
                 }
                 else
                 {
