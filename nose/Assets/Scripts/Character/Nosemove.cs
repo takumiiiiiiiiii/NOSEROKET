@@ -15,10 +15,11 @@ public class Nosemove : MonoBehaviour
     public  static float growlevel=0.6f;
     private Vector2 forword;
     AudioSource audiosorce;
+    public AudioClip charge;
     public AudioClip dash;
     public AudioClip right_left_move;
 
-    private bool a_RightLeft_played;
+    private bool audioCharge_played;
     private bool audioRight_played;
     private bool audioLeft_played;
 
@@ -46,7 +47,7 @@ public class Nosemove : MonoBehaviour
         maxcharge = false;
         DoNotMove = false;
         Nose_Dush = false;
-        a_RightLeft_played = false;
+        audioCharge_played = false;
         audioRight_played = false;
         audioLeft_played = false;
         anima = gameObject.GetComponent<Animator>();
@@ -164,10 +165,21 @@ public class Nosemove : MonoBehaviour
                 audioRight_played = false; ;
             }
 
+            if (Input.GetKeyDown(KeyCode.Space) && Nose_Dush == false && !audioCharge_played)//右の鼻の穴をさす音
+            {
+                audiosorce.PlayOneShot(charge);
+                audioCharge_played = true;
+            }
+            if (Input.GetKeyUp(KeyCode.RightArrow) && Nose_Dush == false)
+            {
+                audioCharge_played = false;
+                audiosorce.Stop();
+            }
+
             if (Input.GetKey(KeyCode.Space) && Nose_Dush == false)
             {
 
-                anima.SetBool("charge", true);
+                anima.SetBool("charge", true);                
                 charge_time += Time.deltaTime;
                 Debug.Log(charge_time);
                 if (charge_time < 0.25f)

@@ -5046,6 +5046,7 @@ MonoBehaviour:
   speed: 0.1
   dash_speed: 4
   player_vector: {x: 0, y: 0}
+  charge: {fileID: 8300000, guid: 5c963552b1ee54d87b608877648b2913, type: 3}
   dash: {fileID: 8300000, guid: 4c56a83be3b4e43d2b1b99c086aa5b25, type: 3}
   right_left_move: {fileID: 8300000, guid: ddaa0fc38c2e940f487cd081f59f6d91, type: 3}
   Damage:
