@@ -1,7 +1,6 @@
 using System.Collections;
 using AIE2D;
 using Unity.Burst.CompilerServices;
-using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -9,7 +8,6 @@ public class Nosemove : MonoBehaviour
 {
     // Start is called before the first frame update
     public Rigidbody2D RB;
-    public CircleCollider2D CC2D;
     public Animator anima;
     public float speed;//鼻の移動スピードを入力する
     public float dash_speed=2;//ダッシュ時のスピード
@@ -57,11 +55,7 @@ public class Nosemove : MonoBehaviour
         audiosorce = GetComponent<AudioSource>();
         
         Sdc = GameObject.Find("dash_slider").GetComponent<SliderController>();
-        CC2D = gameObject.AddComponent<CircleCollider2D>();
-        CC2D.radius = 0.0001f;
-        CC2D.isTrigger = false;
-        CC2D.offset = new Vector2(0, 1);
-
+        
         //_player.CreateAfterImage(gameObject.GetComponent<SpriteRenderer>());
     }
     // Update is called once per frame
@@ -329,8 +323,6 @@ public class Nosemove : MonoBehaviour
     private IEnumerator SuperDash()
     {
         Nose_Dush = true;
-        anima.SetBool("Charge", true);
-        CC2D.radius = 3.0f;
         audiosorce.PlayOneShot(dash);
         Sdc.feverFlag = true;
         Sdc.FeverTime();
@@ -340,8 +332,6 @@ public class Nosemove : MonoBehaviour
         Sdc.FeverTime();
         charge_time = 0f;
         Nose_Dush = false;
-        CC2D.radius = 0.0001f;
-        anima.SetBool("Charge", false);
         maxcharge = false;
     }
 
