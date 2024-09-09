@@ -18,7 +18,7 @@ public class countdown : MonoBehaviour
         if (currentTime > 0)
         {
             currentTime -= Time.deltaTime;  // カウントダウンの進行
-            textMesh.text = Mathf.Ceil(currentTime).ToString();  // 小数点以下を切り捨てて表示
+            textMesh.text = Mathf.Ceil(currentTime).ToString();   // 小数点以下を切り捨てて表示
         }
         else
         {
