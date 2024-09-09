@@ -9,7 +9,7 @@ public class PlanetDestroy : MonoBehaviour
     {
         if (collision.gameObject.tag == "Planet")
         {
-            Destroy(collision.gameObject);
+            Destroy(collision.gameObject); 
         }
     }
 }
