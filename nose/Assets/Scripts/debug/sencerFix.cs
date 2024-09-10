@@ -11,7 +11,7 @@ public class sencerFix : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
@@ -19,12 +19,16 @@ public class sencerFix : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            Nosemove.growlevel += 0.1f;
+            Nosemove.growlevel += 1f;
         }
         if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            Nosemove.growlevel -= 0.1f;
+            Nosemove.growlevel -= 1f;
         }
+        Serial serial;//呼ぶスクリプトにあだ名をつける
+        GameObject objc = GameObject.Find("sencer");//Circleというゲームオブジェクトを探す
+        serial = objc.GetComponent<Serial>();//スクリプトを取得
+
         scoreText.text = string.Format("{0}", Nosemove.growlevel);
     }
 }
