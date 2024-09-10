@@ -16,7 +16,7 @@ public class CameraPos : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(cameramove);
+        //Debug.Log(cameramove);
         if (Nosemove.DoNotMove==false&&cameramove)
         {
             this.transform.position = new Vector3(Nose.transform.position.x, Nose.transform.position.y, -10);

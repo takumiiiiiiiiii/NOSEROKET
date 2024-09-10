@@ -65,8 +65,11 @@ public class pop_upPollen : MonoBehaviour
         if (this.transform.position.y < worldPos.y)
         {
             Instantiate(audio_getpollen, this.transform.position, Quaternion.identity);
-            Sc.score += 100;
-            Sdc.CollectObject();
+            if (Sc != null)
+            {
+                Sc.score += 100;
+                Sdc.CollectObject();
+            }
             Destroy(this.gameObject);
         }
     }

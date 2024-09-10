@@ -12,7 +12,7 @@ public class Nosemove : MonoBehaviour
     public float speed;//鼻の移動スピードを入力する
     public float dash_speed=2;//ダッシュ時のスピード
     public Vector2 player_vector;//プレイヤーの現在地を記録
-    public  static float growlevel=0.6f;
+    public  static float growlevel=30f;
     private Vector2 forword;
     AudioSource audiosorce;
     public AudioClip dash;
@@ -61,7 +61,7 @@ public class Nosemove : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
-        Debug.Log("チャージ状態"+maxcharge);
+        //Debug.Log("チャージ状態"+maxcharge);
         Serial serial;//呼ぶスクリプトにあだ名をつける
         GameObject objc = GameObject.Find("sencer");//Circleというゲームオブジェクトを探す
         serial = objc.GetComponent<Serial>();//スクリプトを取得
@@ -72,6 +72,7 @@ public class Nosemove : MonoBehaviour
             float x, z;
             if (float.TryParse(serial.x, out x)&&float.TryParse(serial.z, out z))
             {
+                x = x - 25f;
                 //チャージ時間に応じた処理
                 if (z < growlevel && x < growlevel)
                 {
@@ -218,21 +219,22 @@ public class Nosemove : MonoBehaviour
         player_vector = this.transform.position;
         myTransform = this.transform;
         Vector3 worldAngle = myTransform.eulerAngles;
-        Debug.Log(Nose_Dush);
+        //Debug.Log(Nose_Dush);
         worldAngle.x = 10.0f;
         worldAngle.y = 0;
         worldAngle.z = 0;
-        Debug.Log("DoNotMove:" + DoNotMove);
+        //Debug.Log("DoNotMove:" + DoNotMove);
         Serial serial;//呼ぶスクリプトにあだ名をつける
         GameObject objc = GameObject.Find("sencer");//Circleというゲームオブジェクトを探す
         serial = objc.GetComponent<Serial>();//スクリプトを取得
-        
+        Debug.Log("センサーの接続:"+serial.connect_char);
         if (serial.connect_char == true)
         {
             float x, z;
             if (float.TryParse(serial.x, out x) && float.TryParse(serial.z, out z))//文字を数字に直しつつ変なデータがきたら弾く
             {
-                Debug.Log("X:" + x);
+                x = x - 25;
+                //Debug.Log("X:" + x);
                 if (DoNotMove == false)
                 {
                     if (z < growlevel && x >= growlevel)//右移動

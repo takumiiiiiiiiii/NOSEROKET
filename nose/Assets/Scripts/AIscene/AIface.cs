@@ -41,7 +41,7 @@ public class AIface : MonoBehaviour
             if (float.TryParse(serial.x, out x) && float.TryParse(serial.z, out z))//文字を数字に直しつつ変なデータがきたら弾く
             {
                 MainSpriteRenderer.sprite = changeNormalSprite;
-                Debug.Log("X:" + x);
+                //Debug.Log("X:" + x);
                 if (DoNotMove == false)
                 {
                     if (z < Nosemove.growlevel && x >= Nosemove.growlevel)//右に指を入れる
