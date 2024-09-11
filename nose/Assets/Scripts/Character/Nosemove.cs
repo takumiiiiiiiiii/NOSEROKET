@@ -15,10 +15,12 @@ public class Nosemove : MonoBehaviour
     public  static float growlevel=30f;
     private Vector2 forword;
     AudioSource audiosorce;
+    AudioSource audiosorce2;
+    public AudioClip charge;
     public AudioClip dash;
     public AudioClip right_left_move;
 
-    private bool a_RightLeft_played;
+    private bool audioCharge_played;
     private bool audioRight_played;
     private bool audioLeft_played;
 
@@ -30,6 +32,8 @@ public class Nosemove : MonoBehaviour
     //チャージ関連
     private float charge_time=0f;//チャージ時間を入れる
     public static bool maxcharge = false;//最大チャージ
+
+    [SerializeField] private GameObject audio_charge;
 
     [HideInInspector] public static bool DoNotMove=false;
     [HideInInspector] public static bool Nose_Dush=false;
@@ -47,14 +51,15 @@ public class Nosemove : MonoBehaviour
         maxcharge = false;
         DoNotMove = false;
         Nose_Dush = false;
-        a_RightLeft_played = false;
+        audioCharge_played = false;
         audioRight_played = false;
         audioLeft_played = false;
         anima = gameObject.GetComponent<Animator>();
         forword = transform.forward;
         _player = gameObject.GetComponent<AfterImageEffect2DPlayerBase>();
         audiosorce = GetComponent<AudioSource>();
-        
+        audiosorce2 = GetComponent<AudioSource>();
+
         Sdc = GameObject.Find("dash_slider").GetComponent<SliderController>();
         
         //_player.CreateAfterImage(gameObject.GetComponent<SpriteRenderer>());
@@ -166,10 +171,22 @@ public class Nosemove : MonoBehaviour
                 audioRight_played = false; ;
             }
 
+            if (Input.GetKey(KeyCode.Space) && Nose_Dush == false && !audioCharge_played)//音
+            {
+                audiosorce2.PlayOneShot(charge);
+                audiosorce2.PlayOneShot(charge);
+                audioCharge_played = true;
+            }
+            if (Input.GetKeyUp(KeyCode.Space) && Nose_Dush == false)
+            {
+                audiosorce2.Stop();
+                audioCharge_played = false;
+            }
+
             if (Input.GetKey(KeyCode.Space) && Nose_Dush == false)
             {
 
-                anima.SetBool("charge", true);
+                anima.SetBool("charge", true);                
                 charge_time += Time.deltaTime;
                 Debug.Log(charge_time);
                 if (charge_time < 0.25f)
