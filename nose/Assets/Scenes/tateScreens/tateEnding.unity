@@ -1678,8 +1678,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: feb04ece56bc244ad9f7e22be11de304, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage:
-  - {fileID: 0}
 --- !u!114 &519420034
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1870,10 +1868,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50ed87b3482c54a3596b06138325c567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  portName: /dev/cu.usbserial-6552CACE16
+  portName: /dev/cu.usbmodem101
   baurate: 9600
   conect: 0
   connect_char: 0
+  xfl: 10000
+  zfl: 10000
   cntx: 
   cntz: 
   x: 10
@@ -4579,6 +4579,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: tree_prefab
       objectReference: {fileID: 0}
+    - target: {fileID: 5683628914129367301, guid: 96e28c63978bb441bb8ae1d541a10fe4, type: 3}
+      propertyPath: m_FlipX
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5891673560341877771, guid: 96e28c63978bb441bb8ae1d541a10fe4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.87
@@ -4644,7 +4648,7 @@ MonoBehaviour:
   RB: {fileID: 0}
   between: 2
   tree: {fileID: 5303262885290699823, guid: 96e28c63978bb441bb8ae1d541a10fe4, type: 3}
-  debug: 1
+  debug: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

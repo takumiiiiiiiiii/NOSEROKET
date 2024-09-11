@@ -5,10 +5,11 @@ using UnityEngine;
 public class Nose_anime : MonoBehaviour
 {
     public Animator anima;
-    [HideInInspector] private float x_before = 10f, z_before = 10f;
+    [HideInInspector] private float x_before = 10000f, z_before = 10000f;
     // Start is called before the first frame update
     void Start()
     {
+        Debug.Log("xbfore" + x_before);
         anima = gameObject.GetComponent<Animator>();
     }
 
@@ -28,7 +29,6 @@ public class Nose_anime : MonoBehaviour
             }
             if (x_before < Nosemove.growlevel && z_before < Nosemove.growlevel)
             {
-
                 if (x >= Nosemove.growlevel || z >= Nosemove.growlevel)
                 {
                     anima.SetBool("Puff_anima", true);

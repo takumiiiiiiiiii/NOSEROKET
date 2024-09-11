@@ -9460,7 +9460,7 @@ AudioListener:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 495805510}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!20 &495805512
 Camera:
   m_ObjectHideFlags: 0
@@ -15269,10 +15269,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 50ed87b3482c54a3596b06138325c567, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  portName: /dev/cu.usbserial-6552CACE16
+  portName: /dev/cu.usbmodem101
   baurate: 9600
   conect: 0
   connect_char: 0
+  xfl: 10000
+  zfl: 10000
   cntx: 
   cntz: 
   x: 
@@ -17716,7 +17718,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 850, y: 169}
+  m_AnchoredPosition: {x: 1076, y: 169}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!328 &950440236

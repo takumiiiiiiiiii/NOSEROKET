@@ -8,8 +8,8 @@ public class FingerRightAnimation : MonoBehaviour
     [HideInInspector] public static bool DoNotMove = false;
     [HideInInspector] public static bool Nose_Dush = false;
     [HideInInspector] public static bool Nose_Charge = false;
-    private float x_before = 10;
-    private float z_before = 10;
+    private float x_before = 10000;
+    private float z_before = 10000;
     private float charge_time = 0f;
     // Start is called before the first frame update
     void Start()
@@ -31,7 +31,7 @@ public class FingerRightAnimation : MonoBehaviour
             float x, z;
             if (float.TryParse(serial.x, out x) && float.TryParse(serial.z, out z))//文字を数字に直しつつ変なデータがきたら弾く
             {
-                Debug.Log("X:" + x);
+                //Debug.Log("X:" + x);
                 anima.SetBool("FingerIN", false);
                 if (DoNotMove == false)
                 {

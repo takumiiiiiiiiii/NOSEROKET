@@ -65,7 +65,7 @@ public class Serial : MonoBehaviour
     {
         while (this.isLoop)
         {
-            Debug.Log("whilestart");
+            //Debug.Log("whilestart");
             cntx = this.serial.ReadLine();
             cntz = this.serial.ReadLine();
             string cntx1 = cntx.Substring(0, 1);
@@ -91,7 +91,7 @@ public class Serial : MonoBehaviour
             //UnityEngine.Debug.Log("x="+x);
             //UnityEngine.Debug.Log("z="+z);
             connect_char = true;
-            Debug.Log("whileEnd");
+            //Debug.Log("whileEnd");
             
             if (float.TryParse(x, out xfl) && float.TryParse(z, out zfl))
             {

@@ -6,8 +6,8 @@ public class DominoStart : MonoBehaviour
 {
     private Vector2 thispos;
     public static bool end_start=false;
-    private float x_before = 10;
-    private float z_before = 10;
+    private float x_before = 10000;
+    private float z_before = 10000;
     [SerializeField] private Rigidbody2D RB;
 
     AudioSource audiosorce;
@@ -30,8 +30,6 @@ public class DominoStart : MonoBehaviour
         Serial serial;//呼ぶスクリプトにあだ名をつける
         GameObject objc = GameObject.Find("sencer");//Circleというゲームオブジェクトを探す
         serial = objc.GetComponent<Serial>();//スクリプトを取得
-
-
         float x, z;
         if (!end_start)
         {

@@ -34,7 +34,7 @@ public class Nosemove : MonoBehaviour
     [HideInInspector] public static bool DoNotMove=false;
     [HideInInspector] public static bool Nose_Dush=false;
     [HideInInspector] public static Transform myTransform;
-    [HideInInspector] private float x_before=10f,z_before=10f;
+    [HideInInspector] private float x_before=10000f,z_before=10000f;
     
 
     private AfterImageEffect2DPlayerBase _player = null;
@@ -43,6 +43,7 @@ public class Nosemove : MonoBehaviour
     private 
     void Start()
     {
+        growlevel = 49;
         maxcharge = false;
         DoNotMove = false;
         Nose_Dush = false;
@@ -247,19 +248,25 @@ public class Nosemove : MonoBehaviour
                         myTransform.Rotate(0, 0, -3.0f, Space.World);//左移動
                     }
 
-                    if ((z < growlevel && x >= growlevel) && !audioRight_played)//右の鼻の穴をさす音
+                    if ((z < growlevel && x >= growlevel))//右の鼻の穴をさす音
                     {
-                        audiosorce.PlayOneShot(right_left_move);
-                        audioRight_played = true;
+                        if (!audioRight_played)
+                        {
+                            audiosorce.PlayOneShot(right_left_move);
+                            audioRight_played = true;
+                        }
                     }
                     else
                     {
                         audioRight_played = false;
                     }
-                    if ((x < growlevel && z >= growlevel) && !audioLeft_played)//左の鼻の穴をさす音
+                    if ((x < growlevel && z >= growlevel))//左の鼻の穴をさす音
                     {
-                        audiosorce.PlayOneShot(right_left_move);
-                        audioLeft_played = true;
+                        if (!audioLeft_played)
+                        {
+                            audiosorce.PlayOneShot(right_left_move);
+                            audioLeft_played = true;
+                        }
                     }
                     else
                     {
