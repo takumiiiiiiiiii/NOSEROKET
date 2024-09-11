@@ -72,7 +72,7 @@ public class Nosemove : MonoBehaviour
             float x, z;
             if (float.TryParse(serial.x, out x)&&float.TryParse(serial.z, out z))
             {
-                x = x - 25f;
+                //x = x - 25f;
                 //チャージ時間に応じた処理
                 if (z < growlevel && x < growlevel)
                 {
@@ -233,7 +233,7 @@ public class Nosemove : MonoBehaviour
             float x, z;
             if (float.TryParse(serial.x, out x) && float.TryParse(serial.z, out z))//文字を数字に直しつつ変なデータがきたら弾く
             {
-                x = x - 25;
+                //x = x - 25;
                 //Debug.Log("X:" + x);
                 if (DoNotMove == false)
                 {
