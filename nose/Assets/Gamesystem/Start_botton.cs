@@ -12,8 +12,8 @@ public class Start_botton : MonoBehaviour
     AudioSource audiosorce;
     public AudioClip gonose;
     public Animator anima;
-    private float x_before = 10000;
-    private float z_before = 10000;
+    private float x_bef = 10000;
+    private float z_bef = 10000;
     private bool anime_start = false;
     private float add_spd = -11.0f;  
     // Start is called before the first frame update
@@ -38,7 +38,7 @@ public class Start_botton : MonoBehaviour
             {
                 anima.SetBool("Charge", true);
             }
-            if (x_before < Nosemove.growlevel && z_before < Nosemove.growlevel)
+            if (x_bef < Nosemove.growlevel && z_bef < Nosemove.growlevel)
             {
                 if (x >= Nosemove.growlevel || z >= Nosemove.growlevel)
                 {
@@ -47,8 +47,8 @@ public class Start_botton : MonoBehaviour
                     MainSpriteRenderer.sprite = changeSprite;
                 }
             }
-            x_before = x;
-            z_before = z;
+            x_bef = x;
+            z_bef = z;
         }
         if (Input.GetKeyDown(KeyCode.Space)) //スペースキーをおした場合
         {

@@ -15,6 +15,8 @@ public class DominoStart : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        x_before = 1000;
+        z_before = 1000;
         end_start = false;
         RB = GetComponent<Rigidbody2D>();
         RB.gravityScale = 0;
@@ -26,6 +28,7 @@ public class DominoStart : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Debug.Log("x_before" + x_before);
         //Debug.Log(end_start);
         Serial serial;//呼ぶスクリプトにあだ名をつける
         GameObject objc = GameObject.Find("sencer");//Circleというゲームオブジェクトを探す
@@ -35,19 +38,30 @@ public class DominoStart : MonoBehaviour
         {
             this.transform.position = thispos;
         }
+
         if (serial.conect&&float.TryParse(serial.x, out x) && float.TryParse(serial.z, out z))
         {
-            
-            if (x_before <  Nosemove.growlevel && z_before < Nosemove.growlevel)
+            if (x_before < Nosemove.growlevel && z_before < Nosemove.growlevel)
             {
                 if (x >= Nosemove.growlevel || z >= Nosemove.growlevel)
                 {
+                    Debug.Log("x_before" + x_before + "x" + x);
                     RB.gravityScale = 100;
                     end_start = true;
                 }
             }
             x_before = x;
             z_before = z;
+            //if (x_before <  Nosemove.growlevel && z_before < Nosemove.growlevel)
+            //{
+            //    if (x >= Nosemove.growlevel || z >= Nosemove.growlevel)
+            //    {
+            //        RB.gravityScale = 100;
+            //        end_start = true;
+            //    }
+            //}
+            //x_before = x;
+            //z_before = z;
         }
         if (Input.GetKeyUp(KeyCode.Space))
         {
