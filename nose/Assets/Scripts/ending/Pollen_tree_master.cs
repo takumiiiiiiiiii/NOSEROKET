@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.CompilerServices;
 using Unity.VisualScripting;
 using UnityEngine;
 [RequireComponent(typeof(Rigidbody2D))]
@@ -34,12 +35,17 @@ public class Pollen_tree_master : MonoBehaviour
         camera_xpos = 0.4f;
         RB = GetComponent<Rigidbody2D>();
         CC = GetComponent<CircleCollider2D>();
-        Instantiate(tree, this.transform.position+new Vector3(distance,0,0), Quaternion.identity);//花粉を置く
+        Instantiate(tree, this.transform.position+new Vector3(distance,0,0), Quaternion.identity);//木を置く
     }
     // Update is called once per frame
     void Update()
     {
  
         //RB.AddForce(new Vector2(10, 0));
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        
     }
 }
