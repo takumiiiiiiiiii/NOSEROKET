@@ -5,8 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class Blackout : MonoBehaviour
 {
-    private float x_before = 10;
-    private float z_before = 10;
+    private float x_before = 10000;
+    private float z_before = 10000;
     private bool anime_start = false;
     private SpriteRenderer objRenderer;
     private float alpha;

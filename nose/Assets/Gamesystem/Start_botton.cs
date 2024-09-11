@@ -12,8 +12,8 @@ public class Start_botton : MonoBehaviour
     AudioSource audiosorce;
     public AudioClip gonose;
     public Animator anima;
-    private float x_before = 10;
-    private float z_before = 10;
+    private float x_before = 10000;
+    private float z_before = 10000;
     private bool anime_start = false;
     private float add_spd = -11.0f;  
     // Start is called before the first frame update

@@ -13,8 +13,8 @@ public class patinko : MonoBehaviour
     public VideoClip[] videoClips;        // 再生する動画クリップを格納する配列
     public bool[] autoSwitchFlags ;// 各動画に対する自動遷移フラグ
     private int currentClipIndex = 0;//現在の動画番号
-    private float x_before = 10;//センサーの前の値
-    private float z_before = 10;//センサーの前の値
+    private float x_before = 10000;//センサーの前の値
+    private float z_before = 10000;//センサーの前の値
     //boolたち
     private bool Startanime = false;
     private bool patinkoawake = true;//一回だけ呼び出す
@@ -138,13 +138,16 @@ public class patinko : MonoBehaviour
 
                     if (x >= Nosemove.growlevel && z >= Nosemove.growlevel)
                     {
+                        Debug.Log("x" + x + "growlevel" + Nosemove.growlevel);
                         SwitchToBeforeClip();
                     }
 
                 }
-                if (!Input.GetKey(KeyCode.Space))
-                {
-                    SwitchToBeforeClip();
+                else {
+                    if (!Input.GetKey(KeyCode.Space))
+                    {
+                        SwitchToBeforeClip();
+                    }
                 }
                 break;//switch文を抜ける
             case 3: //はなせ！
@@ -159,9 +162,12 @@ public class patinko : MonoBehaviour
                     z_before = z;
 
                 }
-                if (!Input.GetKey(KeyCode.Space))
+                else
                 {
-                    SwitchToNextClip();
+                    if (!Input.GetKey(KeyCode.Space))
+                    {
+                        SwitchToNextClip();
+                    }
                 }
                 break;//switch文を抜ける
             case 4: //ホワイトアウト
