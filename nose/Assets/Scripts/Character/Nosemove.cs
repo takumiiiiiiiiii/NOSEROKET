@@ -169,14 +169,13 @@ public class Nosemove : MonoBehaviour
                 audioRight_played = false; ;
             }
 
-            if (Input.GetKeyDown(KeyCode.Space) && Nose_Dush == false && !audioCharge_played)//音
+            if (Input.GetKey(KeyCode.Space) && Nose_Dush == false && !audioCharge_played)//音
             {
-                Instantiate(audio_charge, this.transform.position, Quaternion.identity);
+                audiosorce.PlayOneShot(charge);
                 audioCharge_played = true;
             }
-            if (Input.GetKeyUp(KeyCode.RightArrow) && Nose_Dush == false)
+            if (Input.GetKeyUp(KeyCode.Space) && Nose_Dush == false)
             {
-                Destroy(this.gameObject);
                 audioCharge_played = false;
             }
 
