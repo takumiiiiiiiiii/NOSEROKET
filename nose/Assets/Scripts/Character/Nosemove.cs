@@ -171,11 +171,13 @@ public class Nosemove : MonoBehaviour
 
             if (Input.GetKey(KeyCode.Space) && Nose_Dush == false && !audioCharge_played)//音
             {
-                audiosorce.PlayOneShot(charge);
+                audiosorce2.PlayOneShot(charge);
+                audiosorce2.PlayOneShot(charge);
                 audioCharge_played = true;
             }
             if (Input.GetKeyUp(KeyCode.Space) && Nose_Dush == false)
             {
+                audiosorce2.Stop();
                 audioCharge_played = false;
             }
 

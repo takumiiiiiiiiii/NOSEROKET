@@ -4959,7 +4959,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: -0.8, y: 0.4}
   serializedVersion: 2
-  m_Radius: 0.25
+  m_Radius: 0.3
 --- !u!58 &208241178
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4994,7 +4994,7 @@ CircleCollider2D:
   m_UsedByComposite: 0
   m_Offset: {x: 0.8, y: 0.4}
   serializedVersion: 2
-  m_Radius: 0.25
+  m_Radius: 0.3
 --- !u!70 &208241179
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -5028,7 +5028,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 1.8}
-  m_Size: {x: 1, y: 1.8}
+  m_Size: {x: 1.2, y: 1.9}
   m_Direction: 0
 --- !u!114 &208241180
 MonoBehaviour:
@@ -5047,7 +5047,7 @@ MonoBehaviour:
   speed: 0.1
   dash_speed: 4
   player_vector: {x: 0, y: 0}
-  charge: {fileID: 8300000, guid: 5c963552b1ee54d87b608877648b2913, type: 3}
+  charge: {fileID: 8300000, guid: 0316fd458295b40a7bc14dd9b0205241, type: 3}
   dash: {fileID: 8300000, guid: 4c56a83be3b4e43d2b1b99c086aa5b25, type: 3}
   right_left_move: {fileID: 8300000, guid: ddaa0fc38c2e940f487cd081f59f6d91, type: 3}
   Damage:
