@@ -290,6 +290,17 @@ public class Nosemove : MonoBehaviour
                         audioLeft_played = false;
                     }
 
+                    if ((x >= growlevel && z >= growlevel) && Nose_Dush == false && !audioCharge_played)//ダッシュ音
+                    {
+                        audiosorce2.PlayOneShot(charge);
+                        audiosorce2.PlayOneShot(charge);
+                        audioCharge_played = true;
+                    }
+                    if ((x >= growlevel && z >= growlevel) && Nose_Dush == false)
+                    {
+                        audiosorce2.Stop();
+                        audioCharge_played = false;
+                    }
 
                     if (x >= growlevel && z >= growlevel && Nose_Dush == true)
                     {
