@@ -129,13 +129,11 @@ public class Nosemove : MonoBehaviour
                 z_before = z;
                 if (x < growlevel && z >= growlevel)
                 {
-                   
-                    anima.SetBool("Right_anima", true);
+                    anima.SetBool("Left_anima", true);
                 }
                 if (z < growlevel && x >= growlevel)
                 {
-                    anima.SetBool("Left_anima", true);
-                    
+                    anima.SetBool("Right_anima", true);
                 }
             }
            
@@ -257,12 +255,13 @@ public class Nosemove : MonoBehaviour
                 {
                     if (z < growlevel && x >= growlevel)//右移動
                     {
-                        myTransform.Rotate(0, 0, 3.0f, Space.World);
+                        myTransform.Rotate(0, 0, -3.0f, Space.World);//左移動
+
                     }
 
                     if (x < growlevel && z >= growlevel)
-                    {                      
-                        myTransform.Rotate(0, 0, -3.0f, Space.World);//左移動
+                    {
+                        myTransform.Rotate(0, 0, 3.0f, Space.World);
                     }
 
                     if ((z < growlevel && x >= growlevel))//右の鼻の穴をさす音
