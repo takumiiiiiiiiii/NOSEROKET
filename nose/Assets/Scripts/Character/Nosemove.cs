@@ -75,6 +75,7 @@ public class Nosemove : MonoBehaviour
         anima.SetBool("Right_anima", false);
         if (serial.connect_char == true)
         {
+            anima.SetBool("charge", false);
             float x, z;
             if (float.TryParse(serial.x, out x)&&float.TryParse(serial.z, out z))
             {
