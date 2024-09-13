@@ -36,7 +36,7 @@ public class FingerLeftAnimation : MonoBehaviour
                 if (DoNotMove == false)
                 {
                     
-                    if (x < Nosemove.growlevel && z >= Nosemove.growlevel&&Nose_Dush == false && Nose_Charge == false)//左に指を入れる
+                    if (z < Nosemove.growlevel &&Nose_Dush == false)//左に指を入れる
                     {
                         anima.SetBool("FingerIN", true);
                     }
