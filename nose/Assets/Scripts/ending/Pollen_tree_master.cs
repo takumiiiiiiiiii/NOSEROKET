@@ -9,6 +9,9 @@ public class Pollen_tree_master : MonoBehaviour
 {
     [SerializeField] private CircleCollider2D CC;
     [SerializeField] private Rigidbody2D RB;
+    AudioSource audiosorce;
+    [SerializeField] private GameObject audio_tree_falldown;
+    private bool audio_tree_falldown_played;
 
     public static bool end = true;
     public static int tree_cnt=0;
@@ -22,7 +25,7 @@ public class Pollen_tree_master : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        audiosorce = GetComponent<AudioSource>();
         end = true;
         tree_cnt = 0;
         tree_cnt_end = Score.current_score/100;
@@ -40,12 +43,12 @@ public class Pollen_tree_master : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
- 
         //RB.AddForce(new Vector2(10, 0));
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        
+        if(collision.gameObject.tag == "Planet" || collision.gameObject.tag == "Tree")
+            Instantiate(audio_tree_falldown, this.transform.position, Quaternion.identity);
     }
 }
