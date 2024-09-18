@@ -66,6 +66,17 @@ public class Planet : MonoBehaviour
         }
  
     }
+    private IEnumerator HitStop()//鼻を一時的にフリーズさせる
+    {
+        GameObject game = GameObject.Find("MainCamera");
+        if (game != null)
+        {
+            Camerashake camerachake = game.GetComponent<Camerashake>();
+            camerachake.StartShake(0.6f, 0.6f, 0.6f);
+        }
+        yield return new WaitForSeconds(0.1f);
+        Hit = true;
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
        
@@ -75,17 +86,18 @@ public class Planet : MonoBehaviour
         nose = obj.GetComponent<Nosemove>();//スクリプトを取得
         if (collision.gameObject.tag == "Player" && Nosemove.Nose_Dush == true)
         {
-            GameObject game = GameObject.Find("MainCamera");
-            if (game != null)
-            {
-                Camerashake camerachake = game.GetComponent<Camerashake>();
-                camerachake.StartShake(0.6f, 0.6f, 0.6f);
-            }
+            //GameObject game = GameObject.Find("MainCamera");
+            //if (game != null)
+            //{
+            //    Camerashake camerachake = game.GetComponent<Camerashake>();
+            //    camerachake.StartShake(0.6f, 0.6f, 0.6f);
+            //}
+            StartCoroutine(HitStop());
             if (!Nosemove.maxcharge)
             {
                 StartCoroutine(Stopc_MoveNose());
             }
-            Hit = true;
+            //Hit = true;
         }
     }
 }
