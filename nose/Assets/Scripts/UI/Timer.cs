@@ -44,6 +44,13 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
+        if (!timerStop)
+        {
+            Countdown();
+        }
+    }
+    public void Countdown()
+    {
         if (countdown >= 0)
         {
             countdown -= Time.deltaTime;

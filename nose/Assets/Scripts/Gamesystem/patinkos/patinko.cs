@@ -71,6 +71,7 @@ public class patinko : MonoBehaviour
             }
             if (patinkoawake)//一回だけ呼び出す
             {
+                Timer.timerStop = true;
                 NOSE.transform.eulerAngles = new Vector3(0, 0, 0);
                 Camerapatinko camepati = GameObject.Find("MainCamera").GetComponent<Camerapatinko>();
                 camepati.CameraPatinkoAnime(true);
@@ -226,6 +227,7 @@ public class patinko : MonoBehaviour
     //動画の再生を終了する
     void StopVideo()
     {
+        
         Debug.Log("動画の再生を終了");
         if (videoPlayer.isPlaying)
         {
@@ -241,6 +243,7 @@ public class patinko : MonoBehaviour
     }
     private IEnumerator moveAgain()
     {
+        Timer.timerStop = false;
         yield return new WaitForSeconds(1);//1秒後にダッシュ終わり
         patinkoEnd = true;
         Nosemove nose = GameObject.Find("nose_player").GetComponent<Nosemove>();
