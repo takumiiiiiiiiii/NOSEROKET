@@ -43,6 +43,7 @@ public class Start_botton : MonoBehaviour
                 if (x >= Nosemove.growlevel || z >= Nosemove.growlevel)
                 {
                     anima.SetBool("Charge",false);
+                    audiosorce.PlayOneShot(gonose);
                     anime_start = true;
                     MainSpriteRenderer.sprite = changeSprite;
                 }
