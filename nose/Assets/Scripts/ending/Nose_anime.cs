@@ -9,6 +9,8 @@ public class Nose_anime : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        x_bef = 10000f;
+        z_bef = 10000f;
         Debug.Log("xbfore" + x_bef);
         anima = gameObject.GetComponent<Animator>();
     }

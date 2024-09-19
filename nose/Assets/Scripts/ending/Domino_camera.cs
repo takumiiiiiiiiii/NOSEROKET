@@ -15,6 +15,7 @@ public class Domino_camera : MonoBehaviour
     }
     void Update()
     {
+        Debug.Log(speed);
         // ターゲット位置に向かって移動
         
         if (target != null&&DominoStart.end_start)
