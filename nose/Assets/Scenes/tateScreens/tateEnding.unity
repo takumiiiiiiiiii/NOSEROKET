@@ -2632,8 +2632,8 @@ MonoBehaviour:
   zfl: 10000
   cntx: 
   cntz: 
-  x: 10
-  z: 10
+  x: 100
+  z: 100
 --- !u!4 &568389858
 Transform:
   m_ObjectHideFlags: 0
