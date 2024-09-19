@@ -7,6 +7,7 @@ public class Pollen_tree_child : MonoBehaviour
 {
     [SerializeField] private CircleCollider2D CC;
     [SerializeField] private Rigidbody2D RB;
+    [SerializeField] private GameObject audio_tree_falldown;
     public GameObject tree;
     public GameObject NO1;//
     public GameObject NO2;//
@@ -68,6 +69,7 @@ public class Pollen_tree_child : MonoBehaviour
         if (Mathf.Abs(currentAngle) > 10&&taoreru==false)
         {
             Domino_camera.target = this.transform;
+            Instantiate(audio_tree_falldown, this.transform.position, Quaternion.identity);
             Debug.Log("fwsefwe");
             Ending_Count.tree++;
             taoreru = true;
