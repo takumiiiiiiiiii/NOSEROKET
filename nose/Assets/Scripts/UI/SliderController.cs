@@ -98,11 +98,11 @@ public class SliderController : MonoBehaviour
             }
             */
             if(feverFlag)
-                sliderImage.color = new Color32(80, 255, 0, 255);
+                sliderImage.color = new Color32(255, 209, 0, 255);
             else if(pollenPoint > 100)
                 sliderImage.color = new Color32(255, 209, 0, 255);
             else
-                sliderImage.color = new Color32(0, 100, 255, 255);
+                sliderImage.color = new Color32(80, 255, 0, 255);
         }
     }
 }
