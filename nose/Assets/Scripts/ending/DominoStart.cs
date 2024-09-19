@@ -6,8 +6,10 @@ public class DominoStart : MonoBehaviour
 {
     private Vector2 thispos;
     public static bool end_start=false;
+    public static bool finaldomino = false;
     private float x_bef = 10000;
     private float z_bef = 10000;
+
     [SerializeField] private Rigidbody2D RB;
 
     AudioSource audiosorce;
@@ -15,6 +17,7 @@ public class DominoStart : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        finaldomino = false;
         x_bef = 1000;
         z_bef = 1000;
         end_start = false;
@@ -41,6 +44,7 @@ public class DominoStart : MonoBehaviour
 
         if (serial.conect&&float.TryParse(serial.x, out x) && float.TryParse(serial.z, out z))
         {
+            Debug.Log("x:" + x);
             if (x_bef < Nosemove.growlevel && z_bef < Nosemove.growlevel)
             {
                 if (x >= Nosemove.growlevel || z >= Nosemove.growlevel)

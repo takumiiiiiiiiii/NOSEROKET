@@ -8,10 +8,10 @@ public class Domino_camera : MonoBehaviour
 {
     public static Transform target; // 移動先のターゲット位置
     public float speed = 5f; // 移動速度
-    
+    public static bool finaldomino = false;
     void Start()
     {
-
+        finaldomino = false;
     }
     void Update()
     {
@@ -22,11 +22,7 @@ public class Domino_camera : MonoBehaviour
         {
             //Debug.Log("transform:"+transform.position.x);
             //Debug.Log("target:" + target.position.x);
-            if (transform.position.x >= target.position.x-0.5 && Animation_ending.anima_start_end==true)
-            {
-                GoToTitle.ending_start = true;
-                Animation_ending.anima_end.SetBool("EndGame", true);
-            }
+           
             Vector3 direction = (target.position - transform.position).normalized;
             if (transform.position.x < target.position.x)
             {
@@ -35,6 +31,12 @@ public class Domino_camera : MonoBehaviour
             else
             {
                 speed--;
+            }
+            if (transform.position.x >= target.position.x - 0.5 && Animation_ending.anima_start_end == true && finaldomino)
+            {
+                speed = 0;
+                GoToTitle.ending_start = true;
+                Animation_ending.anima_end.SetBool("EndGame", true);
             }
             transform.position += new Vector3(direction.x * speed * Time.deltaTime, 0);
         }

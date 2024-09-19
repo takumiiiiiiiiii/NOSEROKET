@@ -18,7 +18,7 @@ public class Serial : MonoBehaviour
     public SerialPort serial;
     private bool isLoop = true;
     public float xfl=10000f, zfl=10000f;
-    public string cntx,cntz,x="1000000",z="10000000";
+    public string cntx,cntz,x="50",z="50";
     void Start()
     {
         this.serial = new SerialPort(portName, baurate, Parity.None, 8, StopBits.One);
@@ -88,8 +88,8 @@ public class Serial : MonoBehaviour
             //x = this.serial.ReadLine();
             //z = this.serial.ReadLine();
             //UnityEngine.Debug.Log(message);
-            //UnityEngine.Debug.Log("x="+x);
-            //UnityEngine.Debug.Log("z="+z);
+            UnityEngine.Debug.Log("x="+x);
+            UnityEngine.Debug.Log("z="+z);
             connect_char = true;
             //Debug.Log("whileEnd");
             
