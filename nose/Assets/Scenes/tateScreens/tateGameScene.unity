@@ -5059,6 +5059,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: fe16912b2c06547d2974d9d484934e53, type: 3}
   - {fileID: 8300000, guid: 44a90ad237f2e499e8e417da4bc54aa6, type: 3}
   Sdc: {fileID: 0}
+  Ns: {fileID: 0}
   audio_charge: {fileID: 0}
 --- !u!114 &208241181
 MonoBehaviour:
@@ -30863,6 +30864,7 @@ MonoBehaviour:
   pollenPoint: 0
   pollenReleaseRate: 10
   sliderImage: {fileID: 900383040}
+  noseScaleChange: 0
   feverFlag: 0
 --- !u!114 &1758798134
 MonoBehaviour:
