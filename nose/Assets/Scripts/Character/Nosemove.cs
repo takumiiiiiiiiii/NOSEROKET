@@ -84,6 +84,7 @@ public class Nosemove : MonoBehaviour
                 {
                     anima.SetBool("charge", true);
                     charge_time += Time.deltaTime;
+                    
                     Debug.Log(charge_time);
                     if (charge_time < 0.25f)
                     {
@@ -102,6 +103,18 @@ public class Nosemove : MonoBehaviour
                         // 長く押された場合の反応を記述
                     }
                 }
+                if (z < growlevel && x < growlevel && !audioCharge_played)
+                {
+                    audiosorce2.PlayOneShot(charge);
+                    audiosorce2.PlayOneShot(charge);
+                    audioCharge_played = true;
+                }
+                if ((x >= growlevel && z >= growlevel) && Nose_Dush == false)
+                {
+                    audiosorce2.Stop();
+                    audioCharge_played = false;
+                }
+
                 //花粉が溜まってないと動かない
                 if (x_before < growlevel && z_before < growlevel && Nose_Dush == false)
                 {
@@ -288,19 +301,6 @@ public class Nosemove : MonoBehaviour
                     {
                         audioLeft_played = false;
                     }
-
-                    if ((x >= growlevel && z >= growlevel) && Nose_Dush == false && !audioCharge_played)//ダッシュ音
-                    {
-                        audiosorce2.PlayOneShot(charge);
-                        audiosorce2.PlayOneShot(charge);
-                        audioCharge_played = true;
-                    }
-                    if ((x >= growlevel && z >= growlevel) && Nose_Dush == false)
-                    {
-                        audiosorce2.Stop();
-                        audioCharge_played = false;
-                    }
-
                     if (x >= growlevel && z >= growlevel && Nose_Dush == true)
                     {
                         Debug.Log("iff");
