@@ -26,8 +26,9 @@ public class Nosemove : MonoBehaviour
 
     public AudioClip[] Damage;
     public SliderController Sdc;
+    public NoseScale Ns;
 
-    
+ 
 
     //チャージ関連
     private float charge_time=0f;//チャージ時間を入れる
