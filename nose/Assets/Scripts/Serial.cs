@@ -18,7 +18,7 @@ public class Serial : MonoBehaviour
     public SerialPort serial;
     private bool isLoop = true;
     public float xfl=10000f, zfl=10000f;
-    public string cntx,cntz,x="10",z="10";
+    public string cntx,cntz,x="1000000",z="10000000";
     void Start()
     {
         this.serial = new SerialPort(portName, baurate, Parity.None, 8, StopBits.One);
