@@ -9,6 +9,7 @@ public class Pollen_tree_master : MonoBehaviour
     [SerializeField] private CircleCollider2D CC;
     [SerializeField] private Rigidbody2D RB;
 
+   
     public static bool end = true;
     public static int tree_cnt=0;
     public static int tree_cnt_end = 90;//杉の木の倒す数
@@ -43,3 +44,4 @@ public class Pollen_tree_master : MonoBehaviour
         //RB.AddForce(new Vector2(10, 0));
     }
 }
+
