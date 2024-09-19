@@ -32,7 +32,7 @@ public class NoseScale : MonoBehaviour
         }
         else
         {
-            Debug.Log("Scaleno");
+            Debug.Log("Scale ;" + Sdc.noseScaleChange+ "ScaleUp ;" + ScaleUpFlag);
         }
     }
 
