@@ -6,6 +6,7 @@ public class NoseScale : MonoBehaviour
 {
 
     public SliderController Sdc;
+    public Animator anima;
     private bool ScaleUpFlag;
 
     // Start is called before the first frame update
@@ -18,6 +19,8 @@ public class NoseScale : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
+
+        /*
         if (Sdc.noseScaleChange && !ScaleUpFlag)
         {
             StartCoroutine("ScaleUp");
@@ -34,6 +37,7 @@ public class NoseScale : MonoBehaviour
         {
             Debug.Log("Scale ;" + Sdc.noseScaleChange+ "ScaleUp ;" + ScaleUpFlag);
         }
+        */
     }
 
     IEnumerator ScaleUp()

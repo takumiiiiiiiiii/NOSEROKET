@@ -221,12 +221,20 @@ public class Nosemove : MonoBehaviour
             
             if (Input.GetKeyUp(KeyCode.Space) && Nose_Dush == false)
             {
-                anima.SetBool("charge",false);
                 StartCoroutine(Dash());
+                if (Sdc.pollenPoint >= 100)
+                {
+                    
+                    
+                    //StartCoroutine(SuperDash());
+                    Debug.Log("chargeanime");
+                }
+                
+                
                 //if(Sdc.EmittingObject())
                 if (Sdc.pollenPoint >= 100)
                 {                   
-                    //StartCoroutine(SuperDash());
+                    //
                 }
                 
                     //StartCoroutine(Dash());
@@ -355,6 +363,7 @@ public class Nosemove : MonoBehaviour
     }
     private IEnumerator Dash()
     {
+        anima.SetBool("charge", false);
         Nose_Dush = true;
         audiosorce.PlayOneShot(dash);
         yield return new WaitForSeconds(1);//1秒後にダッシュ終わり
@@ -368,11 +377,13 @@ public class Nosemove : MonoBehaviour
     }
     private IEnumerator SuperDash()
     {
+        anima.SetBool("charge", true);
         Nose_Dush = true;
         audiosorce.PlayOneShot(dash);
         Sdc.feverFlag = true;
         Sdc.FeverTime();
         yield return new WaitForSeconds(8);//1秒後にダッシュ終わり
+        anima.SetBool("charge", false);
         Sdc.pollenPoint -= 100;
         Sdc.feverFlag = false;
         Sdc.FeverTime();
