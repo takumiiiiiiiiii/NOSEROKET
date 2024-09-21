@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/tateScreens/tatetutorial.unity
     guid: b5251da2b46264f3f89bccbd444662dc
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/tateScreens/tateGameScene.unity
     guid: 4e4f735202c8a4c38b5953f748569f2e
   - enabled: 1
