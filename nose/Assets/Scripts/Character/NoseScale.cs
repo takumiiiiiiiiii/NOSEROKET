@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class NoseScale : MonoBehaviour
 {
+
     public SliderController Sdc;
+    public Animator anima;
     private bool ScaleUpFlag;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -16,10 +19,25 @@ public class NoseScale : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(Sdc.pollenPoint >= 100 && !ScaleUpFlag)
+
+        /*
+        if (Sdc.noseScaleChange && !ScaleUpFlag)
+        {
             StartCoroutine("ScaleUp");
-        else if(Sdc.pollenPoint < 100 && ScaleUpFlag)
+            ScaleUpFlag = true;
+            Debug.Log("ScaleUp");
+        }
+        else if (!Sdc.noseScaleChange && ScaleUpFlag)
+        {
             StartCoroutine("ScaleDown");
+            ScaleUpFlag = false;
+            Debug.Log("ScaleDown");
+        }
+        else
+        {
+            Debug.Log("Scale ;" + Sdc.noseScaleChange+ "ScaleUp ;" + ScaleUpFlag);
+        }
+        */
     }
 
     IEnumerator ScaleUp()
@@ -29,7 +47,7 @@ public class NoseScale : MonoBehaviour
             this.transform.localScale = new Vector2(0.53f * i + 0.53f, 0.53f * i + 0.53f);
             yield return new WaitForSeconds(0.01f);
         }
-        ScaleUpFlag = true; 
+       
     }
 
     IEnumerator ScaleDown()
@@ -39,6 +57,6 @@ public class NoseScale : MonoBehaviour
             this.transform.localScale = new Vector2(0.53f * i + 0.53f, 0.53f * i + 0.53f);
             yield return new WaitForSeconds(0.01f);
         }
-        ScaleUpFlag = false;
+        
     }
 }

@@ -28,6 +28,7 @@ public class Nosemove : MonoBehaviour
 
     public AudioClip[] Damage;
     public SliderController Sdc;
+
     public muteplayBGM Mbb;
 
     [HideInInspector] public bool backBGMmute = false;
@@ -226,9 +227,9 @@ public class Nosemove : MonoBehaviour
             {
 
                 if (Sdc.pollenPoint >= 100)
-                {
+                {     
                     anima.SetBool("charge", true);
-                    //StartCoroutine(SuperDash());
+                    //
                 }
                 StartCoroutine(Dash());
                 //if(Sdc.EmittingObject())
@@ -374,6 +375,7 @@ public class Nosemove : MonoBehaviour
     }
     private IEnumerator SuperDash()
     {
+
         backBGMmute = true;
         anima.SetBool("charge", true);
         Mbb.muteFlag(backBGMmute);
@@ -383,6 +385,7 @@ public class Nosemove : MonoBehaviour
         Sdc.feverFlag = true;
         Sdc.FeverTime();
         yield return new WaitForSeconds(8);//1秒後にダッシュ終わり
+        anima.SetBool("charge", false);
         Sdc.pollenPoint -= 100;
         anima.SetBool("charge", false);
         Sdc.feverFlag = false;

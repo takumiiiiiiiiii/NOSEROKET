@@ -13,6 +13,7 @@ public class SliderController : MonoBehaviour
     public float pollenPoint;
     public int pollenReleaseRate;
     public UnityEngine.UI.Image sliderImage; //connected the Image Fill from the slider
+    [HideInInspector] public bool noseScaleChange = false;
 
     public bool feverFlag;
 
@@ -83,20 +84,15 @@ public class SliderController : MonoBehaviour
         {
             slider.value = pollenPoint;
 
-            /*
             if (pollenPoint > 100)
             {
-                sliderImage.color=new Color32(80,255,0,255);   
-            }
-            else if(pollenPoint >= pollenReleaseRate)
-            {
-                sliderImage.color=new Color32(255,209,0,255);
+                noseScaleChange = true;
             }
             else
             {
-                sliderImage.color=new Color32(255,80,0,255);
+                noseScaleChange = false;
             }
-            */
+
             if(feverFlag)
                 sliderImage.color = new Color32(255, 209, 0, 255);
             else if(pollenPoint > 100)
