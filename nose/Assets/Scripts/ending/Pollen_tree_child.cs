@@ -16,6 +16,7 @@ public class Pollen_tree_child : MonoBehaviour
     public float NO_height=3.0f;
     private int ID;
     private bool taoreru=false;
+    
 
     // Start is called before the first frame update
     void Start()
@@ -64,6 +65,7 @@ public class Pollen_tree_child : MonoBehaviour
         {
             currentAngle -= 360;
         }
+
         //Debug.Log(Mathf.Abs(currentAngle));
         // 現在の角度がトリガー角度を超えているかどうかをチェックします
         if (Mathf.Abs(currentAngle) > 10&&taoreru==false)
@@ -73,6 +75,10 @@ public class Pollen_tree_child : MonoBehaviour
             Debug.Log("fwsefwe");
             Ending_Count.tree++;
             taoreru = true;
+            if (ID == Pollen_tree_master.tree_cnt_end)
+            {
+                Domino_camera.finaldomino = true;
+            }
         }
     }
 }

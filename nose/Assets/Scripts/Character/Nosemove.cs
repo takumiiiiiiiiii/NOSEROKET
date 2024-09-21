@@ -20,15 +20,23 @@ public class Nosemove : MonoBehaviour
     public AudioClip dash;
     public AudioClip right_left_move;
 
+    public AudioClip superDashBGM;
+
     private bool audioCharge_played;
     private bool audioRight_played;
     private bool audioLeft_played;
 
     public AudioClip[] Damage;
     public SliderController Sdc;
+<<<<<<< HEAD
     public NoseScale Ns;
 
  
+=======
+    public muteplayBGM Mbb;
+
+    [HideInInspector] public bool backBGMmute = false;
+>>>>>>> main
 
     //チャージ関連
     private float charge_time=0f;//チャージ時間を入れる
@@ -62,7 +70,8 @@ public class Nosemove : MonoBehaviour
         audiosorce2 = GetComponent<AudioSource>();
 
         Sdc = GameObject.Find("dash_slider").GetComponent<SliderController>();
-        
+        Mbb = GameObject.Find("BGM").GetComponent<muteplayBGM>();
+
         //_player.CreateAfterImage(gameObject.GetComponent<SpriteRenderer>());
     }
     // Update is called once per frame
@@ -377,8 +386,14 @@ public class Nosemove : MonoBehaviour
     }
     private IEnumerator SuperDash()
     {
+<<<<<<< HEAD
         anima.SetBool("charge", true);
+=======
+        backBGMmute = true;
+        Mbb.muteFlag(backBGMmute);
+>>>>>>> main
         Nose_Dush = true;
+        audiosorce.PlayOneShot(superDashBGM);
         audiosorce.PlayOneShot(dash);
         Sdc.feverFlag = true;
         Sdc.FeverTime();
@@ -388,6 +403,8 @@ public class Nosemove : MonoBehaviour
         Sdc.feverFlag = false;
         Sdc.FeverTime();
         charge_time = 0f;
+        backBGMmute = false;
+        Mbb.muteFlag(backBGMmute);
         Nose_Dush = false;
         maxcharge = false;
     }
