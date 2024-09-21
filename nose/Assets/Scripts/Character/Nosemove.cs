@@ -28,9 +28,15 @@ public class Nosemove : MonoBehaviour
 
     public AudioClip[] Damage;
     public SliderController Sdc;
+<<<<<<< HEAD
+    public NoseScale Ns;
+
+ 
+=======
     public muteplayBGM Mbb;
 
     [HideInInspector] public bool backBGMmute = false;
+>>>>>>> main
 
     //チャージ関連
     private float charge_time=0f;//チャージ時間を入れる
@@ -224,12 +230,20 @@ public class Nosemove : MonoBehaviour
             
             if (Input.GetKeyUp(KeyCode.Space) && Nose_Dush == false)
             {
-                anima.SetBool("charge",false);
                 StartCoroutine(Dash());
+                if (Sdc.pollenPoint >= 100)
+                {
+                    
+                    
+                    //StartCoroutine(SuperDash());
+                    Debug.Log("chargeanime");
+                }
+                
+                
                 //if(Sdc.EmittingObject())
                 if (Sdc.pollenPoint >= 100)
                 {                   
-                    //StartCoroutine(SuperDash());
+                    //
                 }
                 
                     //StartCoroutine(Dash());
@@ -358,6 +372,7 @@ public class Nosemove : MonoBehaviour
     }
     private IEnumerator Dash()
     {
+        anima.SetBool("charge", false);
         Nose_Dush = true;
         audiosorce.PlayOneShot(dash);
         yield return new WaitForSeconds(1);//1秒後にダッシュ終わり
@@ -371,14 +386,19 @@ public class Nosemove : MonoBehaviour
     }
     private IEnumerator SuperDash()
     {
+<<<<<<< HEAD
+        anima.SetBool("charge", true);
+=======
         backBGMmute = true;
         Mbb.muteFlag(backBGMmute);
+>>>>>>> main
         Nose_Dush = true;
         audiosorce.PlayOneShot(superDashBGM);
         audiosorce.PlayOneShot(dash);
         Sdc.feverFlag = true;
         Sdc.FeverTime();
         yield return new WaitForSeconds(8);//1秒後にダッシュ終わり
+        anima.SetBool("charge", false);
         Sdc.pollenPoint -= 100;
         Sdc.feverFlag = false;
         Sdc.FeverTime();
