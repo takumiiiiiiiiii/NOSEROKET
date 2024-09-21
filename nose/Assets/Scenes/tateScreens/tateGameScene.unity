@@ -5216,6 +5216,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Sdc: {fileID: 1758798133}
+  anima: {fileID: 0}
 --- !u!82 &208241185
 AudioSource:
   m_ObjectHideFlags: 0
