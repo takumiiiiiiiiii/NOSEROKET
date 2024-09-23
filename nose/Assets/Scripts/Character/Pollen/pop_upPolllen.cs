@@ -71,6 +71,7 @@ public class pop_upPollen : MonoBehaviour
             {
                 Sc.score += 100;
                 Sdc.CollectObject();
+                UIchake.schake = true;
             }
             Destroy(this.gameObject);
         }
