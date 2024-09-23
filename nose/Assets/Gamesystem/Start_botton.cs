@@ -16,13 +16,16 @@ public class Start_botton : MonoBehaviour
     private float x_bef = 10000;
     private float z_bef = 10000;
     private bool anime_start = false;
-    private float add_spd = -11.0f;  
+    private float add_spd = -11.0f;
+
+    public stopVoice Sv;
     // Start is called before the first frame update
     void Start()
     {
         anima= gameObject.GetComponent<Animator>();
         MainSpriteRenderer = gameObject.GetComponent<SpriteRenderer>();
         audiosorce = GetComponent<AudioSource>();
+        Sv = GameObject.Find("voice").GetComponent<stopVoice>();
     }
 
     // Update is called once per frame
@@ -44,6 +47,7 @@ public class Start_botton : MonoBehaviour
                 if (x >= Nosemove.growlevel || z >= Nosemove.growlevel)
                 {
                     anima.SetBool("Charge",false);
+                    Sv.stopvoice();
                     audiosorce.PlayOneShot(gonose);
                     audiosorce.PlayOneShot(gonoseVoice);
                     anime_start = true;
@@ -63,6 +67,7 @@ public class Start_botton : MonoBehaviour
             anima.SetBool("Charge", false);
             anime_start = true;
             MainSpriteRenderer.sprite = changeSprite;
+            Sv.stopvoice();
             audiosorce.PlayOneShot(gonose);
             audiosorce.PlayOneShot(gonoseVoice);
             Debug.Log("space");
