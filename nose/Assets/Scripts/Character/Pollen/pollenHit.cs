@@ -59,7 +59,7 @@ public class pollenHit : MonoBehaviour
             //RB.velocity = vec * speed;
             if (this.transform.position.y < worldPos.y + 2f)
             {
-                
+                UIchake.schake = true;
                 Sc.score += 100;
                 Sdc.CollectObject();
                 Destroy(this.gameObject);
