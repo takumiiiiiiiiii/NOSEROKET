@@ -11,6 +11,7 @@ public class Start_botton : MonoBehaviour
     public Sprite changeSprite;
     AudioSource audiosorce;
     public AudioClip gonose;
+    public AudioClip gonoseVoice;
     public Animator anima;
     private float x_bef = 10000;
     private float z_bef = 10000;
@@ -44,6 +45,7 @@ public class Start_botton : MonoBehaviour
                 {
                     anima.SetBool("Charge",false);
                     audiosorce.PlayOneShot(gonose);
+                    audiosorce.PlayOneShot(gonoseVoice);
                     anime_start = true;
                     MainSpriteRenderer.sprite = changeSprite;
                 }
@@ -62,6 +64,7 @@ public class Start_botton : MonoBehaviour
             anime_start = true;
             MainSpriteRenderer.sprite = changeSprite;
             audiosorce.PlayOneShot(gonose);
+            audiosorce.PlayOneShot(gonoseVoice);
             Debug.Log("space");
         }
     }

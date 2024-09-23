@@ -373,8 +373,8 @@ public class Nosemove : MonoBehaviour
         anima.SetBool("charge", false);
         
         Nose_Dush = true;
-        //audiosorce.PlayOneShot(dash);
-        audiosorce2.PlayOneShot(dashVoice);
+        audiosorce.PlayOneShot(dash);
+        
         yield return new WaitForSeconds(1);//1秒後にダッシュ終わり
         charge_time = 0f;
         Nose_Dush = false;
@@ -388,6 +388,7 @@ public class Nosemove : MonoBehaviour
     {
 
         backBGMmute = true;
+        audiosorce2.PlayOneShot(dashVoice);
         anima.SetBool("charge", true);
         Mbb.muteFlag(backBGMmute);
         Nose_Dush = true;

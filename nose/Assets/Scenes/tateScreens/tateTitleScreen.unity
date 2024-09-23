@@ -465,6 +465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   changeSprite: {fileID: -1930733768, guid: cd25b85dd7eeb415d83c5f10ddec6eae, type: 3}
   gonose: {fileID: 8300000, guid: 3f9acde076bb34adc81448405c1972f6, type: 3}
+  gonoseVoice: {fileID: 8300000, guid: 774f371c173a847d89dcc7e10e47917f, type: 3}
   anima: {fileID: 0}
 --- !u!114 &98819481
 MonoBehaviour:
