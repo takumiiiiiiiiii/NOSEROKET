@@ -11,7 +11,7 @@ public class Animation_ending : MonoBehaviour
     Vector2 pos;
     */
     AudioSource audiosorce;
-    public AudioClip result_score;
+    public AudioClip result;
 
 
 
@@ -35,6 +35,6 @@ public class Animation_ending : MonoBehaviour
 
     public void OnAnimationEnd()
     {
-        audiosorce.PlayOneShot(result_score);
+        audiosorce.PlayOneShot(result);
     }
 }

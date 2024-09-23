@@ -5063,6 +5063,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 14852fb9f870c4cf2b392d67094f9d78, type: 3}
   - {fileID: 8300000, guid: c44bd5a9d7b2b4e77be4f1bd27eda230, type: 3}
   chargeVoice: {fileID: 8300000, guid: b07b78e38859247c1a01c12a96064c7e, type: 3}
+  dashVoice: {fileID: 8300000, guid: 8e3af2fa8ef784d8c8ec1a0fd048a0c1, type: 3}
   Sdc: {fileID: 0}
   Mbb: {fileID: 0}
   backBGMmute: 1
