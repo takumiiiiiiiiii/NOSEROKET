@@ -5059,6 +5059,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: e540eb3310ecc49ceb8db23f43055300, type: 3}
   - {fileID: 8300000, guid: fe16912b2c06547d2974d9d484934e53, type: 3}
   - {fileID: 8300000, guid: 44a90ad237f2e499e8e417da4bc54aa6, type: 3}
+  itagaruVoice:
+  - {fileID: 8300000, guid: 14852fb9f870c4cf2b392d67094f9d78, type: 3}
+  - {fileID: 8300000, guid: c44bd5a9d7b2b4e77be4f1bd27eda230, type: 3}
+  chargeVoice: {fileID: 8300000, guid: b07b78e38859247c1a01c12a96064c7e, type: 3}
   Sdc: {fileID: 0}
   Mbb: {fileID: 0}
   backBGMmute: 1
@@ -5218,6 +5222,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Sdc: {fileID: 1758798133}
+  anima: {fileID: 0}
 --- !u!82 &208241185
 AudioSource:
   m_ObjectHideFlags: 0
@@ -30881,6 +30886,7 @@ MonoBehaviour:
   pollenPoint: 0
   pollenReleaseRate: 10
   sliderImage: {fileID: 900383040}
+  noseScaleChange: 0
   feverFlag: 0
 --- !u!114 &1758798134
 MonoBehaviour:
