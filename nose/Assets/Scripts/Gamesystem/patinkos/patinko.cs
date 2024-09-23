@@ -8,7 +8,8 @@ public class patinko : MonoBehaviour
 {
     public Animator anima;
     public static bool patinkotime=false;
-
+    private bool patinkosecond = false;//2回目の実効かどうかを判断する
+    private bool patinkosecondFlag = true;//1回だけ呼び出す
     public VideoPlayer videoPlayer;
     public VideoClip[] videoClips;        // 再生する動画クリップを格納する配列
     public bool[] autoSwitchFlags ;// 各動画に対する自動遷移フラグ
@@ -43,15 +44,30 @@ public class patinko : MonoBehaviour
     {
         if (Sdc.pollenPoint >= 100)
         {
-            bar.animationStart();
+            bar.animationStart();//スコアバーのアニメーション
         }
         if (patinkotime)
         {
-            StartVideos();
+            if (!patinkosecond)
+            {
+                StartVideos();
+            }
         }
-        else
+        Debug.Log("patinkotime" + patinkotime);
+        Debug.Log("patinkosecond" + patinkosecond);
+        if (patinkotime && patinkosecond&& Sdc.pollenPoint >= 100&patinkosecondFlag)
+        {
+            videoPlayer.isLooping = false;
+            videoPlayer.clip = videoClips[6];
+            videoPlayer.Play();
+            Nosemove nose = GameObject.Find("nose_player").GetComponent<Nosemove>();
+            nose.SuperDashStart();
+            patinkosecondFlag = false;
+        }
+        else if(patinkotime && patinkosecond && Sdc.pollenPoint >= 100)
         {
 
+            patinkosecondFlag = true;
         }
     }
 
@@ -78,20 +94,21 @@ public class patinko : MonoBehaviour
                 anima.SetBool("patiStart", true);//
                 patinkoawake = false;
             }
-            Switch_Animation();//アニメーションをを移動させるいろんな処理
+            Switch_Animation();//アニメーションを移動させるいろんな処理
         }
         else
         {
             currentClipIndex = 0;
         }
     }
+
     // 動画の終了時に呼ばれるイベントハンドラ
     void OnVideoEnd(VideoPlayer vp)
     {
         if (currentClipIndex < videoClips.Length)
         {
             // 自動で次の動画に遷移させるかどうかをフラグで判断
-            if (autoSwitchFlags[currentClipIndex])
+            if (autoSwitchFlags[currentClipIndex]&&!patinkosecond)
             {
                 SwitchToNextClip();
             }
@@ -238,7 +255,7 @@ public class patinko : MonoBehaviour
         camepati.CameraPatinkoAnimeEnd();
         Nosemove nose = GameObject.Find("nose_player").GetComponent<Nosemove>();
         nose.SuperDashStart();
-        anima.SetBool("patiStart", false);
+        //anima.SetBool("patiStart", false);
         StartCoroutine(moveAgain());
     }
     private IEnumerator moveAgain()
@@ -249,7 +266,7 @@ public class patinko : MonoBehaviour
         Nosemove nose = GameObject.Find("nose_player").GetComponent<Nosemove>();
         Nosemove.DoNotMove = false;
         patinkoawake = true;
+        patinkosecond = true;
     }
-    
 
 }

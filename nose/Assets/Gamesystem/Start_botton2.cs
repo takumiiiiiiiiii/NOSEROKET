@@ -24,7 +24,7 @@ public class Start_botton2 : MonoBehaviour
         {
             if (x <= growlevel &&z <= growlevel ) //スペースキー押した場合
             {
-                serial.serial.Close();
+                //serial.serial.Close();
                 SceneManager.LoadScene("OpenCampus");//some_senseiシーンをロードする
                 Debug.Log("space");
 

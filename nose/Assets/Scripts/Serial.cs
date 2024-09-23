@@ -19,6 +19,10 @@ public class Serial : MonoBehaviour
     private bool isLoop = true;
     public float xfl=10000f, zfl=10000f;
     public string cntx,cntz,x="50",z="50";
+    void Awake()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
     void Start()
     {
         this.serial = new SerialPort(portName, baurate, Parity.None, 8, StopBits.One);
