@@ -1810,8 +1810,8 @@ MonoBehaviour:
   baurate: 9600
   conect: 0
   connect_char: 0
-  xfl: 0
-  zfl: 0
+  xfl: 100000
+  zfl: 10000
   cntx: 
   cntz: 
   x: 
