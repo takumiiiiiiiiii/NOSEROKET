@@ -388,7 +388,6 @@ public class Nosemove : MonoBehaviour
     }
     private IEnumerator SuperDash()
     {
-
         backBGMmute = true;
         audiosorce2.PlayOneShot(dashVoice);
         anima.SetBool("charge", true);
@@ -398,9 +397,10 @@ public class Nosemove : MonoBehaviour
         audiosorce.PlayOneShot(dash);
         Sdc.feverFlag = true;
         Sdc.FeverTime();
+        Sdc.pollenPoint -= 100;
         yield return new WaitForSeconds(8);//1秒後にダッシュ終わり
         anima.SetBool("charge", false);
-        Sdc.pollenPoint -= 100;
+        
         anima.SetBool("charge", false);
         Sdc.feverFlag = false;
         Sdc.FeverTime();
@@ -421,6 +421,4 @@ public class Nosemove : MonoBehaviour
             audiosorce.PlayOneShot(Damage[Random.Range(0, Damage.Length)]);
         }
     }
-
-    
 }
