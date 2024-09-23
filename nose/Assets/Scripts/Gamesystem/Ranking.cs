@@ -8,6 +8,7 @@ public class Ranking : MonoBehaviour
     int point;
 
     string[] ranking = { "ランキング1位", "ランキング2位", "ランキング3位", "ランキング4位", "ランキング5位" };
+    public int ranknumber;
 
     int[] rankingValue = new int[5];
     public static int[] rankingshare = new int[5];
@@ -17,6 +18,7 @@ public class Ranking : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        ranknumber = 6;
         rankingshare = rankingValue;
         GetRanking();
         SetRanking(Score.current_score/100+1);
@@ -59,6 +61,8 @@ public class Ranking : MonoBehaviour
         for (int i = 0; i < ranking.Length; i++)
         {
             PlayerPrefs.SetInt(ranking[i], rankingValue[i]);
+            if (_value == rankingValue[i])
+                ranknumber = i;
         }
     }
 }

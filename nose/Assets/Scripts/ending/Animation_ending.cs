@@ -11,7 +11,9 @@ public class Animation_ending : MonoBehaviour
     Vector2 pos;
     */
     AudioSource audiosorce;
-    public AudioClip result;
+    public AudioClip[] result;
+
+    public Ranking Rk;
 
 
 
@@ -22,6 +24,7 @@ public class Animation_ending : MonoBehaviour
         anima_start_end = true;
         //pos = GetComponent<RectTransform>().anchoredPosition;
         audiosorce = GetComponent<AudioSource>();
+        Rk = GameObject.Find("Ranking").GetComponent<Ranking>();
     }
 
     // Update is called once per frame
@@ -35,6 +38,17 @@ public class Animation_ending : MonoBehaviour
 
     public void OnAnimationEnd()
     {
-        audiosorce.PlayOneShot(result);
+        if(Rk.ranknumber > 5)
+        {
+            audiosorce.PlayOneShot(result[0]);
+        }
+        else if(Rk.ranknumber > 1)
+        {
+            audiosorce.PlayOneShot(result[1]);
+        }
+        else
+        {
+            audiosorce.PlayOneShot(result[2]);
+        }
     }
 }

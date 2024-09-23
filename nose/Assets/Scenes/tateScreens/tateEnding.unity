@@ -7168,6 +7168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   point: 0
+  ranknumber: 0
   rankingText:
   - {fileID: 1953630572}
   - {fileID: 143986977}
@@ -7961,7 +7962,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3931d48990bc497591e309ce0203f91, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  result: {fileID: 8300000, guid: 3b336f1517a004fc081648dbffc679cb, type: 3}
+  result:
+  - {fileID: 8300000, guid: 3b336f1517a004fc081648dbffc679cb, type: 3}
+  - {fileID: 8300000, guid: 16bbd6501dbf142fbabda1232c67515d, type: 3}
+  - {fileID: 8300000, guid: d1363695617ff48a689382943877513b, type: 3}
+  Rk: {fileID: 0}
 --- !u!82 &1868424207
 AudioSource:
   m_ObjectHideFlags: 0
