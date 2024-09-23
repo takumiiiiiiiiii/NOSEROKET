@@ -66,7 +66,6 @@ public class patinko : MonoBehaviour
         }
         else if(patinkotime && patinkosecond && Sdc.pollenPoint >= 100)
         {
-
             patinkosecondFlag = true;
         }
     }
