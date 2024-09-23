@@ -29,6 +29,9 @@ public class Nosemove : MonoBehaviour
     private bool audioLeft_played;
 
     public AudioClip[] Damage;
+    public AudioClip[] itagaruVoice;
+    public AudioClip chargeVoice;
+    public AudioClip dashVoice;
     public SliderController Sdc;
 
     public muteplayBGM Mbb;
@@ -114,6 +117,8 @@ public class Nosemove : MonoBehaviour
                 {
                     audiosorce2.PlayOneShot(charge);
                     audiosorce2.PlayOneShot(charge);
+                    audiosorce.PlayOneShot(chargeVoice);
+                    audiosorce.PlayOneShot(chargeVoice);
                     audioCharge_played = true;
                 }
                 if ((x >= growlevel && z >= growlevel) && Nose_Dush == false)
@@ -168,6 +173,7 @@ public class Nosemove : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.LeftArrow) && Input.GetKey(KeyCode.Space) == false && !audioLeft_played)//左の鼻の穴をさす音
             {
                 audiosorce.PlayOneShot(right_left_move);
+                audiosorce2.PlayOneShot(itagaruVoice[Random.Range(0, itagaruVoice.Length)]);
                 audioLeft_played = true;
             }
             if (Input.GetKeyUp(KeyCode.LeftArrow) && Input.GetKey(KeyCode.Space) == false)
@@ -182,6 +188,7 @@ public class Nosemove : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.RightArrow) && Input.GetKey(KeyCode.Space) == false && !audioRight_played)//右の鼻の穴をさす音
             {
                 audiosorce.PlayOneShot(right_left_move);
+                audiosorce2.PlayOneShot(itagaruVoice[Random.Range(0, itagaruVoice.Length)]);
                 audioRight_played = true;
             }
             if (Input.GetKeyUp(KeyCode.RightArrow) && Input.GetKey(KeyCode.Space) == false)
@@ -193,6 +200,10 @@ public class Nosemove : MonoBehaviour
             {
                 audiosorce2.PlayOneShot(charge);
                 audiosorce2.PlayOneShot(charge);
+                audiosorce.PlayOneShot(chargeVoice);
+                audiosorce.PlayOneShot(chargeVoice);
+
+
                 audioCharge_played = true;
             }
             if (Input.GetKeyUp(KeyCode.Space) && Nose_Dush == false)
@@ -227,7 +238,7 @@ public class Nosemove : MonoBehaviour
             
             if (Input.GetKeyUp(KeyCode.Space) && Nose_Dush == false)
             {
-
+                
                 if (Sdc.pollenPoint >= 100)
                 {     
                     anima.SetBool("charge", true);
@@ -369,6 +380,7 @@ public class Nosemove : MonoBehaviour
             Nose_Dush = true;
             audiosorce.PlayOneShot(dash);
         }
+
         yield return new WaitForSeconds(1);//1秒後にダッシュ終わり
         if (!superDush)
         {
@@ -386,6 +398,7 @@ public class Nosemove : MonoBehaviour
 
         superDush = true;
         backBGMmute = true;
+        audiosorce2.PlayOneShot(dashVoice);
         anima.SetBool("charge", true);
         Mbb.muteFlag(backBGMmute);
         Nose_Dush = true;

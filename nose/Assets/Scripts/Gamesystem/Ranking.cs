@@ -8,6 +8,7 @@ public class Ranking : MonoBehaviour
     int point;
 
     string[] ranking = { "ランキング1位", "ランキング2位", "ランキング3位", "ランキング4位", "ランキング5位" };
+    public int ranknumber;
 
     int[] rankingValue = new int[5];
     public static int[] rankingshare = new int[5];
@@ -17,6 +18,7 @@ public class Ranking : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        ranknumber = -1;
         rankingshare = rankingValue;
         GetRanking();
         SetRanking(Score.current_score/100+1);
@@ -24,6 +26,8 @@ public class Ranking : MonoBehaviour
         {
             int lank = i + 1;
             rankingText[i].text =lank+"st "+rankingValue[i].ToString();
+            if(rankingValue[i] == Score.current_score / 100 + 1)
+                ranknumber = lank;
         }
     }
 
@@ -52,7 +56,9 @@ public class Ranking : MonoBehaviour
                 var change = rankingValue[i];
                 rankingValue[i] = _value;
                 _value = change;
+                ranknumber = i;
             }
+            
         }
 
         //入れ替えた値を保存
