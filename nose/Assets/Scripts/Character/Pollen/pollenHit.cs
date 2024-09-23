@@ -14,6 +14,7 @@ public class pollenHit : MonoBehaviour
     //Cameraへ移動する
     public Camera targetCamera;
     //
+    public float pollenYpos, pollenXpos;//花粉が集まる座標を調整
     public float speed;
     [SerializeField] private GameObject pollen_point;
     [SerializeField] private CircleCollider2D Cc;
@@ -46,8 +47,8 @@ public class pollenHit : MonoBehaviour
         {
             Vector3 screenPoint = new Vector3(targetCamera.pixelWidth, 0, 0);//カメラの座標位置を取得
             Vector3 worldPos = targetCamera.ScreenToWorldPoint(screenPoint);//カメラの座標をワールドに変換
-                                                                            // ゲームオブジェクトをその位置に移動
-            Vector2 Pvec = new Vector2(worldPos.x, worldPos.y);//UIの座標を保存
+                                                                           // ゲームオブジェクトをその位置に移動
+            Vector2 Pvec = new Vector2(worldPos.x, worldPos.y)+ new Vector2(pollenXpos, pollenYpos);//UIの座標を保存
             vec = Pvec - new Vector2(this.transform.position.x, this.transform.position.y);//プレイヤーの位置から敵の位置を引く
             vec = vec.normalized * speed;//正規化
 
@@ -56,7 +57,7 @@ public class pollenHit : MonoBehaviour
             RB.AddForce(vec * speed);
 
             //RB.velocity = vec * speed;
-            if (this.transform.position.y < worldPos.y)
+            if (this.transform.position.y < worldPos.y + 2f)
             {
                 
                 Sc.score += 100;
@@ -74,8 +75,6 @@ public class pollenHit : MonoBehaviour
             audiosorce.PlayOneShot(getpollen);
             Sc.score += 100;
             Sdc.CollectObject();
-           
-            
         }
     }
     private IEnumerator Homing()

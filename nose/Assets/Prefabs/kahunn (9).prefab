@@ -163,7 +163,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetCamera: {fileID: 0}
-  speed: 3
+  pollenYpos: 2
+  pollenXpos: -2.5
+  speed: 4
   pollen_point: {fileID: 3793076850701079243, guid: b00d91f93ec204732be92e19314cd016, type: 3}
   Cc: {fileID: 858440252183875512}
   RB: {fileID: 0}

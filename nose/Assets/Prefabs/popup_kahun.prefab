@@ -162,11 +162,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetCamera: {fileID: 0}
+  pollenYpos: 2
+  pollenXpos: -2.5
   pollen_point: {fileID: 3793076850701079243, guid: b00d91f93ec204732be92e19314cd016, type: 3}
   audio_getpollen: {fileID: 913490507699145446, guid: 0998ae9448e454acaa1dc8be8cb8e4b2, type: 3}
   CC: {fileID: 2112242898136277788}
   RB: {fileID: 7556947460370933913}
-  speed: 3
+  speed: 4
   pop_min: -500
   pop_max: 500
   Sc: {fileID: 0}
