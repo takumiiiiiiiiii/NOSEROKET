@@ -11,10 +11,12 @@ public class pop_upPollen : MonoBehaviour
     //Cameraへ移動する
     public Camera targetCamera;
     //
+    public float pollenYpos, pollenXpos;//花粉が集まる座標を調整
     [SerializeField] private GameObject pollen_point;
     [SerializeField] private GameObject audio_getpollen;
     [SerializeField] private CircleCollider2D CC;
     [SerializeField] private Rigidbody2D RB;
+
     public float speed;
     public float pop_min = 100f, pop_max = 200f;
     private Vector2 vec;//鼻のベクトルを入れる
@@ -51,7 +53,7 @@ public class pop_upPollen : MonoBehaviour
         Vector3 screenPoint = new Vector3(targetCamera.pixelWidth, 0, 0);//カメラの座標位置を取得
         Vector3 worldPos = targetCamera.ScreenToWorldPoint(screenPoint);//カメラの座標をワールドに変換
         // ゲームオブジェクトをその位置に移動
-        Vector2 Pvec = new Vector2(worldPos.x, worldPos.y);//UIの座標を保存
+        Vector2 Pvec = new Vector2(worldPos.x, worldPos.y)+new Vector2(pollenXpos,pollenYpos);//UIの座標を保存
         vec = Pvec - new Vector2(this.transform.position.x, this.transform.position.y);//プレイヤーの位置から敵の位置を引く
         vec = vec.normalized * speed;//正規化
         if (instant==1)
@@ -62,7 +64,7 @@ public class pop_upPollen : MonoBehaviour
         StartCoroutine(Homing());
         RB.AddForce(vec * speed);
         //RB.velocity = vec * speed;
-        if (this.transform.position.y < worldPos.y)
+        if (this.transform.position.y < worldPos.y+2f)
         {
             Instantiate(audio_getpollen, this.transform.position, Quaternion.identity);
             if (Sc != null)
