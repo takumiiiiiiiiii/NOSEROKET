@@ -38,17 +38,18 @@ public class Animation_ending : MonoBehaviour
 
     public void OnAnimationEnd()
     {
-        if(Rk.ranknumber > 5)
+        Debug.Log("Ranking;" + Rk.ranknumber);
+        if(Rk.ranknumber  == 1)
         {
-            audiosorce.PlayOneShot(result[0]);
+            audiosorce.PlayOneShot(result[2]);
         }
-        else if(Rk.ranknumber > 1)
+        else if(Rk.ranknumber < 6 && Rk.ranknumber != -1)
         {
             audiosorce.PlayOneShot(result[1]);
         }
         else
         {
-            audiosorce.PlayOneShot(result[2]);
+            audiosorce.PlayOneShot(result[0]);
         }
     }
 }

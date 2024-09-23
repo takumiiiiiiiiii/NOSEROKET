@@ -18,7 +18,7 @@ public class Ranking : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        ranknumber = 6;
+        ranknumber = -1;
         rankingshare = rankingValue;
         GetRanking();
         SetRanking(Score.current_score/100+1);
@@ -26,6 +26,8 @@ public class Ranking : MonoBehaviour
         {
             int lank = i + 1;
             rankingText[i].text =lank+"st "+rankingValue[i].ToString();
+            if(rankingValue[i] == Score.current_score / 100 + 1)
+                ranknumber = lank;
         }
     }
 
@@ -54,15 +56,15 @@ public class Ranking : MonoBehaviour
                 var change = rankingValue[i];
                 rankingValue[i] = _value;
                 _value = change;
+                ranknumber = i;
             }
+            
         }
 
         //入れ替えた値を保存
         for (int i = 0; i < ranking.Length; i++)
         {
             PlayerPrefs.SetInt(ranking[i], rankingValue[i]);
-            if (_value == rankingValue[i])
-                ranknumber = i;
         }
     }
 }
