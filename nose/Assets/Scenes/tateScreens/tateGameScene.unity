@@ -5218,6 +5218,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Sdc: {fileID: 1758798133}
+  anima: {fileID: 0}
 --- !u!82 &208241185
 AudioSource:
   m_ObjectHideFlags: 0
@@ -17905,7 +17906,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 1076, y: 169}
+  m_AnchoredPosition: {x: 458, y: 169}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!328 &950440236
@@ -18000,7 +18001,8 @@ MonoBehaviour:
   - {fileID: 32900000, guid: ef441448542294c6eb93253bf9693538, type: 3}
   - {fileID: 32900000, guid: 52174c0bc7f4c49428aeedb170e69e9c, type: 3}
   - {fileID: 32900000, guid: df8685ca6ccaa4b9d92e6082720c02bc, type: 3}
-  autoSwitchFlags: 010001000101
+  - {fileID: 32900000, guid: b7c6f4641109545d7aa7d0ff3f586b98, type: 3}
+  autoSwitchFlags: 01000100010101
   Sdc: {fileID: 0}
   NOSE: {fileID: 0}
   bar: {fileID: 0}
@@ -30881,6 +30883,7 @@ MonoBehaviour:
   pollenPoint: 0
   pollenReleaseRate: 10
   sliderImage: {fileID: 900383040}
+  noseScaleChange: 0
   feverFlag: 0
 --- !u!114 &1758798134
 MonoBehaviour:
