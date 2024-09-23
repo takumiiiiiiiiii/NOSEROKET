@@ -30,7 +30,7 @@ public class GoToTitle : MonoBehaviour
         Serial seria;//呼ぶスクリプトにあだ名をつける
         GameObject objc = GameObject.Find("sencer");//Circleというゲームオブジェクトを探す
         seria = objc.GetComponent<Serial>();//スクリプトを取得
-        seria.serial.Close();
+        //seria.serial.Close();
         SceneManager.LoadScene(SceneName);//some_senseiシーンをロードする
 
     }
