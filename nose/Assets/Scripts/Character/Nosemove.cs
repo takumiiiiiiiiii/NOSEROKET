@@ -20,6 +20,8 @@ public class Nosemove : MonoBehaviour
     public AudioClip dash;
     public AudioClip right_left_move;
 
+    private bool superDush = false;
+
     public AudioClip superDashBGM;
 
     private bool audioCharge_played;
@@ -372,15 +374,20 @@ public class Nosemove : MonoBehaviour
     }
     private IEnumerator Dash()
     {
-        anima.SetBool("charge", false);
-        
-        Nose_Dush = true;
-        audiosorce.PlayOneShot(dash);
-        
+        if (!superDush)
+        {
+            anima.SetBool("charge", false);
+            Nose_Dush = true;
+            audiosorce.PlayOneShot(dash);
+        }
+
         yield return new WaitForSeconds(1);//1秒後にダッシュ終わり
-        charge_time = 0f;
-        Nose_Dush = false;
-        maxcharge = false;
+        if (!superDush)
+        {
+            charge_time = 0f;
+            Nose_Dush = false;
+            maxcharge = false;
+        }
     }
     public void SuperDashStart()
     {
@@ -388,6 +395,8 @@ public class Nosemove : MonoBehaviour
     }
     private IEnumerator SuperDash()
     {
+
+        superDush = true;
         backBGMmute = true;
         audiosorce2.PlayOneShot(dashVoice);
         anima.SetBool("charge", true);
@@ -399,6 +408,7 @@ public class Nosemove : MonoBehaviour
         Sdc.FeverTime();
         Sdc.pollenPoint -= 100;
         yield return new WaitForSeconds(8);//1秒後にダッシュ終わり
+        superDush = false;
         anima.SetBool("charge", false);
         
         anima.SetBool("charge", false);

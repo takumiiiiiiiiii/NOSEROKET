@@ -25,57 +25,60 @@ public class FingerRightAnimation : MonoBehaviour
     {
         Serial serial;//呼ぶスクリプトにあだ名をつける
         GameObject objc = GameObject.Find("sencer");//Circleというゲームオブジェクトを探す
-        serial = objc.GetComponent<Serial>();//スクリプトを取得
-        if (serial.connect_char == true)
+        if (!objc)
         {
-            float x, z;
-            if (float.TryParse(serial.x, out x) && float.TryParse(serial.z, out z))//文字を数字に直しつつ変なデータがきたら弾く
+            serial = objc.GetComponent<Serial>();//スクリプトを取得
+            if (serial.connect_char == true)
             {
-                //Debug.Log("X:" + x);
-                anima.SetBool("FingerIN", false);
-                if (DoNotMove == false)
+                float x, z;
+                if (float.TryParse(serial.x, out x) && float.TryParse(serial.z, out z))//文字を数字に直しつつ変なデータがきたら弾く
                 {
-                    if (x < Nosemove.growlevel && Nose_Dush == false)//左に指を入れる
+                    //Debug.Log("X:" + x);
+                    anima.SetBool("FingerIN", false);
+                    if (DoNotMove == false)
                     {
-                        anima.SetBool("FingerIN", true);
-                    }
-                    if (z < Nosemove.growlevel && x < Nosemove.growlevel)
-                    {
-                        charge_time += Time.deltaTime;
-                        Debug.Log(charge_time);
-                        if (charge_time < 0.25f)
+                        if (x < Nosemove.growlevel && Nose_Dush == false)//左に指を入れる
                         {
-                            Debug.Log("短く押された: " + charge_time + " 秒");
-                            // 短く押された場合の反応を記述
+                            anima.SetBool("FingerIN", true);
                         }
-                        else if (charge_time >= 0.25f && charge_time < 0.5f)
+                        if (z < Nosemove.growlevel && x < Nosemove.growlevel)
                         {
-                            Debug.Log("中くらいの時間押された: " + charge_time + " 秒");
-                            // 中くらいの時間押された場合の反応を記述
+                            charge_time += Time.deltaTime;
+                            Debug.Log(charge_time);
+                            if (charge_time < 0.25f)
+                            {
+                                Debug.Log("短く押された: " + charge_time + " 秒");
+                                // 短く押された場合の反応を記述
+                            }
+                            else if (charge_time >= 0.25f && charge_time < 0.5f)
+                            {
+                                Debug.Log("中くらいの時間押された: " + charge_time + " 秒");
+                                // 中くらいの時間押された場合の反応を記述
+                            }
+                            else if (charge_time >= 0.5f && charge_time < 0.75f)
+                            {
+
+                                // 長く押された場合の反応を記述
+                            }
+                            else
+                            {
+                            }
+                            Nose_Charge = true;
                         }
-                        else if (charge_time >= 0.5f && charge_time < 0.75f)
+                        if (x_before < Nosemove.growlevel && z_before < Nosemove.growlevel)
                         {
 
-                            // 長く押された場合の反応を記述
+                            if (x >= Nosemove.growlevel || z >= Nosemove.growlevel)
+                            {
+                                StartCoroutine(Dash());
+                            }
                         }
-                        else
+                        if (Nose_Dush == true)
                         {
                         }
-                        Nose_Charge = true;
+                        x_before = x;
+                        z_before = z;
                     }
-                    if (x_before < Nosemove.growlevel && z_before < Nosemove.growlevel)
-                    {
-
-                        if (x >= Nosemove.growlevel || z >= Nosemove.growlevel)
-                        {
-                            StartCoroutine(Dash());
-                        }
-                    }
-                    if (Nose_Dush == true)
-                    {
-                    }
-                    x_before = x;
-                    z_before = z;
                 }
             }
         }

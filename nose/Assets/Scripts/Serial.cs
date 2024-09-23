@@ -10,7 +10,7 @@ using UniRx;
 
 public class Serial : MonoBehaviour
 {
-
+    private static Serial instance;
     [SerializeField] private string portName;
     [SerializeField] private int baurate;
 
@@ -21,7 +21,15 @@ public class Serial : MonoBehaviour
     public string cntx,cntz,x="50",z="50";
     void Awake()
     {
-        DontDestroyOnLoad(this.gameObject);
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(this.gameObject);
+        }
+        else
+        {
+            Destroy(this.gameObject);
+        }
     }
     void Start()
     {
