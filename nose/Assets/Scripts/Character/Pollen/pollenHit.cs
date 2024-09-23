@@ -73,7 +73,7 @@ public class pollenHit : MonoBehaviour
             instant = true;
             Instantiate(pollen_point, this.transform.position, Quaternion.identity);
             audiosorce.PlayOneShot(getpollen);
-            Sc.score += 100;
+            
             Sdc.CollectObject();
         }
     }
