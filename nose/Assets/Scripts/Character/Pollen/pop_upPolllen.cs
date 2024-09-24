@@ -66,6 +66,8 @@ public class pop_upPollen : MonoBehaviour
         //RB.velocity = vec * speed;
         if (this.transform.position.y < worldPos.y+2f)
         {
+            GameObject parentObject = GameObject.Find("nose_player");
+            this.transform.SetParent(parentObject.transform, true);
             Instantiate(audio_getpollen, this.transform.position, Quaternion.identity);
             if (Sc != null)
             {

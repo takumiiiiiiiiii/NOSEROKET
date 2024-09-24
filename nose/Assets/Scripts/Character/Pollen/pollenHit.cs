@@ -59,6 +59,8 @@ public class pollenHit : MonoBehaviour
             //RB.velocity = vec * speed;
             if (this.transform.position.y < worldPos.y + 2f)
             {
+                GameObject parentObject = GameObject.Find("nose_player");
+                this.gameObject.transform.SetParent(parentObject.transform, true);
                 UIchake.schake = true;
                 Sc.score += 100;
                 Sdc.CollectObject();
