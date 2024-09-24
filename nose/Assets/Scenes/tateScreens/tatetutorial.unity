@@ -1761,7 +1761,7 @@ MonoBehaviour:
   black_out: {fileID: 3633454196707031951, guid: 68d28f3a58bd646fd948c9e8ca676f6b, type: 3}
   text: {fileID: 8465516378775091074, guid: 6e2eff8f924504333b6770e7bd9a4906, type: 3}
   speed: 40
-  OUT_POLLEN: 20
+  OUT_POLLEN: 0
   scene_name: tateGameScene
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
 --- !u!1 &975426245
