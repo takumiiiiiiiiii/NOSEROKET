@@ -5051,7 +5051,7 @@ MonoBehaviour:
   charge: {fileID: 8300000, guid: 0316fd458295b40a7bc14dd9b0205241, type: 3}
   dash: {fileID: 8300000, guid: 4c56a83be3b4e43d2b1b99c086aa5b25, type: 3}
   right_left_move: {fileID: 8300000, guid: ddaa0fc38c2e940f487cd081f59f6d91, type: 3}
-  superDashBGM: {fileID: 8300000, guid: 911100742ba3441a19455c4bd8a5a785, type: 3}
+  superDashBGM: {fileID: 8300000, guid: 6a9226e8d7f724103b2a4a23d8ccab4b, type: 3}
   Damage:
   - {fileID: 8300000, guid: 343fb0ea1c487451ca10a46aada519db, type: 3}
   - {fileID: 8300000, guid: dba000202be3842659939cf5ae7a1267, type: 3}
