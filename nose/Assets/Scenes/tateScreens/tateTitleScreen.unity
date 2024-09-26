@@ -467,6 +467,7 @@ MonoBehaviour:
   gonose: {fileID: 8300000, guid: 3f9acde076bb34adc81448405c1972f6, type: 3}
   gonoseVoice: {fileID: 8300000, guid: 774f371c173a847d89dcc7e10e47917f, type: 3}
   anima: {fileID: 0}
+  Sv: {fileID: 0}
 --- !u!114 &98819481
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3375,7 +3376,7 @@ SpriteRenderer:
   m_SortingLayerID: 761794615
   m_SortingLayer: 3
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 69a048d5dd4b44aac8f69fb95b34d026, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 869d9d910ab8945f8ae757439f8ef4e0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -7806,6 +7807,5 @@ SceneRoots:
   - {fileID: 85451427}
   - {fileID: 691435974}
   - {fileID: 682888836}
-
   - {fileID: 444022802}
-
+  - {fileID: 1800055298}
