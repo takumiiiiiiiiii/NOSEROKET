@@ -121,7 +121,7 @@ public class Nosemove : MonoBehaviour
                     audiosorce.PlayOneShot(chargeVoice);
                     audioCharge_played = true;
                 }
-                if ((x >= growlevel && z >= growlevel) && Nose_Dush == false)
+                if ((x >= growlevel || z >= growlevel) && Nose_Dush == false)
                 {
                     audiosorce2.Stop();
                     audioCharge_played = false;
@@ -279,6 +279,7 @@ public class Nosemove : MonoBehaviour
         Debug.Log("センサーの接続:"+serial.connect_char);
         if (serial.connect_char == true)
         {
+
             float x, z;
             if (float.TryParse(serial.x, out x) && float.TryParse(serial.z, out z))//文字を数字に直しつつ変なデータがきたら弾く
             {
@@ -301,18 +302,23 @@ public class Nosemove : MonoBehaviour
                     {
                         if (!audioRight_played)
                         {
+                            Debug.Log("nonnon");
+                            audiosorce2.PlayOneShot(itagaruVoice[Random.Range(0, itagaruVoice.Length)]);
                             audiosorce.PlayOneShot(right_left_move);
                             audioRight_played = true;
                         }
                     }
                     else
                     {
+   
                         audioRight_played = false;
                     }
                     if ((x < growlevel && z >= growlevel))//左の鼻の穴をさす音
                     {
                         if (!audioLeft_played)
                         {
+
+                            audiosorce2.PlayOneShot(itagaruVoice[Random.Range(0, itagaruVoice.Length)]);
                             audiosorce.PlayOneShot(right_left_move);
                             audioLeft_played = true;
                         }
@@ -374,6 +380,7 @@ public class Nosemove : MonoBehaviour
     }
     private IEnumerator Dash()
     {
+        audiosorce2.PlayOneShot(dashVoice);
         if (!superDush)
         {
             anima.SetBool("charge", false);
