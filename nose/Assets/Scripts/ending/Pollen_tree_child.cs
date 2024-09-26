@@ -70,6 +70,7 @@ public class Pollen_tree_child : MonoBehaviour
         // 現在の角度がトリガー角度を超えているかどうかをチェックします
         if (Mathf.Abs(currentAngle) > 10&&taoreru==false)
         {
+            UIchake.schake = true;//UIをゆらす
             Domino_camera.target = this.transform;
             Instantiate(audio_tree_falldown, this.transform.position, Quaternion.identity);
             Debug.Log("fwsefwe");
