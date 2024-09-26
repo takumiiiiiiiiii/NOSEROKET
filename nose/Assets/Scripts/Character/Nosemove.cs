@@ -301,6 +301,7 @@ public class Nosemove : MonoBehaviour
                     {
                         if (!audioRight_played)
                         {
+                            audiosorce2.PlayOneShot(itagaruVoice[Random.Range(0, itagaruVoice.Length)]);
                             audiosorce.PlayOneShot(right_left_move);
                             audioRight_played = true;
                         }
@@ -313,6 +314,7 @@ public class Nosemove : MonoBehaviour
                     {
                         if (!audioLeft_played)
                         {
+                            audiosorce2.PlayOneShot(itagaruVoice[Random.Range(0, itagaruVoice.Length)]);
                             audiosorce.PlayOneShot(right_left_move);
                             audioLeft_played = true;
                         }
