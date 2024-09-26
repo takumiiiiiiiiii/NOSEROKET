@@ -201,7 +201,7 @@ public class Nosemove : MonoBehaviour
                 audiosorce2.PlayOneShot(charge);
                 audiosorce2.PlayOneShot(charge);
                 audiosorce.PlayOneShot(chargeVoice);
-                audiosorce.PlayOneShot(chargeVoice);
+            
 
 
                 audioCharge_played = true;
@@ -376,6 +376,7 @@ public class Nosemove : MonoBehaviour
     }
     private IEnumerator Dash()
     {
+        audiosorce2.PlayOneShot(dashVoice);
         if (!superDush)
         {
             anima.SetBool("charge", false);
