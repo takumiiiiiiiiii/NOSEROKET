@@ -8,6 +8,7 @@ public class Planet : MonoBehaviour
     public float speed=40;//吹っ飛んで行くスピード
     public int OUT_POLLEN=20;//落とす花粉の数
     [SerializeField] private GameObject pollen;//花粉
+    [SerializeField] private GameObject HitEffect;//ヒットエフェクト
 
     private bool Hit = false;//ダッシュ中の鼻にあたったかを判定
     private Vector2 vec;//鼻のベクトルを入れる
@@ -86,6 +87,13 @@ public class Planet : MonoBehaviour
         nose = obj.GetComponent<Nosemove>();//スクリプトを取得
         if (collision.gameObject.tag == "Player" && Nosemove.Nose_Dush == true)
         {
+            foreach (ContactPoint2D point in collision.contacts)
+            {
+                if (HitEffect != null)
+                {
+                    Instantiate(HitEffect, (Vector3)point.point, Quaternion.identity);//花粉を置く
+                }
+            }
             //GameObject game = GameObject.Find("MainCamera");
             //if (game != null)
             //{

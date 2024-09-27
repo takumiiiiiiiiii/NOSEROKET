@@ -176,6 +176,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1134866
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -355,6 +356,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &3626802
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -534,6 +536,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &3850417
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -712,6 +715,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 10
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &8015656
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1061,6 +1065,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 10
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &11065659
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1240,6 +1245,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &28233688
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -1761,6 +1767,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &46520389
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2501,6 +2508,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 10
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &117243602
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2736,6 +2744,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 10
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &140205561
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -2914,6 +2923,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 10
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &150396652
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3093,6 +3103,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &152855015
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3356,6 +3367,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 50
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &156347986
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3540,6 +3552,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 50
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &159757621
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3724,6 +3737,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 50
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &162700393
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3986,6 +4000,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 10
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &165515133
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4165,6 +4180,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &183969007
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4359,6 +4375,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 30
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &189857102
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4675,6 +4692,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 10
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &204809152
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6188,6 +6206,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &281142354
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6366,6 +6385,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 10
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &287928043
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6607,6 +6627,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &318670112
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -6785,6 +6806,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 10
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &322765034
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7252,6 +7274,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 10
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &337445992
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7804,6 +7827,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &365173429
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -7982,6 +8006,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 10
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &375295472
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -8166,6 +8191,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 50
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &381524528
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -9010,6 +9036,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 10
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &449572041
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -9912,6 +9939,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 10
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &497361790
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -10210,6 +10238,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 10
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &518312098
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -10832,6 +10861,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 10
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &538897844
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -11010,6 +11040,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 10
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &542341187
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -11735,6 +11766,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &629748696
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -12275,6 +12307,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 50
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &652938958
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -13686,6 +13719,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &745763694
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -14040,6 +14074,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 10
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &770047460
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -14218,6 +14253,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &775348919
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -14397,6 +14433,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &776055953
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -14747,6 +14784,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &776925842
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -15590,6 +15628,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 50
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &869699552
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -15769,6 +15808,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &875181034
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -15947,6 +15987,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 10
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &881442330
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -16125,6 +16166,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 10
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &883825179
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -16379,6 +16421,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &915531699
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -16557,6 +16600,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &915576716
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -16735,6 +16779,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 10
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &918746427
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -17255,6 +17300,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 10
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &930312328
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -17439,6 +17485,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 50
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &931209860
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -17617,6 +17664,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &935554956
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -17950,14 +17998,14 @@ RectTransform:
   m_GameObject: {fileID: 950440234}
   m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
   m_LocalPosition: {x: 0, y: 0, z: 2.7429876}
-  m_LocalScale: {x: 0.5252227, y: 0.5252227, z: 0.5252227}
+  m_LocalScale: {x: 0.5716524, y: 0.5716524, z: 0.5716524}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 548410926}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 458, y: 169}
+  m_AnchoredPosition: {x: 531, y: 169}
   m_SizeDelta: {x: 1920, y: 1080}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!328 &950440236
@@ -18130,6 +18178,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &987813620
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -18818,6 +18867,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 10
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1023035557
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -18997,6 +19047,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1034172368
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -19585,6 +19636,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 50
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1058948934
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -19934,6 +19986,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 10
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1068280941
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -20512,6 +20565,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1080940410
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -20727,6 +20781,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1100899350
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -20905,6 +20960,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 10
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1104364380
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -21567,6 +21623,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 10
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1163563417
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -21802,6 +21859,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 10
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1178385400
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -22226,6 +22284,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 10
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1193333567
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -22581,6 +22640,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1210579941
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -22988,6 +23048,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1253986952
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -23251,6 +23312,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1263796250
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -23601,6 +23663,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1280030709
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -24649,6 +24712,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 30
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!114 &1336534157
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -24827,6 +24891,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 10
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1345091859
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -25174,6 +25239,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 30
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1379627509
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -25339,6 +25405,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1382134864
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -25860,6 +25927,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1415326593
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -26189,6 +26257,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 50
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1426146393
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -26538,6 +26607,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1461020613
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -27109,6 +27179,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 10
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1492419138
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -27371,6 +27442,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 10
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1500077587
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -28125,6 +28197,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 50
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1559597244
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -28304,6 +28377,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1559791001
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -28659,6 +28733,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1569383024
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -29014,6 +29089,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1611434751
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -29192,6 +29268,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 10
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1612255578
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -29376,6 +29453,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 50
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1627702291
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -29806,6 +29884,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1650776078
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -30069,6 +30148,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1673618244
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -30425,6 +30505,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1717514594
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -30603,6 +30684,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 10
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1721262688
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -31062,6 +31144,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 10
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1761047862
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -31240,6 +31323,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 10
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1765485966
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -31733,6 +31817,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1773198476
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -32343,6 +32428,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1804486150
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -32867,6 +32953,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1818301834
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -33313,6 +33400,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 10
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1842177207
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -33890,6 +33978,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 10
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1864102185
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -34068,6 +34157,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1864380307
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -34330,6 +34420,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 10
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1912349464
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -34509,6 +34600,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1920491448
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -34689,6 +34781,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1930648175
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -34867,6 +34960,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1931310138
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -35444,6 +35538,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 10
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1954005086
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -35707,6 +35802,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1961531731
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -35885,6 +35981,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 10
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &1969119889
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -36781,6 +36878,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &2002749756
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -37186,6 +37284,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 50
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &2024404933
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -37365,6 +37464,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &2024441685
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -37657,6 +37757,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 10
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &2053868190
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -37836,6 +37937,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &2056683621
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -38014,6 +38116,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 10
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &2061072687
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -38599,6 +38702,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &2082983302
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -38895,6 +38999,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 10
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &2096673603
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -39197,6 +39302,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 30
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &2109161641
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -39446,6 +39552,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 10
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &2117522888
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -39681,6 +39788,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 10
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &2121438559
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -39859,6 +39967,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &2141729495
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -40038,6 +40147,7 @@ MonoBehaviour:
   speed: 40
   OUT_POLLEN: 20
   pollen: {fileID: 1421619557877210916, guid: cff1fc5a5a9764ae59d81b2eb2d13c5d, type: 3}
+  HitEffect: {fileID: 1808282196726254888, guid: f0b79b8e31430411f863693d24ce8617, type: 3}
 --- !u!58 &2144624631
 CircleCollider2D:
   m_ObjectHideFlags: 0
