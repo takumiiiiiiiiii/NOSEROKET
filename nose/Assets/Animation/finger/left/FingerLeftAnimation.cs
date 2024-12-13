@@ -36,7 +36,7 @@ public class FingerLeftAnimation : MonoBehaviour
                 if (DoNotMove == false)
                 {
                     
-                    if (z < Nosemove.growlevel &&Nose_Dush == false)//左に指を入れる
+                    if (z < Nosemove.growlevel )//左に指を入れる
                     {
                         anima.SetBool("FingerIN", true);
                     }
@@ -84,10 +84,8 @@ public class FingerLeftAnimation : MonoBehaviour
         {
             anima.SetBool("FingerIN", false);
             //アニメーション
-            if (Nose_Dush == true)
-            {
-            }
-            else if (Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.Space) == false && Nose_Charge == false && Nose_Dush == false)
+            //
+            if (Input.GetKey(KeyCode.LeftArrow) && Input.GetKey(KeyCode.Space) == false)
             {
                 anima.SetBool("FingerIN", true);
             }
